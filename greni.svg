@@ -1,0 +1,84 @@
+<svg viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <filter id="g" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .s{stroke:#38D8FF;stroke-width:2.1;stroke-linejoin:round;stroke-linecap:round;}
+      .d{stroke:#2FB6DC;stroke-width:1.3;stroke-linejoin:round;stroke-linecap:round;opacity:.85;}
+      .a{fill:#5CE8FF;}
+      .t{fill:#8FE1F5;font-family:'Segoe UI',Arial,sans-serif;font-size:11px;letter-spacing:.04em;}
+      .lead{stroke:#4EC9E8;stroke-width:1;opacity:.7;}
+      .beam{stroke:#5CE8FF;stroke-width:1.4;stroke-dasharray:3 5;opacity:.8;}
+    </style>
+  </defs>
+
+  <!-- ground -->
+  <ellipse cx="190" cy="292" rx="150" ry="9" fill="#38D8FF" opacity="0.10"/>
+  <line class="d" x1="46" y1="292" x2="334" y2="292"/>
+
+  <g filter="url(#g)">
+    <!-- power unit (skid enclosure) -->
+    <path class="s" d="M74,188 L306,188 L306,274 L74,274 Z"/>
+    <path class="d" d="M96,262 L124,262 L124,272 L96,272 Z"/>
+    <path class="d" d="M256,262 L284,262 L284,272 L284,272 Z"/>
+    <path class="d" d="M256,262 L284,262 L284,272 L256,272 Z"/>
+    <!-- control display -->
+    <path class="s" d="M90,204 L128,204 L128,232 L90,232 Z"/>
+    <line class="d" x1="90" y1="212" x2="128" y2="212"/>
+    <!-- distribution sockets -->
+    <circle class="d" cx="258" cy="216" r="5"/><circle class="d" cx="278" cy="216" r="5"/><circle class="d" cx="298" cy="216" r="4"/>
+    <!-- vent grille -->
+    <line class="d" x1="150" y1="248" x2="230" y2="248"/>
+    <line class="d" x1="150" y1="254" x2="230" y2="254"/>
+    <line class="d" x1="150" y1="260" x2="230" y2="260"/>
+    <!-- exhaust (subtle, hybrid) -->
+    <path class="s" d="M300,188 L300,172 L308,172"/>
+
+    <!-- tilting solar wings on roof -->
+    <path class="s" d="M150,186 L86,158 L78,170 L142,198 Z"/>
+    <line class="d" x1="108" y1="163" x2="100" y2="188"/>
+    <line class="d" x1="128" y1="172" x2="120" y2="192"/>
+    <path class="s" d="M230,186 L294,158 L302,170 L238,198 Z"/>
+    <line class="d" x1="272" y1="163" x2="280" y2="188"/>
+    <line class="d" x1="252" y1="172" x2="260" y2="192"/>
+
+    <!-- drone landing pad on roof -->
+    <ellipse class="s" cx="190" cy="176" rx="52" ry="13"/>
+    <ellipse class="d" cx="190" cy="176" rx="30" ry="7"/>
+    <line class="d" x1="174" y1="176" x2="206" y2="176"/>
+    <line class="d" x1="190" y1="170" x2="190" y2="182"/>
+  </g>
+
+  <!-- charge beam -->
+  <line class="beam" x1="190" y1="130" x2="190" y2="164"/>
+  <path class="a" d="M186,142 l6,-10 -2,7 h4 l-8,11 2,-8 z"/>
+
+  <!-- drone (quadcopter) hovering -->
+  <g filter="url(#g)">
+    <path class="s" d="M176,108 L204,108 L200,120 L180,120 Z"/>
+    <line class="s" x1="180" y1="110" x2="158" y2="96"/>
+    <line class="s" x1="200" y1="110" x2="222" y2="96"/>
+    <line class="s" x1="182" y1="118" x2="164" y2="128"/>
+    <line class="s" x1="198" y1="118" x2="216" y2="128"/>
+    <ellipse class="s" cx="154" cy="94" rx="12" ry="4"/>
+    <ellipse class="s" cx="226" cy="94" rx="12" ry="4"/>
+    <ellipse class="d" cx="160" cy="130" rx="10" ry="3.5"/>
+    <ellipse class="d" cx="220" cy="130" rx="10" ry="3.5"/>
+    <circle class="a" cx="190" cy="114" r="2.4"/>
+    <line class="d" x1="182" y1="120" x2="182" y2="126"/>
+    <line class="d" x1="198" y1="120" x2="198" y2="126"/>
+    <line class="d" x1="176" y1="126" x2="204" y2="126"/>
+  </g>
+
+  <!-- labels -->
+  <line class="lead" x1="294" y1="162" x2="326" y2="150"/>
+  <text class="t" x="286" y="144">tilting solar</text>
+  <line class="lead" x1="238" y1="176" x2="300" y2="196"/>
+  <text class="t" x="300" y="200">drone dock</text>
+  <line class="lead" x1="128" y1="218" x2="60" y2="212"/>
+  <text class="t" x="16" y="210">hybrid power</text>
+  <text class="t" x="16" y="222">unit</text>
+  <text class="t" x="150" y="314" style="font-size:12px;letter-spacing:.08em;fill:#5CE8FF;font-family:'IBM Plex Mono',monospace">MK-GR-01</text>
+</svg>
