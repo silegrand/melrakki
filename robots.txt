@@ -1,0 +1,5 @@
+# Melrakki Systems
+User-agent: *
+Allow: /
+
+Sitemap: https://www.melrakki.systems/sitemap.xml

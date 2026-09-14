@@ -1,0 +1,18 @@
+# Melrakki Systems
+
+> Melrakki Systems designs and supplies autonomous off-grid power platforms, solar and battery towers and masts, that keep surveillance, communications and drone systems running in the most remote and hostile places on earth, with no mains power and no fuel convoy.
+
+Melrakki engineers each platform from the load backwards, sizing it to the exact power draw, duty cycle and conditions it has to sustain, then integrating proven power hardware so nothing critical rests on an unproven part. The company draws on more than a decade of deploying off-grid solar surveillance into demanding sectors. The name is the Icelandic word for the Arctic fox, the only animal that thrives unaided through the polar winter. Strapline: Power that holds. Business to business, worldwide.
+
+## Platforms
+- [Melrakki Harka Hybrid, model MK-HK-H6](https://www.melrakki.systems/): The endurance tier. Solar, battery and a Stage V backup generator running on HVO renewable diesel, for guaranteed uptime through low light, deep winter and heavy loads. Silent and zero emission in battery mode; the generator engages only to recharge.
+- [Melrakki Harka Solar, model MK-HK-S6](https://www.melrakki.systems/): The clean tier. Solar and battery only, no fuel, no emissions and no noise, for the lowest signature and running cost where irradiance allows.
+- [Melrakki Greni, model MK-GR-01](https://www.melrakki.systems/): An off-grid charging and docking station for autonomous drones, so persistent and beyond line of sight operations keep flying with no power at the landing zone. In development.
+
+## Sectors served
+- Priority: oil and gas, defence and public sector, and extreme and hostile location sites.
+- Also: security and surveillance, telecommunications and remote networks, critical national infrastructure, border and perimeter security, remote construction, and emergency and disaster response.
+
+## Contact
+- [Website](https://www.melrakki.systems/): Company overview, platforms and enquiries.
+- Email: hello@melrakki.systems
