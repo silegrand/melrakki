@@ -1,6 +1,6 @@
 # Melrakki Systems : website essentials
 
-Drop these into your repository. Unless noted, they belong at the repository **root**, next to `index.html`.
+Drop these into your repository. Unless noted, they belong at the repo **root**, next to `index.html`.
 
 ## Files and where they go
 | File | Location | What it does |
