@@ -13,6 +13,11 @@ Melrakki engineers each platform from the load backwards, sizing it to the exact
 - Priority: oil and gas, defence and public sector, and extreme and hostile location sites.
 - Also: security and surveillance, telecommunications and remote networks, critical national infrastructure, border and perimeter security, remote construction, and emergency and disaster response.
 
+## Resilience
+Field notes on off-grid power and operational resilience: keeping critical systems alive where the grid and the fuel convoy end.
+- [Where the grid ends](https://www.melrakki.systems/resilience/): The resilience section overview.
+- [Designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/): How to size an off-grid solar or hybrid power system from the load backwards, and let the honest answer choose the tier.
+
 ## Contact
 - [Website](https://www.melrakki.systems/): Company overview, platforms and enquiries.
 - Email: hello@melrakki.systems
