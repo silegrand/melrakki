@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When the drone has its own power station | Melrakki Systems</title>
+<meta name="description" content="A drone is only as autonomous as the infrastructure behind it. Why off-grid drone charging is really an energy problem, and where Melrakki's Greni concept fits.">
+<link rel="canonical" href="https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/">
+<meta name="theme-color" content="#071A2B">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Melrakki Systems">
+<meta property="og:title" content="When the drone has its own power station">
+<meta property="og:description" content="A drone is only as autonomous as the infrastructure that supports it. The off-grid energy architecture behind persistent remote drone operations, and where Greni fits.">
+<meta property="og:url" content="https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/">
+<meta property="og:image" content="https://www.melrakki.systems/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="When the drone has its own power station">
+<meta name="twitter:description" content="A drone is only as autonomous as the infrastructure that supports it. The off-grid energy architecture behind persistent remote drone operations.">
+<meta name="twitter:image" content="https://www.melrakki.systems/social-preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"When the drone has its own power station",
+  "description":"A drone is only as autonomous as the infrastructure that supports it. Why off-grid drone charging is really an energy architecture problem, and where Melrakki's Greni concept fits.",
+  "inLanguage":"en-GB",
+  "datePublished":"2026-09-23",
+  "dateModified":"2026-09-23",
+  "author":{"@type":"Person","name":"Simon Legrand","jobTitle":"Founder, Melrakki Systems","url":"https://www.melrakki.systems/"},
+  "publisher":{"@type":"Organization","name":"Melrakki Systems","url":"https://www.melrakki.systems/","logo":{"@type":"ImageObject","url":"https://www.melrakki.systems/icon-512.png"}},
+  "image":"https://www.melrakki.systems/social-preview.png",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/"},
+  "isPartOf":{"@type":"CollectionPage","name":"Where the Grid Ends","url":"https://www.melrakki.systems/resilience/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.melrakki.systems/"},
+    {"@type":"ListItem","position":2,"name":"Resilience","item":"https://www.melrakki.systems/resilience/"},
+    {"@type":"ListItem","position":3,"name":"When the drone has its own power station","item":"https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/lockup-horizontal-dark.png" alt="Melrakki Systems"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/#sectors">Sectors</a></li>
+        <li><a href="/resilience/" aria-current="page">Notes</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="deep article-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span>
+      <a href="/resilience/">Resilience</a><span class="sep">/</span>
+      <span aria-current="page">When the drone has its own power station</span>
+    </nav>
+    <div class="article-head">
+      <p class="eyebrow" style="margin-top:1.8rem;">Autonomous infrastructure</p>
+      <h1>When the drone has its own power station</h1>
+      <p class="standfirst">A drone can be autonomous in flight and still depend on a person to keep it alive on the ground. Persistent remote operations are not really a drone problem. They are an infrastructure problem, and the hardest part of that infrastructure is power.</p>
+      <div class="article-meta">
+        <span>Preparedness and resilience</span>
+        <span class="dotsep">&middot;</span>
+        <span>13 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="section" style="padding-top:clamp(1.5rem,4vw,2.5rem);">
+  <div class="wrap">
+    <div class="prose">
+
+      <p class="lead-para">A modern drone can take off, fly a route, hold a target, avoid an obstacle and land itself on a pad the size of a dustbin lid, all without a hand on the controls. It is a genuinely autonomous machine. Then the mission ends, and something ordinary has to happen. It has to be charged. On a remote site, charging is where the autonomy quietly runs out, because somewhere behind that pad is a power supply that someone had to build, connect and keep alive.</p>
+
+      <p>That gap is what this note is about. Not the aircraft, which the industry has largely solved, but everything the aircraft depends on when it comes home. Greni is Melrakki's approach to that layer. It is in development, so this is a piece about the problem and the architecture, not a specification sheet. The problem is worth setting out plainly, because it is the part most drone conversations skip.</p>
+
+      <h2>The drone is not the system</h2>
+      <p>It is easy to look at an autonomous drone and assume the hard part is finished. The flight is the visible cleverness. But a drone on its own is a sensor that runs flat in well under an hour. To turn it into a standing capability on a remote site you need a good deal more than the aircraft: a place for it to land and dock, a way to charge it, power to do the charging, a communications link for command and video, mission management, health monitoring, physical protection, and a person with authority over what it does.</p>
+      <p>Every one of those is a dependency, and the rule is unforgiving. The system is only as autonomous as its most demanding dependency. If any of them needs someone to attend the site on a schedule, the autonomy stops there, at the landing zone, however clever the flight was.</p>
+
+      <h2>The missing layer behind autonomous flight</h2>
+      <p>Most of the attention, and most of the market, sits on the aircraft and the box it lives in. The drone-in-a-box category is real and maturing quickly: DJI, Skydio, Percepto, Airobotics and others build weatherproof docks that launch, land, charge and re-task an aircraft with no one present. They are capable machines.</p>
+      <p>But look at what those docks assume, and a pattern appears. They assume a site with power. They assume a mains connection, or at least an installer who will arrange one. Read any serious buyer's guide and the small print says the same thing: budget for the site electrical work. The dock solves the aircraft's endurance and leaves the site's energy as someone else's problem. On a site with a grid, that is fair enough. On the sites Melrakki builds for, there is no grid to connect to, and that changes which problem is actually hard.</p>
+
+      <h2>Greni, and what it is</h2>
+      <p>Greni is Melrakki's off-grid charging and docking concept for autonomous drones: a den the aircraft returns to, powered by the site itself rather than by a mains connection that does not exist. In Melrakki's own description it is built on skid-mounted solar hybrid power, with a tilting solar array and lithium storage, so persistent and beyond-line-of-sight operations can keep flying with no power at the landing zone. It carries the name the whole company is named for, the Arctic fox that winters with no shelter and no resupply.</p>
+      <p>Greni is in development. That word matters, and this note keeps to it. There are no field trials to report, no endurance figures to quote and no drone compatibilities to promise. What can be discussed honestly is the thinking: why an off-grid drone node is a different and harder object than a mains-powered dock, and why it sits naturally alongside the power platforms Melrakki already builds.</p>
+
+      <h2>Persistent readiness, not persistent flight</h2>
+      <p>There is a temptation to sell autonomous drones on the image of something always in the air, watching everything. It is the wrong promise, and a fragile one. Batteries are finite, weather intervenes, and a machine that must be airborne to be useful is useless the moment it lands.</p>
+      <p>The stronger proposition is quieter. The drone does not need to be flying. It needs to be ready. It sits docked and charged, the station stays powered, the link stays up, and the system watches its own state. When something calls for a look, the aircraft launches, observes, returns and recharges, and the capability is available again.</p>
+      <p class="lead-para">Call it persistent readiness. It is the difference between a thing that is always doing something and a thing that is always able to.</p>
+      <p>For most real operations, the second is what matters, and it is far more honest about what the hardware can actually sustain. Nothing here depends on a drone hanging in the sky for hours. It depends on the capability being present the moment it is called for.</p>
+
+      <h2>The autonomous loop</h2>
+      <p>It helps to draw the cycle out: detect, decide, deploy, observe, return, recharge, ready. A fixed sensor or a report raises something worth seeing. A decision is taken to look. The drone deploys, observes and comes home. The station recharges it, and the loop settles back to ready.</p>
+      <p>One word in that sequence deserves care. <strong>Decide</strong> does not have to mean a machine deciding. On the operations this is written for, a person stays firmly in the loop and holds the authority to launch and to act. The purpose of the infrastructure is not to remove the human. It is that once the human has decided, nothing physical has to be carried to the site to act on it. That is the line between automation, which follows a script, and autonomy, which no longer needs you standing next to it. The decision stays human. The logistics disappear.</p>
+
+      <h2>Why off-grid changes the problem</h2>
+      <p>Here is the part the drone industry tends to treat as an afterthought, and the part Melrakki treats as the whole job. A charging station is, underneath, an energy system. On a remote site with no grid, the real question is not how do we charge the drone. It is how do we produce and store enough electricity, on site and unattended, to charge an aircraft on demand and run everything around it, in a place that may see very little sun for months.</p>
+      <p>Because the station does not only feed the drone. It has to power the docking mechanism, the communications, the control electronics, the environmental protection that keeps a battery alive in the cold, the sensors and the standby draw that never sleeps. The recharge is a spike on top of a baseline that runs day and night. Size for the spike and forget the baseline, and the system dies quietly between missions. <strong>The drone-charging problem, looked at honestly, is an energy architecture problem wearing a different hat.</strong> That is Melrakki's field, not an adjacent one.</p>
+
+      <h2>Engineered from the load backwards</h2>
+      <p>Which is why the discipline that sizes a Harka platform applies here too, only with a harder load to characterise. You cannot design this system by asking how much solar will fit on the skid. You start from the mission and work back: which aircraft, which battery, how many sorties in a day, how long each one flies, how much energy each recharge demands, what the station draws while it waits, what the link needs, what the winter looks like, and what happens in the worst week rather than on the average day.</p>
+      <p>Only when those are numbers can the generation, the storage and the power management be sized to hold the capability through the hardest conditions the site will see. We set that method out in full in <a href="/resilience/designing-power-from-the-load-backwards/">sizing a system from the load backwards</a>. A drone node is the same method with a spikier, less forgiving load, because a mission you cannot fly for lack of charge is not a smaller version of the service. It is the service failing at the moment it was wanted.</p>
+
+      <h2>The weather problem</h2>
+      <p>None of this is easy, and it would be dishonest to pretend the environment is a detail. The sites that most need an unattended aerial capability are often the ones with the least generous conditions: short winter days, low sun, snow on the array, ice on the pad, wind that keeps the aircraft grounded, cold that saps both panel and battery. Those are not edge cases to be waved away. They are the design case.</p>
+      <p>A drone node built for its best day is a demonstration. A drone node built for its worst credible week is infrastructure. The gap between the two is the engineering, and it is the reason an off-grid node is hard to do well and easy to do badly. The weather is also why an honest version of the concept has to allow that, on some sites and in some seasons, the sun alone will not carry it, and a hybrid architecture with fuelled backup is the truthful answer, the same logic that separates the <a href="/#platforms">Harka Solar and Harka Hybrid</a> platforms.</p>
+
+      <h2>From fixed cameras to a mobile layer</h2>
+      <p>Set the energy problem aside for a moment, because the operational idea is worth stating carefully, and it is easy to overstate. Fixed cameras and sensors are very good at watching a defined line or a fixed asset. They are poor at looking at the thing that just happened three fields away, or at getting an angle nobody planned for. A docked drone adds a mobile layer over the fixed one: not a replacement for cameras, sensors, fences or people, but a way to send a look to where attention is suddenly needed.</p>
+      <p>The claim is deliberately modest. Not the drone watches everything, which is neither true nor desirable, but the drone can be sent to what matters, when it matters, without a vehicle and a long drive. On a large perimeter or a spread-out estate, that mobility is the point. The fixed layer says something is there. The mobile layer goes and looks.</p>
+
+      <h2>One node, then a network</h2>
+      <p>One Greni would be a single autonomous node: a remote point that can see, power itself, and recharge what does the seeing. The more interesting idea is what happens when there is more than one.</p>
+      <p>Place nodes along a pipeline, a rail corridor, a border, a utility route or across a set of dispersed sites, and the individual stations begin to behave like distributed infrastructure rather than isolated gadgets. Attention can be dispatched to wherever it is needed along the line, from the node nearest to it, without anyone travelling to the line at all. This is a direction, not a product, and Melrakki does not operate such a network today. But it is the honest destination of the logic. The valuable thing at the end of this road is not one clever drone. It is a mesh of self-powered nodes that turns a long, thin, hard-to-reach asset into something that can be looked at on demand, anywhere along its length.</p>
+
+      <h2>Where it fits, and where the rules sit</h2>
+      <p>Any serious discussion of remote drone operations has to meet the regulator honestly, because a technology existing does not make the flight lawful. In the UK, flying beyond the remote pilot's visual line of sight, which is what an unattended node implies, sits in the Civil Aviation Authority's Specific category and needs an operational authorisation. Since 23 April 2025 those applications are assessed through the UK SORA, the Specific Operations Risk Assessment, which replaced the older operating safety case.</p>
+      <p>Beyond visual line of sight is possible in the UK today, but in controlled ways: inside segregated airspace such as a danger area, or under the CAA's Atypical Air Environment policy, which covers volumes of airspace close to ground infrastructure where crewed aircraft are unlikely, precisely the power lines, wind turbines and industrial sites where this kind of inspection and security work lives. The CAA has published a roadmap aimed at enabling more routine BVLOS by 2027, and detect-and-avoid together with electronic conspicuity, the drone's ability to sense and to be seen by other airspace users, remain central to any credible case.</p>
+      <p>The point for a piece like this is restraint. An off-grid node exempts no one from any of that. It solves the energy and the presence on the ground. The airspace, the authorisation and the safety case still have to be earned in the ordinary way. There is a second layer too: on sensitive sites and critical national infrastructure, protective-security guidance from the National Protective Security Authority applies, and any persistent surveillance carries data-protection duties under the ICO's remit, including privacy assessments and a lawful basis for what is recorded. Legitimate uses, infrastructure inspection, protective security, emergency response and environmental monitoring, are exactly where this belongs, and the responsible version of the technology treats those obligations as part of the design rather than an obstacle to it.</p>
+
+      <h2>The market starts with the aircraft. Melrakki starts with the power.</h2>
+      <p>It is worth being fair about the wider field. The drone-in-a-box market is competitive and improving quickly, and some vendors do offer solar or off-grid options. Melrakki is not claiming to have invented the docked drone, or to be alone in thinking about power. What is distinctive is the starting point.</p>
+      <p>Most of the industry begins with the aircraft and the dock, and treats the energy as site works to be arranged once the interesting engineering is done. Melrakki begins at the other end, with the autonomous power platform, and treats the drone node as a load to be sustained by it. That is not a marketing distinction, it is an order of operations. When your first question is where the energy comes from on a site with no grid, and only then what it has to support, you end up designing a different object: a power system that happens to charge a drone, rather than a drone dock that happens to need power. For the places Melrakki works, that is the right way round.</p>
+
+      <h2>Why the infrastructure matters more than the drone</h2>
+      <p>Strip the subject back and the interesting development of the last few years is not that drones got better, though they did. It is that the infrastructure around autonomous machines is starting to catch up with the machines themselves. The drone becomes a mobile sensor. The dock becomes its home. The power system becomes its endurance. The link becomes its nervous system. The operator remains its judgement. And a set of nodes becomes infrastructure in its own right.</p>
+      <p>A drone can only be as autonomous as the infrastructure that supports it. Melrakki's interest in Greni is not really in the aircraft. It is in that supporting layer, and specifically in the hardest part of it: making the energy autonomous, in the places the grid never reached, so the capability is simply there when it is needed and no one has to drive out to keep it alive.</p>
+
+      <h2>About the author</h2>
+      <div class="checklist">
+        <p><strong>Simon Legrand</strong> is the founder of Melrakki Systems and co-founder of Sunstone Systems. He has spent more than twenty-five years across technology, infrastructure and the public sector, including thirteen years developing solar-powered surveillance, autonomous off-grid power and IoT systems for demanding environments.</p>
+        <p>That work has included co-design of solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, and granted patents and co-inventions in solar-powered surveillance and autonomous off-grid power, including work relating to solar drone charging.</p>
+        <p>The distinction this article has tried to keep is between what has been built and what is being explored. The remote solar surveillance and off-grid power are deployed, working technology. Greni is a development concept that applies the same discipline to a new problem. Remote power rarely looks the same on a drawing as it does when someone has to keep it running where access is hard, and that experience is the reason this piece argues for the infrastructure before the aircraft.</p>
+      </div>
+
+      <p>If you are responsible for a remote site where an unattended aerial capability would earn its place, the conversation Melrakki wants to have is about the load and the location first. Tell us what the site has to support and what it has to survive, and we will be straight about what is possible today and what is still in development. Contact <a href="mailto:hello@melrakki.systems?subject=Greni%20enquiry">hello@melrakki.systems</a>.</p>
+
+    </div>
+
+    <div class="article-foot">
+      <a class="back" href="/resilience/">&larr; All resilience notes</a>
+    </div>
+  </div>
+</article>
+
+<section class="section-tight cta">
+  <div class="wrap">
+    <h2>Bring us the load, the location and the conditions.</h2>
+    <p>We will engineer the platform that keeps it alive.</p>
+    <a class="btn btn-primary" href="mailto:hello@melrakki.systems?subject=Melrakki%20enquiry">Start a conversation</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/lockup-horizontal-dark.png" alt="Melrakki Systems">
+        <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
+        <p class="foot-strap">Power that holds.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/#platforms">Platforms</a></li>
+          <li><a href="/#sectors">Sectors</a></li>
+          <li><a href="/#story">Story</a></li>
+          <li><a href="/resilience/">Notes</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="/Melrakki-Harka-Hybrid.pdf">Harka Hybrid brochure</a></li>
+          <li><a href="/Melrakki-Harka-Solar.pdf">Harka Solar brochure</a></li>
+          <li><a href="mailto:hello@melrakki.systems">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>hello@melrakki.systems &nbsp;|&nbsp; &copy; 2026 Melrakki Systems.</p>
+      <p class="foot-desc">Autonomous power for the hardest places on earth.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(t&&l){t.addEventListener('click',function(){
+    var open=l.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });}
+})();
+</script>
+</body>
+</html>
