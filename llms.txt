@@ -16,6 +16,7 @@ Melrakki engineers each platform from the load backwards, sizing it to the exact
 ## Resilience
 Field notes on off-grid power and operational resilience: keeping critical systems alive where the grid and the fuel convoy end.
 - [Where the grid ends](https://www.melrakki.systems/resilience/): The resilience section overview.
+- [When the drone has its own power station](https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/): Why persistent remote drone operations are an infrastructure and off-grid energy problem, not a drone problem, and where the Greni concept (in development) fits.
 - [The true cost of a diesel generator on a remote site](https://www.melrakki.systems/resilience/the-true-cost-of-a-diesel-generator/): Why the real cost of remote diesel power is the convoy, the site visits, the signature and the downtime, not the fuel, and what autonomous power removes.
 - [Designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/): How to size an off-grid solar or hybrid power system from the load backwards, and let the honest answer choose the tier.
 
