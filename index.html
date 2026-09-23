@@ -270,6 +270,10 @@
   .foot-bottom{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--navy-700);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center;}
   .foot-bottom p{font-size:.82rem;color:var(--slate);}
   .foot-desc{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--cyan);letter-spacing:.03em;}
+  .foot-credit{flex-basis:100%;margin-top:.4rem;}
+  .foot-credit a{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;color:var(--slate);text-decoration:none;transition:color .2s;}
+  .foot-credit a:hover{color:var(--cyan);}
+  .foot-credit svg{flex-shrink:0;}
 
   a:focus-visible,.btn:focus-visible,button:focus-visible{outline:2px solid var(--cyan-ink);outline-offset:3px;border-radius:2px;}
 
@@ -927,7 +931,7 @@
     <div class="foot-bottom">
       <p>© 2026 Melrakki Systems. All rights reserved.</p>
       <p class="foot-desc">Autonomous power for the hardest places on earth.</p>
-      <p style="flex-basis:100%;font-size:.8rem;color:var(--slate);margin-top:.4rem;">Digital marketing by <a href="https://www.marketingformymates.com/" style="color:var(--text);text-decoration:underline;">Marketing for my Mates</a>.</p>
+      <p class="foot-credit"><a href="https://www.marketingformymates.com/" title="Website design"><svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>Website design</a></p>
     </div>
   </div>
 </footer>
