@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When the grid goes away | Melrakki Systems</title>
+<meta name="description" content="What happens to a remote camera, sensor or comms node when the power supporting it disappears? Resilience at the edge is not a bigger backup. It is needing less from the system around you.">
+<link rel="canonical" href="https://www.melrakki.systems/resilience/when-the-grid-goes-away/">
+<meta name="theme-color" content="#071A2B">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Melrakki Systems">
+<meta property="og:title" content="When the grid goes away">
+<meta property="og:description" content="Designing infrastructure that keeps working when the infrastructure around it cannot. Resilience at the remote edge is about needing less from the system around you.">
+<meta property="og:url" content="https://www.melrakki.systems/resilience/when-the-grid-goes-away/">
+<meta property="og:image" content="https://www.melrakki.systems/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="When the grid goes away">
+<meta name="twitter:description" content="Resilience at the remote edge is not a bigger backup. It is needing less from the system around you.">
+<meta name="twitter:image" content="https://www.melrakki.systems/social-preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* pull quote, scoped to this article */
+  .prose .pullquote{
+    margin:2.6rem auto;padding:0 0 0 1.6rem;max-width:var(--prose);
+    border-left:3px solid var(--cyan);
+  }
+  .prose .pullquote p{
+    font-size:clamp(1.35rem,3vw,1.75rem);line-height:1.34;font-weight:300;
+    color:#fff;letter-spacing:-0.01em;margin:0;
+  }
+  @media (max-width:820px){ .prose .pullquote{padding-left:1.1rem;} }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"When the grid goes away",
+  "description":"Designing infrastructure that keeps working when the infrastructure around it cannot. Why resilience at the remote edge is about reducing dependencies, not adding backup.",
+  "inLanguage":"en-GB",
+  "datePublished":"2026-09-23",
+  "dateModified":"2026-09-23",
+  "author":{"@type":"Person","name":"Simon Legrand","jobTitle":"Founder, Melrakki Systems","url":"https://www.melrakki.systems/"},
+  "publisher":{"@type":"Organization","name":"Melrakki Systems","url":"https://www.melrakki.systems/","logo":{"@type":"ImageObject","url":"https://www.melrakki.systems/icon-512.png"}},
+  "image":"https://www.melrakki.systems/social-preview.png",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://www.melrakki.systems/resilience/when-the-grid-goes-away/"},
+  "isPartOf":{"@type":"CollectionPage","name":"Where the Grid Ends","url":"https://www.melrakki.systems/resilience/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.melrakki.systems/"},
+    {"@type":"ListItem","position":2,"name":"Resilience","item":"https://www.melrakki.systems/resilience/"},
+    {"@type":"ListItem","position":3,"name":"When the grid goes away","item":"https://www.melrakki.systems/resilience/when-the-grid-goes-away/"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/lockup-horizontal-dark.png" alt="Melrakki Systems"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/#sectors">Sectors</a></li>
+        <li><a href="/resilience/" aria-current="page">Notes</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="deep article-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span>
+      <a href="/resilience/">Resilience</a><span class="sep">/</span>
+      <span aria-current="page">When the grid goes away</span>
+    </nav>
+    <div class="article-head">
+      <p class="eyebrow" style="margin-top:1.8rem;">Autonomous resilience</p>
+      <h1>When the grid goes away</h1>
+      <p class="standfirst">Designing infrastructure that keeps working when the infrastructure around it cannot. Resilience at the remote edge is not about the biggest backup. It is about needing less from the system around you.</p>
+      <div class="article-meta">
+        <span>Preparedness and resilience</span>
+        <span class="dotsep">&middot;</span>
+        <span>14 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="section" style="padding-top:clamp(1.5rem,4vw,2.5rem);">
+  <div class="wrap">
+    <div class="prose">
+
+      <p class="lead-para">A camera watches a remote pipeline. A radio links it back to a monitoring centre. A sensor sits beside it, waiting for something to change. Every part is doing exactly what it was built to do. Then the power goes, and in the same instant the camera is dark, the link is dead, the sensor is mute, and the site that was under watch a moment ago is simply invisible. Nothing on that list failed. The failure was underneath all of it.</p>
+
+      <p>That is the uncomfortable question this note is about. Not whether the camera is good, the radio resilient or the sensor clever, but how resilient the whole thing really was, given that a single upstream loss took all of it out at once. Resilience is usually discussed component by component. It is better understood as a chain of dependencies. The most useful question you can ask of a remote system is not whether each part is strong. It is what each part depends on, and what happens when that thing is gone.</p>
+
+      <h2>The dependency chain</h2>
+      <p>Infrastructure rarely fails in isolation. A remote surveillance system depends on power, which supports the communications, which carry the sensor data, which feeds the monitoring, which enables a decision, which triggers a response. Draw that as a line and every link is a place it can break. The engineering question is not "is this component resilient" but "what does this component depend on", and then, of that answer, the same question again, until you reach the thing at the bottom that everything else is standing on.</p>
+      <p>For most remote systems, you reach the same place quickly. The camera depends on power. The radio depends on power. The sensor, the recorder, the edge computer, the heater that keeps the battery alive, all of it depends on power. Power is not one dependency among many. It is the one the others are built on, which is why it is the first one worth interrogating and the one whose loss is hardest to hide.</p>
+
+      <h2>What "the grid goes away" actually means</h2>
+      <p>This is not a claim that the national electricity grid is about to vanish. "The grid goes away" is shorthand for something more ordinary and more local. For a remote asset, grid power can be absent or unreliable for reasons that have nothing to do with national catastrophe: there is no connection to begin with; the site is temporary; a planned outage; weather; damage; a local fault; maintenance; or simply that the asset sits somewhere a cable was never going to reach.</p>
+      <p>So the article is really about two different engineering problems that look the same from the equipment's point of view. One is that no grid exists at the site at all. The other is that a grid exists but cannot be relied upon at the moment it is needed. In both, the remote system has to answer the same question: what keeps me alive when the supply I was counting on is not there?</p>
+
+      <h2>The UK has started asking the same question</h2>
+      <p>This is no longer a fringe concern. The UK's own resilience thinking has moved firmly towards interdependency and cascade. The government's <a href="https://assets.publishing.service.gov.uk/media/6787ea8e1124a2c3ceb646bf/National_Risk_Register_2025.pdf">National Risk Register</a> now treats a major power failure as something that does not stay contained: it describes losses rippling across water, fuel distribution and communications, and it advises organisations to plan for back-up power rather than assume supply. The July 2025 <a href="https://www.gov.uk/government/publications/the-uk-government-resilience-action-plan-2026-implementation-report/the-uk-government-resilience-action-plan-2026-implementation-report-html">Resilience Action Plan</a> pushes the same way, towards mapping the dependencies and interdependencies that run between critical national infrastructure sectors.</p>
+      <p>The concrete version of this is easy to picture. In March 2025 a fire at a single electricity substation in west London took out the power to Heathrow and closed the airport for the best part of a day. One node, one failure, a national piece of infrastructure dark. That is the dependency chain made visible, and it happened at the centre of the network, where resilience is best resourced.</p>
+      <p>This article is about the other end of that network. If a well-defended airport can be stopped by an upstream power event, the remote asset at the far edge, the one nobody can reach quickly, is where the same logic bites hardest and where it is least often designed for.</p>
+
+      <h2>The last mile of resilience</h2>
+      <p>National infrastructure can be resilient. The electricity network, the telecommunications network, the monitoring centre, all can be engineered to a high standard. And the remote asset at the end of the line can still be dead while every one of them is working perfectly. The national system being healthy tells you very little about whether the last camera on the last mast is still on.</p>
+      <p>That last connection, between robust central infrastructure and the thing that actually has to keep operating in the field, is where resilience is thinnest and where it is most often assumed rather than designed. It is also where autonomous power has the most disproportionate value, because it is the one place a local energy architecture can hold the mission up even while everything upstream is unavailable.</p>
+
+      <h2>Resilience is not the same as backup</h2>
+      <p>The reflex answer to all of this is a generator, and generators are genuinely useful. Melrakki's own <a href="/#platforms">Harka Hybrid</a> carries a fuelled backup for exactly the cases where guaranteed uptime matters more than eliminating fuel. So this is not an argument against generators. It is an argument against mistaking one for the whole of resilience.</p>
+      <p>A generator is a resilience component, not a definition of resilience, because it comes with a dependency chain of its own: fuel, transport, storage, servicing, personnel, security and access. On an easy site those are trivial. On a remote one they are the hard part, and we set out just how expensive and exposed they become in <a href="/resilience/the-true-cost-of-a-diesel-generator/">the true cost of a diesel generator on a remote site</a>. The point here is narrower. A backup that depends on a fuel convoy is only as reliable as the convoy, and on the sites that most need resilience, the convoy is exactly the thing that cannot be guaranteed.</p>
+
+      <h2>Redundancy is not independence</h2>
+      <p>It is worth being precise about two ideas that get used interchangeably and are not the same. Redundancy says: if this fails, I have another one. Independence says: this does not depend on the thing that failed. Both are valuable, and they solve different problems. A second grid connection is redundancy. A local generation and storage architecture is a step towards independence.</p>
+      <p>No honest engineer claims absolute independence, because every system depends on something. What a good design does is <strong>move the dependency boundary</strong>. Instead of the remote asset depending on the grid and the fuel convoy, it depends on its own generation, its own storage and the health of that architecture. That is not autonomy in the absolute. It is a different, smaller, more controllable set of dependencies, chosen deliberately rather than inherited by default.</p>
+
+      <h2>Power is infrastructure for other infrastructure</h2>
+      <p>Power is usually treated as a commodity, a thing you plug into. For a remote autonomous system it is better understood as the enabling layer underneath everything else. Surveillance, communications, sensors, computing, data, drones, access control, environmental monitoring: every one of those higher capabilities exists only while the power holds. Remove it and they all disappear together, which is precisely what happened to the camera, the radio and the sensor at the start of this note.</p>
+      <blockquote class="pullquote">
+        <p>Autonomous power is not simply an energy product. It is infrastructure for other infrastructure.</p>
+      </blockquote>
+      <p>That reframing is the heart of Melrakki's thinking. The energy system is not a box bolted on beside the real work. On a remote site it is the foundation the real work stands on, and designing it as an afterthought is how the whole system inherits a single point of failure nobody chose.</p>
+
+      <h2>Engineered from the load backwards</h2>
+      <p>If power is the foundation, it cannot be sized by asking how much solar will fit on the frame. It has to be sized from the mission. What must stay alive without interruption. What can sleep. What draws a heavy peak and when. What the duty cycle is. What happens at night, in winter, through a run of overcast days, during an unusual surge in demand, and when nobody can reach the site for weeks. Only once those are answered do generation, storage, backup, control and monitoring get their numbers.</p>
+      <p>That is the discipline we describe in full in <a href="/resilience/designing-power-from-the-load-backwards/">designing power from the load backwards</a>, and it is the difference between a solar supplier and an engineering company. A supplier sells you a panel and a battery. An engineer asks what has to survive, and in what conditions, and lets the honest answer decide the architecture.</p>
+
+      <h2>Design for the worst credible week, not the best day</h2>
+      <p>A remote system that runs beautifully on a bright summer afternoon has proved almost nothing. The test is the worst credible week: low sun, cold, snow, wind, a heavier load than usual, repeated demand, and no one able to attend. That is the condition the design has to hold through, because that is the condition in which it will be asked to matter.</p>
+      <p>The worst credible week is not the same everywhere, which is the point. It is a function of the specific load, the specific location, the specific conditions and the specific mission profile. A site you can reach in an afternoon and a site reached by a seasonal window are different design problems even if the equipment on top is identical. Sizing to the average flatters every site. Sizing to the worst week is the only version that survives contact with the field.</p>
+
+      <h2>The role of hybrid systems</h2>
+      <p>None of this makes solar and battery the universal answer, and it would be dishonest to pretend otherwise. Some loads are too large, too critical or too exposed to a hard season for a solar-only architecture to carry alone. That is why the design runs along a spectrum rather than to a single answer. Solar only, where the conditions and the load allow it. Solar and battery, where stored energy covers the normal spells of low generation. Solar, battery and a fuelled backup that runs only when it is needed, where guaranteed uptime matters more than removing fuel entirely.</p>
+      <p><a href="/#platforms">Harka Solar</a> is the clean end of that spectrum and Harka Hybrid the endurance end, and the right choice between them is not a matter of taste. Autonomy is not a religion. It is an engineering requirement, and the correct architecture is the one the mission actually demands, chosen honestly against the worst week rather than the best.</p>
+
+      <h2>The remote site that does not need a visit</h2>
+      <p>There is a quieter benefit running under all of this. The most valuable remote system is often the one nobody has to visit. A site visit is never free: it takes a vehicle, fuel, a person or two, permissions, travel time, a weather window, safety procedures, and the work not being done somewhere else while it happens. The harder the site is to reach, the more each visit costs and the more a system that removes the need for one is worth.</p>
+      <p>This is why remoteness is best understood as a logistics problem rather than a distance on a map. A cabinet a few miles down a bad track can be more operationally remote than a site a hundred miles away with a good road to it. Every visit an autonomous system avoids is a small piece of resilience bought, and on the hardest sites those pieces add up to the difference between a system that holds itself up and one that quietly waits to be rescued.</p>
+
+      <h2>From Harka to Greni</h2>
+      <p>Follow this logic one step further and it leads somewhere specific. A Harka platform uses autonomous power to support a remote load: a camera, a radio, a set of sensors. The next step is to use the same autonomous power to support an autonomous machine, one that leaves and returns under its own control. That is what <a href="/resilience/off-grid-drone-infrastructure/">Greni</a>, our off-grid drone charging and docking concept, is being developed to do.</p>
+      <p>The important shift is subtle. When the machine on the site is itself autonomous, the power system stops being a utility beside it and becomes part of the autonomous system, the layer that lets the machine be persistent at all. Greni is in development, and this is the architecture behind it rather than a finished product. But it is not a detour from Melrakki's philosophy. It is that philosophy taken to the point where the power holds up not just the equipment, but the autonomy itself.</p>
+
+      <h2>Autonomous resilience infrastructure</h2>
+      <p>Put the pieces together and a working idea emerges that is broader than any single platform. Call it autonomous resilience infrastructure: infrastructure designed to keep delivering a defined mission with minimal dependence on external power, external access and human intervention. Not one product, but a way of assembling several, autonomous power, local storage, monitoring, communications, surveillance, sensors, autonomous machines and a fuelled backup where the mission needs one, with human oversight kept firmly in place.</p>
+      <p>One such node is a self-sufficient point at the edge. Several of them, along a pipeline, a rail corridor, a border or across a set of dispersed sites, begin to behave like a distributed system that holds its mission even when the infrastructure around it does not. This is a direction rather than a catalogue, and Melrakki does not claim to run such a network today. But it is where the logic points, and it is a considerably larger idea than supplying solar power.</p>
+
+      <h2>Security begins before the camera</h2>
+      <p>Two consequences are worth stating plainly, because they invert the usual order. The first is about security. A surveillance system is only protection while it is running, and what keeps it running is not the camera. Security resilience begins before the camera, in the power and the architecture that keep it alive when the supply it depends on is gone. A better camera does not help a site that has just gone dark.</p>
+      <p>The second is about communications. A link can use the best radio and the most robust protocol and still fall silent the moment its local power is exhausted or its supporting infrastructure fails. If the communications matter, the power under them matters just as much, and treating the two as separate problems is how a resilient-looking system acquires a single point of failure at its base.</p>
+
+      <h2>Why the edge matters</h2>
+      <p>The thread through all of this is simple to state and hard to design around. Distance creates dependency. Dependency creates operational vulnerability. Autonomous infrastructure reduces dependency, and reduced dependency is what resilience actually is at the edge. Not the absence of dependence, which no system achieves, but a deliberate choice about which dependencies to keep, which to remove, which to back up and which must stay in human hands.</p>
+      <p>Infrastructure is built on assumptions: the grid, the road, the fuel supply, the network, the maintenance visit, the belief that someone can always get there. The more remote the asset, the more those assumptions cost when they fail. Melrakki's proposition is not that every dependency can be removed. It is that some of them can, and that where power is the dependency, autonomous generation and storage move the boundary of what the remote system can survive on its own.</p>
+      <p class="lead-para">The strongest remote system may not be the one with the most infrastructure behind it. It may be the one that needs the least.</p>
+
+      <h2>About the author</h2>
+      <div class="checklist">
+        <p><strong>Simon Legrand</strong> is the founder of Melrakki Systems and co-founder of Sunstone Systems. Over more than twenty-five years across technology, infrastructure and the public sector, including thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems, his work has centred on one problem: keeping systems alive at the edge of the network, on sites with no grid and difficult access, which is the subject of this article.</p>
+        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, and granted patents and co-inventions in solar-powered surveillance and autonomous off-grid power, including work relating to solar drone charging. The argument here for treating power as the foundation of resilience rather than a commodity beside it comes directly from that work: the last mile is where remote systems actually fail, and it fails at the power long before it fails at the camera.</p>
+      </div>
+
+      <p>If you are responsible for a remote or hard-to-reach asset that has to keep operating when the supply around it cannot be relied upon, the conversation Melrakki wants to have starts with four things: the load, the location, the conditions and the mission profile, what has to stay alive, where, in what weather, and doing what. Those size the power, and sizing the power honestly is what tells you what the system can survive on its own. Contact <a href="mailto:hello@melrakki.systems?subject=Resilience%20enquiry">hello@melrakki.systems</a>.</p>
+
+    </div>
+
+    <div class="article-foot">
+      <a class="back" href="/resilience/">&larr; All resilience notes</a>
+    </div>
+  </div>
+</article>
+
+<section class="section-tight cta">
+  <div class="wrap">
+    <h2>Bring us the load, the location and the conditions.</h2>
+    <p>We will engineer the platform that keeps it alive.</p>
+    <a class="btn btn-primary" href="mailto:hello@melrakki.systems?subject=Melrakki%20enquiry">Start a conversation</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/lockup-horizontal-dark.png" alt="Melrakki Systems">
+        <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
+        <p class="foot-strap">Power that holds.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/#platforms">Platforms</a></li>
+          <li><a href="/#sectors">Sectors</a></li>
+          <li><a href="/#story">Story</a></li>
+          <li><a href="/resilience/">Notes</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="/Melrakki-Harka-Hybrid.pdf">Harka Hybrid brochure</a></li>
+          <li><a href="/Melrakki-Harka-Solar.pdf">Harka Solar brochure</a></li>
+          <li><a href="mailto:hello@melrakki.systems">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>hello@melrakki.systems &nbsp;|&nbsp; &copy; 2026 Melrakki Systems.</p>
+      <p class="foot-desc">Autonomous power for the hardest places on earth.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(t&&l){t.addEventListener('click',function(){
+    var open=l.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });}
+})();
+</script>
+</body>
+</html>
