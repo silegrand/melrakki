@@ -211,6 +211,10 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible{
   .nav-links li:first-child{border-top:0;}
   .nav-links a{display:block;padding:1rem var(--pad);width:100%;}
   .nav-cta{margin:1rem var(--pad);}
+  .nav-links li.nav-cta{width:auto;align-self:stretch;}
+  .nav-cta .btn{display:flex;justify-content:center;}
+  .foot-col ul{gap:.25rem;}
+  .foot-col a{display:inline-block;padding:.35rem 0;}
   .nav-toggle{display:block;}
 }
 
