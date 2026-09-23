@@ -131,13 +131,13 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
 .field label{display:block;font-size:.82rem;font-weight:600;color:var(--mist);margin-bottom:.45rem;}
 .field input[type=text],.field input[type=number],.field input[type=email],.field select,.field textarea{
   width:100%;background:var(--navy-900);border:1px solid var(--navy-700);border-radius:var(--r);color:#fff;
-  font-family:'Montserrat',sans-serif;font-size:.98rem;padding:.7rem .85rem;outline:none;}
+  font-family:'Montserrat',sans-serif;font-size:1rem;padding:.7rem .85rem;outline:none;}
 .field .mono-in{font-family:'IBM Plex Mono',monospace;}
 .field textarea{resize:vertical;min-height:80px;line-height:1.5;}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--cyan);}
 .field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--slate) 50%),linear-gradient(135deg,var(--slate) 50%,transparent 50%);background-position:calc(100% - 18px) 1.1rem,calc(100% - 12px) 1.1rem;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:2.2rem;}
 .checks{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .9rem;}
-.checks label{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:400;color:var(--text);cursor:pointer;margin:0;}
+.checks label{display:flex;align-items:center;gap:.5rem;padding:.3rem 0;font-size:.9rem;font-weight:400;color:var(--text);cursor:pointer;margin:0;}
 .checks input{accent-color:var(--cyan);width:16px;height:16px;}
 .brief-preview{margin-top:1.8rem;border-top:1px solid var(--navy-700);padding-top:1.6rem;}
 .brief-preview h4{font-size:.9rem;color:#fff;margin-bottom:.8rem;}
@@ -158,6 +158,10 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
   .nav-links li:first-child{border-top:0;}
   .nav-links a{display:block;padding:1rem var(--pad);width:100%;}
   .nav-cta{margin:1rem var(--pad);}
+  .nav-links li.nav-cta{width:auto;align-self:stretch;}
+  .nav-cta .btn{display:flex;justify-content:center;}
+  .foot-col ul{gap:.25rem;}
+  .foot-col a{display:inline-block;padding:.35rem 0;}
   .nav-toggle{display:block;}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
@@ -264,7 +268,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
 
 <header class="site">
   <div class="wrap nav">
-    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/lockup-horizontal-dark.png" alt="Melrakki Systems"></a>
+    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
         <li><a href="/#platforms">Platforms</a></li>
@@ -387,7 +391,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="/lockup-horizontal-dark.png" alt="Melrakki Systems">
+        <img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems">
         <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
         <p class="foot-strap">Power that holds.</p>
       </div>
