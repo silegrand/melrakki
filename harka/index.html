@@ -150,10 +150,46 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
 .proof p a{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;}
 .foot-back{margin-top:2rem;}
 .foot-back a{font-weight:600;color:var(--aqua);font-size:.95rem;}
+
+/* viability calculator */
+.calc{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:clamp(1.6rem,4vw,2.2rem);margin-top:2.2rem;}
+.calc-head .k{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);}
+.calc-head h3{font-size:1.3rem;margin:.5rem 0 .5rem;}
+.calc-sub{color:var(--slate);font-size:.96rem;line-height:1.55;max-width:62ch;}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.6rem;}
+.calc-field label{display:block;font-size:.82rem;font-weight:600;color:var(--mist);margin-bottom:.5rem;letter-spacing:.02em;}
+.input-unit{display:flex;align-items:center;background:var(--navy-900);border:1px solid var(--navy-700);border-radius:var(--r);overflow:hidden;}
+.input-unit input{flex:1;min-width:0;background:transparent;border:0;color:#fff;font-family:'IBM Plex Mono',monospace;font-size:1.15rem;padding:.75rem .9rem;outline:none;}
+.input-unit span{padding:0 .9rem;color:var(--slate);font-family:'IBM Plex Mono',monospace;font-size:.9rem;border-left:1px solid var(--navy-700);}
+.input-unit:focus-within{border-color:var(--cyan);}
+.presets{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem;}
+.presets button{background:transparent;border:1px solid var(--navy-700);color:var(--text);font-size:.76rem;font-family:'IBM Plex Mono',monospace;padding:.4rem .7rem;border-radius:20px;cursor:pointer;transition:border-color .2s,color .2s;}
+.presets button:hover{border-color:var(--cyan);color:var(--cyan);}
+.hint{font-size:.8rem;color:var(--slate);margin-top:.6rem;line-height:1.5;}
+.hint a{color:var(--aqua);text-decoration:underline;text-underline-offset:2px;}
+.calc-out{margin-top:1.8rem;border-top:1px solid var(--navy-700);padding-top:1.6rem;}
+.verdict{border-radius:var(--r);padding:1.2rem 1.3rem;border:1px solid var(--navy-700);}
+.verdict strong{display:block;font-size:1.1rem;color:#fff;margin-bottom:.4rem;}
+.verdict p{font-size:.94rem;color:var(--text);line-height:1.55;}
+.verdict.v-good{border-color:rgba(0,212,255,.5);background:rgba(0,212,255,.06);}
+.verdict.v-good strong{color:var(--aqua);}
+.verdict.v-borderline{border-color:rgba(240,185,70,.5);background:rgba(240,185,70,.07);}
+.verdict.v-borderline strong{color:#f4bd52;}
+.verdict.v-hybrid{border-color:rgba(120,160,200,.55);background:rgba(90,140,190,.08);}
+.verdict.v-hybrid strong{color:#9fc3e6;}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.3rem;}
+.nums div{background:var(--navy-900);border:1px solid var(--navy-700);border-radius:var(--r);padding:1rem 1.1rem;}
+.nums .nl{display:block;font-size:.74rem;color:var(--slate);letter-spacing:.02em;line-height:1.35;}
+.nums .nv{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.25rem;color:#fff;margin-top:.4rem;}
+.calc-note{font-size:.78rem;color:var(--slate);line-height:1.55;margin-top:1.2rem;}
+.calc-cta{margin-top:1.4rem;}
+
 @media (max-width:820px){
   .grid-3{grid-template-columns:1fr;}
   .grid-4{grid-template-columns:1fr 1fr;}
   .tiers{grid-template-columns:1fr;}
+  .calc-grid{grid-template-columns:1fr;}
+  .nums{grid-template-columns:1fr;}
   .foot-grid{grid-template-columns:1fr;gap:2rem;}
   .nav-links{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--navy-800);border-bottom:1px solid var(--navy-700);padding:0;max-height:0;overflow:hidden;transition:max-height .3s ease;}
   .nav-links.open{max-height:460px;}
@@ -426,6 +462,32 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
       <p>The test that matters is the worst credible week, not the best day: low sun, cold, snow, a heavier load than usual, and no one able to attend. Size for that and the platform holds through the season; size for the average and it fails exactly when it is needed. If the worst month still covers the load, Harka Solar is the honest answer. If it does not, Harka Hybrid closes the gap with the smallest amount of fuel, on the days that genuinely need it.</p>
       <p>The same thinking underpins the whole approach to <a href="/resilience/when-the-grid-goes-away/">resilience at the remote edge</a>, and it is why the power system is designed before anything is bought.</p>
     </div>
+
+    <div class="calc" id="calc">
+      <div class="calc-head">
+        <p class="k">Indicative viability check</p>
+        <h3>Try it against your site</h3>
+        <p class="calc-sub">Enter your average load and your site's worst-month sun. This is a directional estimate to start the conversation, not a specification. The real answer comes from a full assessment.</p>
+      </div>
+      <div class="calc-grid">
+        <div class="calc-field">
+          <label for="load">Average continuous load</label>
+          <div class="input-unit"><input id="load" type="number" min="1" max="2000" value="100" inputmode="numeric" aria-describedby="loadHint"><span>W</span></div>
+          <p class="hint" id="loadHint">The average draw of everything on the mast over a day, not the peak.</p>
+        </div>
+        <div class="calc-field">
+          <label for="psh">Worst-month sun</label>
+          <div class="input-unit"><input id="psh" type="number" min="0.1" max="8" step="0.1" value="0.8" inputmode="decimal" aria-describedby="pshHint"><span>PSH/day</span></div>
+          <div class="presets" role="group" aria-label="Rough starting points">
+            <button type="button" data-psh="0.8">Southern UK ~0.8</button>
+            <button type="button" data-psh="0.5">Scotland ~0.5</button>
+            <button type="button" data-psh="1.8">S. Europe ~1.8</button>
+          </div>
+          <p class="hint" id="pshHint">Peak sun hours per day in the worst month. These are rough December starting points; get your site's exact figure free from <a href="https://re.jrc.ec.europa.eu/pvg_tools/en/" target="_blank" rel="noopener">PVGIS</a>.</p>
+        </div>
+      </div>
+      <div class="calc-out" id="calcOut" aria-live="polite"></div>
+    </div>
   </div>
 </section>
 
@@ -511,6 +573,49 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
     var open=l.classList.toggle('open');
     t.setAttribute('aria-expanded',open?'true':'false');
   });}
+})();
+</script>
+<script>
+(function(){
+  var ARRAY=1080, PR=0.7, USABLE_WH=7500; // Harka Solar: 1080 W array, ~0.7 performance ratio, ~7.5 kWh usable battery
+  var load=document.getElementById('load'), psh=document.getElementById('psh'), out=document.getElementById('calcOut');
+  if(!load||!psh||!out) return;
+  function fmt(n){ return Math.round(n).toLocaleString('en-GB'); }
+  function num(l,v){ return '<div><span class="nl">'+l+'</span><span class="nv">'+v+'</span></div>'; }
+  function mailto(L,P,v){
+    var body='Site viability check from the Harka page:%0D%0A%0D%0AAverage load: '+L+' W%0D%0AWorst-month sun: '+P+' peak sun hours per day%0D%0AIndicative result: '+v+'%0D%0A%0D%0APlease advise on the right platform and sizing for my site.';
+    return 'mailto:hello@melrakki.systems?subject=Harka%20viability%20enquiry&body='+body;
+  }
+  function calc(){
+    var L=Math.max(1, parseFloat(load.value)||0);
+    var P=Math.max(0.1, parseFloat(psh.value)||0);
+    var demand=L*24;                        // Wh/day
+    var harvest=ARRAY*P*PR;                 // Wh/day
+    var reserveH=USABLE_WH/L;               // hours from the Harka Solar battery
+    var ratio=harvest/demand;
+    var cls, verdict, detail;
+    if(ratio>=1.15){ cls='v-good'; verdict='Harka Solar looks viable year-round here';
+      detail='Your worst-month solar estimate covers the load with margin to spare. The clean tier, solar and battery with no fuel, should hold through the season at this draw.'; }
+    else if(ratio>=1){ cls='v-borderline'; verdict='Borderline. Worth a proper assessment';
+      detail='The estimate just covers the load, but the margin is thin and a single hard week could close it. Harka Solar may hold; Harka Hybrid removes the risk.'; }
+    else { cls='v-hybrid'; verdict='Harka Hybrid is the honest answer here';
+      detail='Solar alone does not cover the worst month at this load. The Hybrid tier carries the site on clean power and burns HVO backup only on the days the sun cannot keep up.'; }
+    out.innerHTML =
+      '<div class="verdict '+cls+'"><strong>'+verdict+'</strong><p>'+detail+'</p></div>'+
+      '<div class="nums">'+
+        num('Daily energy demand', fmt(demand)+' Wh') +
+        num('Worst-month harvest, est.', '~'+fmt(harvest)+' Wh') +
+        num('Battery reserve at this load', reserveH>=48 ? (reserveH/24).toFixed(1)+' days' : fmt(reserveH)+' h') +
+      '</div>'+
+      '<p class="calc-note">Estimate uses the 1080 W Harka array and a conservative 0.7 performance ratio for tilt, temperature, soiling and charge losses; reserve is the Harka Solar battery at roughly 7.5 kWh usable. Peak sun hours are the daily worst-month figure from a source such as PVGIS. Indicative only, not a specification.</p>'+
+      '<a class="btn btn-primary calc-cta" href="'+mailto(L,P,verdict)+'">Send these figures to an engineer</a>';
+  }
+  load.addEventListener('input',calc);
+  psh.addEventListener('input',calc);
+  Array.prototype.forEach.call(document.querySelectorAll('.presets button'),function(b){
+    b.addEventListener('click',function(){ psh.value=b.getAttribute('data-psh'); calc(); });
+  });
+  calc();
 })();
 </script>
 </body>
