@@ -1,1 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Melrakki Systems | Autonomous off-grid power</title>
+<meta name="description" content="Melrakki Systems engineers autonomous off-grid power for the places the grid never reached. Our principles, our founder Simon Legrand, and the record behind the name.">
+<link rel="canonical" href="https://www.melrakki.systems/about/">
+<meta name="theme-color" content="#071A2B">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
 
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Melrakki Systems">
+<meta property="og:title" content="About Melrakki Systems">
+<meta property="og:description" content="Autonomous off-grid power, built on more than a decade at the edge of the grid.">
+<meta property="og:url" content="https://www.melrakki.systems/about/">
+<meta property="og:image" content="https://www.melrakki.systems/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Melrakki Systems">
+<meta name="twitter:description" content="Autonomous off-grid power, built on more than a decade at the edge of the grid.">
+<meta name="twitter:image" content="https://www.melrakki.systems/social-preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --navy:#071A2B; --navy-900:#04101B; --navy-800:#0A2135; --navy-700:#12314A;
+  --white:#FFFFFF; --ink:#0C2233;
+  --cyan:#00D4FF; --aqua:#4EE6FF; --cyan-ink:#0090B4;
+  --slate:#7A8CA3; --text:#C4D2DE; --mist:#EAF2F8;
+  --max:1180px; --prose:40rem;
+  --pad:clamp(1.25rem,4vw,2.5rem); --sy:clamp(4rem,8vw,7rem); --r:6px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--navy-900);color:var(--text);font-family:'Montserrat',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{line-height:1.12;letter-spacing:-0.015em;margin:0;color:#fff;font-weight:700;}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad);}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin:0 0 1.2rem;}
+.mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;}
+.skip{position:absolute;left:-999px;top:auto;}
+.skip:focus{left:1rem;top:1rem;z-index:200;background:var(--cyan);color:#04121C;padding:.6rem 1rem;border-radius:var(--r);}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.85rem 1.65rem;border-radius:var(--r);border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s,box-shadow .2s;}
+.btn-primary{background:var(--cyan);color:#04121C;}
+.btn-primary:hover{background:var(--aqua);box-shadow:0 6px 22px rgba(0,180,220,.4);}
+.btn-secondary{background:transparent;border-color:rgba(122,140,163,.5);color:var(--mist);}
+.btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);}
+header.site{position:sticky;top:0;z-index:60;background:rgba(5,17,28,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--navy-700);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem;}
+.brand img{height:44px;width:auto;display:block;}
+nav.primary{display:flex;align-items:center;gap:1rem;}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;margin:0;padding:0;}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--mist);transition:color .2s;}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--cyan);}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem;}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--mist);margin:5px 0;transition:.25s;}
+.deep{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%, #0A2338 0%, var(--navy-900) 72%);}
+.deep::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 8%, rgba(0,212,255,.14), transparent 55%);}
+.deep > .wrap{position:relative;z-index:1;}
+.section{padding-block:var(--sy);}
+.section-tight{padding-block:clamp(2.5rem,5vw,4rem);}
+.crumbs{font-size:.82rem;color:var(--slate);display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;}
+.crumbs a{color:var(--slate);transition:color .2s;}
+.crumbs a:hover{color:var(--cyan);}
+.crumbs .sep{color:var(--navy-700);}
+.crumbs [aria-current="page"]{color:var(--mist);}
+.cta{background:linear-gradient(120deg,#0A2135,#0b3a55 55%,#0e506f);}
+.cta .wrap{text-align:center;display:flex;flex-direction:column;align-items:center;}
+.cta h2{color:#fff;font-size:clamp(1.7rem,4vw,2.8rem);max-width:24ch;}
+.cta p{margin:1.3rem auto 2.2rem;max-width:52ch;color:var(--mist);font-size:1.08rem;font-weight:300;}
+footer.site{background:var(--navy-900);border-top:1px solid var(--navy-700);padding-block:clamp(3rem,6vw,4rem) 2rem;}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem;}
+.foot-brand img{width:200px;height:auto;margin-bottom:1.2rem;}
+.foot-brand p{font-size:.92rem;color:var(--slate);max-width:44ch;line-height:1.6;}
+.foot-strap{margin-top:1.2rem;font-weight:600;color:#fff;letter-spacing:.02em;}
+.foot-col h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin:0 0 1.1rem;font-weight:600;}
+.foot-col ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;}
+.foot-col a{font-size:.92rem;color:var(--text);transition:color .2s;}
+.foot-col a:hover{color:var(--cyan);}
+.foot-bottom{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--navy-700);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center;}
+.foot-bottom p{font-size:.82rem;color:var(--slate);}
+.foot-desc{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--cyan);letter-spacing:.03em;}
+a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;}
+
+/* page components */
+.phero{padding-block:clamp(2.6rem,6vw,4rem) clamp(2.5rem,5vw,3.5rem);}
+.phero h1{font-size:clamp(2.2rem,5.4vw,3.7rem);max-width:20ch;margin-top:1.6rem;}
+.phero .standfirst{font-weight:300;font-size:clamp(1.1rem,1.8vw,1.4rem);color:var(--mist);max-width:58ch;margin-top:1.5rem;line-height:1.5;}
+.cta-row{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:1rem;}
+.section-head{max-width:62ch;margin-bottom:clamp(1.8rem,4vw,2.8rem);}
+.section-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem);}
+.section-head p{color:var(--slate);margin-top:.9rem;font-size:1.05rem;line-height:1.6;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.panel{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.7rem 1.8rem;}
+.panel .k{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);}
+.panel h3{font-size:1.15rem;margin:.7rem 0 .55rem;color:#fff;}
+.panel p{font-size:.96rem;color:var(--text);line-height:1.6;}
+.measure{max-width:64ch;}
+.measure p{color:var(--text);font-size:1.05rem;line-height:1.75;}
+.measure p + p{margin-top:1.1rem;}
+.measure a,.inline-link{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(78,230,255,.4);}
+.proof{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:clamp(1.8rem,4vw,2.6rem);}
+.proof .big{font-size:clamp(1.4rem,3vw,2rem);color:#fff;max-width:32ch;line-height:1.25;}
+.proof p{margin-top:1.1rem;color:var(--text);max-width:64ch;line-height:1.65;font-size:1.02rem;}
+.proof p a{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.opt{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.8rem 1.9rem;display:flex;flex-direction:column;}
+.opt .tag{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);}
+.opt h3{font-size:1.35rem;margin:.55rem 0 .5rem;}
+.opt p{color:var(--text);font-size:.98rem;line-height:1.6;flex:1;}
+.opt .go{margin-top:1.2rem;font-weight:600;color:var(--aqua);font-size:.95rem;}
+.opt .go:hover{color:#fff;}
+
+/* brief builder */
+.brief{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:clamp(1.6rem,4vw,2.4rem);}
+.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;}
+.fs{border:0;padding:0;margin:0;min-width:0;}
+.fs legend{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;padding:0;}
+.field{margin-bottom:1.1rem;}
+.field label{display:block;font-size:.82rem;font-weight:600;color:var(--mist);margin-bottom:.45rem;}
+.field input[type=text],.field input[type=number],.field input[type=email],.field select,.field textarea{
+  width:100%;background:var(--navy-900);border:1px solid var(--navy-700);border-radius:var(--r);color:#fff;
+  font-family:'Montserrat',sans-serif;font-size:.98rem;padding:.7rem .85rem;outline:none;}
+.field .mono-in{font-family:'IBM Plex Mono',monospace;}
+.field textarea{resize:vertical;min-height:80px;line-height:1.5;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--cyan);}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--slate) 50%),linear-gradient(135deg,var(--slate) 50%,transparent 50%);background-position:calc(100% - 18px) 1.1rem,calc(100% - 12px) 1.1rem;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:2.2rem;}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .9rem;}
+.checks label{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:400;color:var(--text);cursor:pointer;margin:0;}
+.checks input{accent-color:var(--cyan);width:16px;height:16px;}
+.brief-preview{margin-top:1.8rem;border-top:1px solid var(--navy-700);padding-top:1.6rem;}
+.brief-preview h4{font-size:.9rem;color:#fff;margin-bottom:.8rem;}
+.brief-preview pre{background:var(--navy-900);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.1rem 1.2rem;color:var(--mist);font-family:'IBM Plex Mono',monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word;max-height:340px;overflow:auto;margin:0;}
+.brief-actions{margin-top:1.3rem;display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;}
+.brief-note{font-size:.78rem;color:var(--slate);margin-top:1rem;line-height:1.55;}
+.copied{font-size:.82rem;color:var(--aqua);font-family:'IBM Plex Mono',monospace;}
+@media (max-width:820px){
+  .grid-3{grid-template-columns:1fr;}
+  .opts{grid-template-columns:1fr;}
+  .brief-grid{grid-template-columns:1fr;}
+  .checks{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;gap:2rem;}
+  .nav-links{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--navy-800);border-bottom:1px solid var(--navy-700);padding:0;max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .nav-links.open{max-height:640px;}
+  .no-js .nav-links{max-height:none;}
+  .nav-links li{width:100%;border-top:1px solid var(--navy-700);}
+  .nav-links li:first-child{border-top:0;}
+  .nav-links a{display:block;padding:1rem var(--pad);width:100%;}
+  .nav-cta{margin:1rem var(--pad);}
+  .nav-toggle{display:block;}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
+
+.faq details{border:1px solid var(--navy-700);border-radius:var(--r);background:var(--navy-800);margin-bottom:.9rem;overflow:hidden;}
+.faq summary{cursor:pointer;padding:1.15rem 1.4rem;font-weight:600;color:#fff;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--cyan);font-weight:400;font-size:1.4rem;line-height:1;}
+.faq details[open] summary::after{content:"\2013";}
+.faq details p{padding:0 1.4rem 1.3rem;color:var(--text);font-size:.98rem;line-height:1.65;}
+.faq details p a{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;}
+.spec-strip{margin-top:2.8rem;display:flex;flex-wrap:wrap;gap:1.6rem 2.6rem;padding-top:2rem;border-top:1px solid var(--navy-700);}
+.spec-strip .n{font-family:'IBM Plex Mono',monospace;font-size:1.35rem;color:#fff;font-weight:500;}
+.spec-strip .l{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-top:.35rem;}
+
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:center;}
+.hero-fig img{width:100%;height:auto;filter:drop-shadow(0 0 14px rgba(0,212,255,.25));}
+.status{margin-top:1.6rem;display:inline-flex;align-items:center;gap:.55rem;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--mist);border:1px solid var(--navy-700);background:rgba(10,33,53,.7);padding:.45rem .85rem;border-radius:999px;}
+.status .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);}
+.loop{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:.8rem;counter-reset:step;}
+.loop li{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.1rem 1rem;counter-increment:step;}
+.loop li::before{content:counter(step);display:block;font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--cyan);margin-bottom:.5rem;}
+.loop strong{display:block;color:#fff;font-size:1rem;margin-bottom:.35rem;}
+.loop span{font-size:.86rem;color:var(--text);line-height:1.5;display:block;}
+.loop-note{margin-top:1.2rem;color:var(--slate);font-size:.95rem;max-width:64ch;}
+.two-col{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(2rem,5vw,3.5rem);align-items:start;}
+.linkcard{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.6rem 1.7rem;}
+.linkcard h3{font-size:1rem;color:#fff;margin-bottom:.9rem;}
+.linkcard ul{list-style:none;margin:0;padding:0;display:grid;gap:.75rem;}
+.linkcard a{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(78,230,255,.4);font-size:.95rem;}
+.linkcard a:hover{color:#fff;}
+.linkcard p{font-size:.88rem;color:var(--slate);margin-top:1.1rem;line-height:1.55;}
+.quick{margin-top:1.1rem;font-size:.9rem;color:var(--slate);}
+.quick a{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;}
+.story-fox{max-width:220px;}
+@media (max-width:980px){.loop{grid-template-columns:repeat(4,1fr);}}
+@media (max-width:820px){.hero-grid,.two-col{grid-template-columns:1fr;}.hero-fig{max-width:420px;}.loop{grid-template-columns:1fr 1fr;}}
+@media (max-width:480px){.loop{grid-template-columns:1fr;}}
+
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "AboutPage",
+   "name": "About Melrakki Systems",
+   "url": "https://www.melrakki.systems/about/",
+   "mainEntity": {
+    "@id": "https://www.melrakki.systems/#org"
+   }
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://www.melrakki.systems/#org",
+   "name": "Melrakki Systems",
+   "url": "https://www.melrakki.systems/",
+   "logo": "https://www.melrakki.systems/icon-1024.png",
+   "email": "hello@melrakki.systems",
+   "slogan": "Power that holds.",
+   "description": "Melrakki Systems engineers autonomous off-grid power for surveillance, communications, drones and sensors on sites with no grid, from the load backwards and around proven hardware.",
+   "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Kent",
+    "addressCountry": "GB"
+   },
+   "areaServed": "Worldwide",
+   "founder": {
+    "@type": "Person",
+    "@id": "https://www.melrakki.systems/about/#founder",
+    "name": "Simon Legrand",
+    "jobTitle": "Founder, Melrakki Systems",
+    "url": "https://www.simonlegrand.co.uk/",
+    "sameAs": [
+     "https://www.simonlegrand.co.uk/",
+     "https://www.linkedin.com/in/-simonlegrand-/"
+    ]
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.melrakki.systems/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "About",
+     "item": "https://www.melrakki.systems/about/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/lockup-horizontal-dark.png" alt="Melrakki Systems"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/#sectors">Sectors</a></li>
+        <li><a href="/resilience/">Notes</a></li>
+        <li><a href="/about/" aria-current="page">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="deep phero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span aria-current="page">About</span>
+    </nav>
+    <p class="eyebrow" style="margin-top:1.6rem;">About Melrakki</p>
+    <h1>A new name, built on a long record at the edge of the grid.</h1>
+    <p class="standfirst">Melrakki Systems engineers autonomous off-grid power for the places the grid never reached: the surveillance, communications, drones and sensors that have to keep running with no mains, no fuel convoy and no one on site.</p>
+    <div class="spec-strip">
+      <div><div class="n">25+ years</div><div class="l">Technology, infrastructure and public sector</div></div>
+      <div><div class="n">13 years</div><div class="l">Building off-grid surveillance and power</div></div>
+      <div><div class="n">58 sites</div><div class="l">Solar CCTV infrastructure, Kazakhstan</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why Melrakki exists</p>
+      <h2>Every remote system stops the moment its power does.</h2>
+    </div>
+    <div class="measure">
+      <p>Cameras, sensors, radios, networks and drones are pushed further from mains power every year, onto sites a connection was never going to reach. The usual answer is a diesel generator, and with it comes fuel to haul, emissions to account for, noise and heat that give a position away, maintenance across scattered sites, and fuel worth stealing.</p>
+      <p>Melrakki exists to take that dependency away: to make the energy as autonomous as the equipment it keeps alive. We work business to business, worldwide, from Kent in the United Kingdom, through standard platforms where a requirement fits one, and <a href="/bespoke/">bespoke engineering</a> where it does not.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DNA -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Our DNA</p>
+      <h2>Six principles that decide how we build.</h2>
+      <p>These are not slogans. They are the rules our platforms, our bespoke work and our <a class="inline-link" href="/resilience/">field notes</a> are held to.</p>
+    </div>
+    <div class="grid-3">
+      <div class="panel"><h3>Start from the load</h3><p>We characterise the exact load, its duty cycle and the conditions it must survive first, and let those numbers choose the platform. Never the other way round.</p></div>
+      <div class="panel"><h3>Proven hardware inside</h3><p>Our own platform architecture, integrated around components with a field record, so nothing critical rests on an unproven part.</p></div>
+      <div class="panel"><h3>Design for the worst credible week</h3><p>A system sized for its best day is a demonstration. Infrastructure is sized for the hardest week the site will see.</p></div>
+      <div class="panel"><h3>Fewer dependencies, not bigger backups</h3><p>Resilience comes from removing what can fail: the fuel run, the routine site visit, the cable that was never going to reach.</p></div>
+      <div class="panel"><h3>The decision stays human</h3><p>Autonomy should remove the logistics, not the judgement. A person keeps authority over what the systems we power actually do.</p></div>
+      <div class="panel"><h3>Say what is built and what is in test</h3><p>We separate deployed, proven technology from development work in our specifications, our notes and our conversations. Naming which is which is the point.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="section" id="founder" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The founder</p>
+      <h2>Simon Legrand</h2>
+    </div>
+    <div class="two-col">
+      <div class="measure">
+        <p>Simon Legrand is the founder of Melrakki Systems and co-founder of Sunstone Systems, founded in 2011. Over more than twenty-five years across technology, infrastructure and the public sector, including thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems, his work has centred on one problem: keeping systems alive at the edge of the network, on sites with no grid and difficult access.</p>
+        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, deployments across oil and gas, highways, construction and critical infrastructure, and granted patents and co-inventions in solar-powered surveillance and autonomous off-grid power, including work relating to solar drone charging, the thinking that now sits behind <a href="/greni/">Greni</a>.</p>
+        <p>Simon is a Chartered Marketer (MCIM) and writes Melrakki's field notes on resilience at the remote edge. Melrakki is that experience, engineered into platforms of its own.</p>
+      </div>
+      <aside class="linkcard" aria-label="Founder links">
+        <h3>More from Simon</h3>
+        <ul>
+          <li><a href="https://www.simonlegrand.co.uk/">simonlegrand.co.uk</a></li>
+          <li><a href="https://www.linkedin.com/in/-simonlegrand-/">LinkedIn</a></li>
+          <li><a href="/resilience/when-the-grid-goes-away/">When the grid goes away</a></li>
+          <li><a href="/resilience/off-grid-drone-infrastructure/">When the drone has its own power station</a></li>
+        </ul>
+        <p>To talk to Simon about a remote power problem, email <a href="mailto:hello@melrakki.systems?subject=For%20Simon%20Legrand">hello@melrakki.systems</a>.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- THE NAME -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="proof two-col" style="align-items:center;">
+      <div>
+        <p class="eyebrow">Why the fox</p>
+        <p class="big">The only animal that thrives unaided through the polar winter.</p>
+        <p>Iceland's only native land mammal is the Arctic fox, melrakki, an animal that thrives through the polar winter with no shelter and no resupply, entirely on its own resources. We build power that behaves the same way. Our platforms carry Icelandic names for the same reason: Harka, meaning toughness, and Greni, the fox's den.</p>
+      </div>
+      <div style="display:flex;justify-content:center;"><img class="story-fox" src="/melrakki-mark-white.svg" alt="The Melrakki Arctic fox mark" width="220" height="254"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CTA -->
+<section class="section-tight cta">
+  <div class="wrap">
+    <h2>Tell us the load, the location and the conditions.</h2>
+    <p>We will engineer the power that keeps it alive, and tell you plainly what is proven and what is not.</p>
+    <a class="btn btn-primary" href="mailto:hello@melrakki.systems?subject=Melrakki%20enquiry">Start a conversation</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/lockup-horizontal-dark.png" alt="Melrakki Systems">
+        <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
+        <p class="foot-strap">Power that holds.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/bespoke/">Bespoke</a></li>
+          <li><a href="/harka/">Harka platforms</a></li>
+          <li><a href="/greni/">Greni</a></li>
+          <li><a href="/#sectors">Sectors</a></li>
+          <li><a href="/resilience/">Notes</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="/Melrakki-Harka-Hybrid.pdf">Harka Hybrid brochure</a></li>
+          <li><a href="/Melrakki-Harka-Solar.pdf">Harka Solar brochure</a></li>
+          <li><a href="/greni/#interest">Greni early interest</a></li>
+          <li><a href="mailto:hello@melrakki.systems">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>hello@melrakki.systems &nbsp;|&nbsp; &copy; 2026 Melrakki Systems.</p>
+      <p class="foot-desc">Autonomous power for the hardest places on earth.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});
+    l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');t.setAttribute('aria-expanded','false');}});}
+})();
+</script>
+</body>
+</html>
