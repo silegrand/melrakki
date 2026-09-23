@@ -205,41 +205,86 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@graph":[
-    {"@type":"Product","name":"Melrakki Harka Solar","sku":"MK-HK-S6","category":"Off-grid power platform",
-     "brand":{"@type":"Brand","name":"Melrakki Systems"},
-     "description":"The clean tier: autonomous off-grid power from solar and battery only. No fuel, no emissions and no noise, for the lowest signature and running cost where irradiance allows. 6 m mast, 1080 W array, 24 VDC 400 Ah battery, 75 hours reserve at 100 W.",
-     "url":"https://www.melrakki.systems/harka/",
-     "additionalProperty":[
-       {"@type":"PropertyValue","name":"Solar array","value":"1080 W (3 x 360 W)"},
-       {"@type":"PropertyValue","name":"Battery","value":"24 VDC, 400 Ah"},
-       {"@type":"PropertyValue","name":"Reserve","value":"75 h at 100 W"},
-       {"@type":"PropertyValue","name":"Fuel","value":"None"}
-     ]},
-    {"@type":"Product","name":"Melrakki Harka Hybrid","sku":"MK-HK-H6","category":"Off-grid power platform",
-     "brand":{"@type":"Brand","name":"Melrakki Systems"},
-     "description":"The endurance tier: solar, battery and a Stage V backup generator running on HVO renewable diesel, for guaranteed uptime through low light, deep winter and heavy loads. Silent and zero emission in battery mode; the generator engages only to recharge.",
-     "url":"https://www.melrakki.systems/harka/",
-     "additionalProperty":[
-       {"@type":"PropertyValue","name":"Solar array","value":"1080 W (3 x 360 W)"},
-       {"@type":"PropertyValue","name":"Battery","value":"24 VDC, 220 Ah"},
-       {"@type":"PropertyValue","name":"Runtime","value":"up to 1840 h at 100 W"},
-       {"@type":"PropertyValue","name":"Backup","value":"HVO Stage V generator"}
-     ]},
-    {"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.melrakki.systems/"},
-      {"@type":"ListItem","position":2,"name":"Harka platforms","item":"https://www.melrakki.systems/harka/"}
-    ]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"Does Harka need a mains connection?","acceptedAnswer":{"@type":"Answer","text":"No. Harka is an autonomous off-grid platform that generates and stores its own power from solar and battery. There is no mains connection, no trenching and no conventional cable runs."}},
-      {"@type":"Question","name":"How long does it run without any sun?","acceptedAnswer":{"@type":"Answer","text":"Harka Solar holds a published reserve of 75 hours at 100 W from the battery alone, and runs indefinitely where irradiance supports the duty cycle. Endurance scales with the actual load: a lighter load lasts longer, a heavier one shorter."}},
-      {"@type":"Question","name":"What is the difference between Harka Solar and Harka Hybrid?","acceptedAnswer":{"@type":"Answer","text":"Harka Solar is the clean tier, solar and battery only, with no fuel, emissions or noise. Harka Hybrid is the endurance tier: it adds a Stage V generator on HVO renewable diesel that engages only to recharge the battery, for guaranteed uptime through deep winter or heavy loads."}},
-      {"@type":"Question","name":"What can a Harka platform power?","acceptedAnswer":{"@type":"Answer","text":"Harka is the power platform beneath the payload. It is built to sustain surveillance, communications, sensors, drones and other remote loads. You supply the equipment; Harka keeps it running."}},
-      {"@type":"Question","name":"Does it work in winter?","acceptedAnswer":{"@type":"Answer","text":"Yes, when it is sized for the worst month rather than the average. Solar output is seasonal, which is why each platform is engineered from the load backwards, and why the Hybrid tier exists for sites and seasons where solar alone cannot close the gap."}},
-      {"@type":"Question","name":"What fuel does the Hybrid use?","acceptedAnswer":{"@type":"Answer","text":"HVO renewable diesel, in a Stage V generator that runs only when the battery needs recharging. In battery mode the platform is silent and zero emission."}},
-      {"@type":"Question","name":"How is a Harka platform sized for my site?","acceptedAnswer":{"@type":"Answer","text":"From the load backwards. Your continuous and peak load, your location and its worst-month solar resource, the site conditions and the mission profile decide the array, the battery, the reserve and the tier, in that order."}}
-    ]}
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.melrakki.systems/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Harka platforms",
+          "item": "https://www.melrakki.systems/harka/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Harka need a mains connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Harka is an autonomous off-grid platform that generates and stores its own power from solar and battery. There is no mains connection, no trenching and no conventional cable runs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it run without any sun?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harka Solar holds a published reserve of 75 hours at 100 W from the battery alone, and runs indefinitely where irradiance supports the duty cycle. Endurance scales with the actual load: a lighter load lasts longer, a heavier one shorter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Harka Solar and Harka Hybrid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harka Solar is the clean tier, solar and battery only, with no fuel, emissions or noise. Harka Hybrid is the endurance tier: it adds a Stage V generator on HVO renewable diesel that engages only to recharge the battery, for guaranteed uptime through deep winter or heavy loads."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can a Harka platform power?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Harka is the power platform beneath the payload. It is built to sustain surveillance, communications, sensors, drones and other remote loads. You supply the equipment; Harka keeps it running."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work in winter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, when it is sized for the worst month rather than the average. Solar output is seasonal, which is why each platform is engineered from the load backwards, and why the Hybrid tier exists for sites and seasons where solar alone cannot close the gap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What fuel does the Hybrid use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HVO renewable diesel, in a Stage V generator that runs only when the battery needs recharging. In battery mode the platform is silent and zero emission."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is a Harka platform sized for my site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From the load backwards. Your continuous and peak load, your location and its worst-month solar resource, the site conditions and the mission profile decide the array, the battery, the reserve and the tier, in that order."
+          }
+        }
+      ]
+    }
   ]
 }
 </script>
