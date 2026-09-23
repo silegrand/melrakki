@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harka off-grid power platforms | Melrakki Systems</title>
+<meta name="description" content="Harka is Melrakki's autonomous off-grid power platform in two tiers: Harka Solar, solar and battery only, and Harka Hybrid, with an HVO Stage V backup. Power for remote sites with no grid and no fuel convoy.">
+<link rel="canonical" href="https://www.melrakki.systems/harka/">
+<meta name="theme-color" content="#071A2B">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Melrakki Systems">
+<meta property="og:title" content="Harka off-grid power platforms">
+<meta property="og:description" content="Autonomous off-grid power for remote sites, in two tiers: Harka Solar (solar and battery) and Harka Hybrid (with HVO Stage V backup). No grid, no fuel convoy.">
+<meta property="og:url" content="https://www.melrakki.systems/harka/">
+<meta property="og:image" content="https://www.melrakki.systems/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Harka off-grid power platforms">
+<meta name="twitter:description" content="Autonomous off-grid power for remote sites, in two tiers. No grid, no fuel convoy.">
+<meta name="twitter:image" content="https://www.melrakki.systems/social-preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#071A2B; --navy-900:#04101B; --navy-800:#0A2135; --navy-700:#12314A;
+  --snow:#F5F8FB; --white:#FFFFFF; --ice:#E9F1F7; --ice-line:#CFE0EC;
+  --ink:#0C2233; --ink-soft:#33485A;
+  --cyan:#00D4FF; --aqua:#4EE6FF; --cyan-ink:#0090B4;
+  --slate:#7A8CA3; --slate-l:#5A6C7B; --text:#C4D2DE; --mist:#EAF2F8;
+  --max:1180px; --prose:40rem;
+  --pad:clamp(1.25rem,4vw,2.5rem); --sy:clamp(4rem,8vw,7rem); --r:6px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--navy-900);color:var(--text);font-family:'Montserrat',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{line-height:1.12;letter-spacing:-0.015em;margin:0;color:#fff;font-weight:700;}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad);}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin:0 0 1.2rem;}
+.mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;}
+.skip{position:absolute;left:-999px;top:auto;}
+.skip:focus{left:1rem;top:1rem;z-index:200;background:var(--cyan);color:#04121C;padding:.6rem 1rem;border-radius:var(--r);}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.85rem 1.65rem;border-radius:var(--r);border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s,box-shadow .2s;}
+.btn-primary{background:var(--cyan);color:#04121C;}
+.btn-primary:hover{background:var(--aqua);box-shadow:0 6px 22px rgba(0,180,220,.4);}
+.btn-secondary{background:transparent;border-color:rgba(122,140,163,.5);color:var(--mist);}
+.btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);}
+header.site{position:sticky;top:0;z-index:60;background:rgba(5,17,28,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--navy-700);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem;}
+.brand img{height:44px;width:auto;display:block;}
+nav.primary{display:flex;align-items:center;gap:1rem;}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;margin:0;padding:0;}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--mist);transition:color .2s;}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--cyan);}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem;}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--mist);margin:5px 0;transition:.25s;}
+.deep{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%, #0A2338 0%, var(--navy-900) 72%);}
+.deep::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 8%, rgba(0,212,255,.14), transparent 55%);}
+.deep > .wrap{position:relative;z-index:1;}
+.section{padding-block:var(--sy);}
+.section-tight{padding-block:clamp(2.5rem,5vw,4rem);}
+.crumbs{font-size:.82rem;color:var(--slate);display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;}
+.crumbs a{color:var(--slate);transition:color .2s;}
+.crumbs a:hover{color:var(--cyan);}
+.crumbs .sep{color:var(--navy-700);}
+.crumbs [aria-current="page"]{color:var(--mist);}
+.cta{background:linear-gradient(120deg,#0A2135,#0b3a55 55%,#0e506f);}
+.cta .wrap{text-align:center;display:flex;flex-direction:column;align-items:center;}
+.cta h2{color:#fff;font-size:clamp(1.7rem,4vw,2.8rem);max-width:22ch;}
+.cta p{margin:1.3rem auto 2.2rem;max-width:52ch;color:var(--mist);font-size:1.08rem;font-weight:300;}
+footer.site{background:var(--navy-900);border-top:1px solid var(--navy-700);padding-block:clamp(3rem,6vw,4rem) 2rem;}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem;}
+.foot-brand img{width:200px;height:auto;margin-bottom:1.2rem;}
+.foot-brand p{font-size:.92rem;color:var(--slate);max-width:44ch;line-height:1.6;}
+.foot-strap{margin-top:1.2rem;font-weight:600;color:#fff;letter-spacing:.02em;}
+.foot-col h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin:0 0 1.1rem;font-weight:600;}
+.foot-col ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;}
+.foot-col a{font-size:.92rem;color:var(--text);transition:color .2s;}
+.foot-col a:hover{color:var(--cyan);}
+.foot-bottom{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--navy-700);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center;}
+.foot-bottom p{font-size:.82rem;color:var(--slate);}
+.foot-desc{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--cyan);letter-spacing:.03em;}
+a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:2px;}
+
+/* ---------- product-page components ---------- */
+.phero{padding-block:clamp(2.6rem,6vw,4rem) clamp(2.5rem,5vw,3.5rem);}
+.phero .head{max-width:60ch;}
+.phero h1{font-size:clamp(2.2rem,5.4vw,3.7rem);max-width:18ch;margin-top:1.6rem;}
+.phero .standfirst{font-weight:300;font-size:clamp(1.1rem,1.8vw,1.4rem);color:var(--mist);max-width:56ch;margin-top:1.5rem;line-height:1.5;}
+.cta-row{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:1rem;}
+.spec-strip{margin-top:2.8rem;display:flex;flex-wrap:wrap;gap:1.6rem 2.6rem;padding-top:2rem;border-top:1px solid var(--navy-700);}
+.spec-strip .n{font-family:'IBM Plex Mono',monospace;font-size:1.35rem;color:#fff;font-weight:500;}
+.spec-strip .l{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-top:.35rem;}
+.section-head{max-width:62ch;margin-bottom:clamp(1.8rem,4vw,2.8rem);}
+.section-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem);}
+.section-head p{color:var(--slate);margin-top:.9rem;font-size:1.05rem;line-height:1.6;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.panel{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.7rem 1.8rem;}
+.panel .k{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);}
+.panel h3{font-size:1.15rem;margin:.7rem 0 .55rem;color:#fff;}
+.panel p{font-size:.96rem;color:var(--text);line-height:1.6;}
+.measure{max-width:64ch;}
+.measure p{color:var(--text);font-size:1.05rem;line-height:1.75;}
+.measure p + p{margin-top:1.1rem;}
+.measure a,.inline-link{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(78,230,255,.4);}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+.tier{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:2rem 2rem 1.9rem;display:flex;flex-direction:column;}
+.tier .tag{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);}
+.tier h3{font-size:1.5rem;margin:.6rem 0 .25rem;}
+.tier .model{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--slate);}
+.tier .desc{margin-top:1rem;color:var(--text);font-size:1rem;line-height:1.62;}
+.tier .keyspec{margin-top:1.5rem;display:grid;gap:0;list-style:none;padding:0;}
+.tier .keyspec li{display:flex;justify-content:space-between;gap:1rem;font-size:.92rem;padding:.6rem 0;border-top:1px solid var(--navy-700);}
+.tier .keyspec li span:first-child{color:var(--slate);}
+.tier .keyspec li span:last-child{color:var(--mist);font-family:'IBM Plex Mono',monospace;text-align:right;}
+.tier .suits{margin-top:1.5rem;padding-top:1.3rem;border-top:1px solid var(--navy-700);font-size:.94rem;color:var(--text);line-height:1.6;}
+.tier .suits strong{color:var(--cyan);font-weight:600;}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--navy-700);border-radius:var(--r);}
+table.spec{width:100%;border-collapse:collapse;font-size:.94rem;min-width:560px;}
+table.spec caption{text-align:left;padding:0 0 .9rem;color:var(--slate);font-size:.85rem;}
+table.spec th,table.spec td{text-align:left;padding:.85rem 1.2rem;border-top:1px solid var(--navy-700);vertical-align:top;}
+table.spec thead th{background:var(--navy-800);color:#fff;font-weight:600;border-top:0;}
+table.spec tbody th{color:var(--slate);font-weight:500;white-space:nowrap;}
+table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
+.tbl-note{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--slate);margin-top:.9rem;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.sector{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.15rem 1.3rem;font-size:.98rem;color:var(--mist);font-weight:500;}
+.sector span{display:block;font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:var(--slate);margin-top:.35rem;font-weight:400;letter-spacing:.04em;text-transform:uppercase;}
+.faq details{border:1px solid var(--navy-700);border-radius:var(--r);background:var(--navy-800);margin-bottom:.9rem;overflow:hidden;}
+.faq summary{cursor:pointer;padding:1.15rem 1.4rem;font-weight:600;color:#fff;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--cyan);font-weight:400;font-size:1.4rem;line-height:1;}
+.faq details[open] summary::after{content:"\2013";}
+.faq details p{padding:0 1.4rem 1.3rem;color:var(--text);font-size:.98rem;line-height:1.65;}
+.faq details p a{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;}
+.proof{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:clamp(1.8rem,4vw,2.6rem);}
+.proof .big{font-size:clamp(1.4rem,3vw,2rem);color:#fff;max-width:30ch;line-height:1.25;}
+.proof p{margin-top:1.1rem;color:var(--text);max-width:62ch;line-height:1.65;font-size:1.02rem;}
+.proof p a{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;}
+.foot-back{margin-top:2rem;}
+.foot-back a{font-weight:600;color:var(--aqua);font-size:.95rem;}
+@media (max-width:820px){
+  .grid-3{grid-template-columns:1fr;}
+  .grid-4{grid-template-columns:1fr 1fr;}
+  .tiers{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;gap:2rem;}
+  .nav-links{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--navy-800);border-bottom:1px solid var(--navy-700);padding:0;max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .nav-links.open{max-height:460px;}
+  .no-js .nav-links{max-height:none;}
+  .nav-links li{width:100%;border-top:1px solid var(--navy-700);}
+  .nav-links li:first-child{border-top:0;}
+  .nav-links a{display:block;padding:1rem var(--pad);width:100%;}
+  .nav-cta{margin:1rem var(--pad);}
+  .nav-toggle{display:block;}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Product","name":"Melrakki Harka Solar","sku":"MK-HK-S6","category":"Off-grid power platform",
+     "brand":{"@type":"Brand","name":"Melrakki Systems"},
+     "description":"The clean tier: autonomous off-grid power from solar and battery only. No fuel, no emissions and no noise, for the lowest signature and running cost where irradiance allows. 6 m mast, 1080 W array, 24 VDC 400 Ah battery, 75 hours reserve at 100 W.",
+     "url":"https://www.melrakki.systems/harka/",
+     "additionalProperty":[
+       {"@type":"PropertyValue","name":"Solar array","value":"1080 W (3 x 360 W)"},
+       {"@type":"PropertyValue","name":"Battery","value":"24 VDC, 400 Ah"},
+       {"@type":"PropertyValue","name":"Reserve","value":"75 h at 100 W"},
+       {"@type":"PropertyValue","name":"Fuel","value":"None"}
+     ]},
+    {"@type":"Product","name":"Melrakki Harka Hybrid","sku":"MK-HK-H6","category":"Off-grid power platform",
+     "brand":{"@type":"Brand","name":"Melrakki Systems"},
+     "description":"The endurance tier: solar, battery and a Stage V backup generator running on HVO renewable diesel, for guaranteed uptime through low light, deep winter and heavy loads. Silent and zero emission in battery mode; the generator engages only to recharge.",
+     "url":"https://www.melrakki.systems/harka/",
+     "additionalProperty":[
+       {"@type":"PropertyValue","name":"Solar array","value":"1080 W (3 x 360 W)"},
+       {"@type":"PropertyValue","name":"Battery","value":"24 VDC, 220 Ah"},
+       {"@type":"PropertyValue","name":"Runtime","value":"up to 1840 h at 100 W"},
+       {"@type":"PropertyValue","name":"Backup","value":"HVO Stage V generator"}
+     ]},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.melrakki.systems/"},
+      {"@type":"ListItem","position":2,"name":"Harka platforms","item":"https://www.melrakki.systems/harka/"}
+    ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Does Harka need a mains connection?","acceptedAnswer":{"@type":"Answer","text":"No. Harka is an autonomous off-grid platform that generates and stores its own power from solar and battery. There is no mains connection, no trenching and no conventional cable runs."}},
+      {"@type":"Question","name":"How long does it run without any sun?","acceptedAnswer":{"@type":"Answer","text":"Harka Solar holds a published reserve of 75 hours at 100 W from the battery alone, and runs indefinitely where irradiance supports the duty cycle. Endurance scales with the actual load: a lighter load lasts longer, a heavier one shorter."}},
+      {"@type":"Question","name":"What is the difference between Harka Solar and Harka Hybrid?","acceptedAnswer":{"@type":"Answer","text":"Harka Solar is the clean tier, solar and battery only, with no fuel, emissions or noise. Harka Hybrid is the endurance tier: it adds a Stage V generator on HVO renewable diesel that engages only to recharge the battery, for guaranteed uptime through deep winter or heavy loads."}},
+      {"@type":"Question","name":"What can a Harka platform power?","acceptedAnswer":{"@type":"Answer","text":"Harka is the power platform beneath the payload. It is built to sustain surveillance, communications, sensors, drones and other remote loads. You supply the equipment; Harka keeps it running."}},
+      {"@type":"Question","name":"Does it work in winter?","acceptedAnswer":{"@type":"Answer","text":"Yes, when it is sized for the worst month rather than the average. Solar output is seasonal, which is why each platform is engineered from the load backwards, and why the Hybrid tier exists for sites and seasons where solar alone cannot close the gap."}},
+      {"@type":"Question","name":"What fuel does the Hybrid use?","acceptedAnswer":{"@type":"Answer","text":"HVO renewable diesel, in a Stage V generator that runs only when the battery needs recharging. In battery mode the platform is silent and zero emission."}},
+      {"@type":"Question","name":"How is a Harka platform sized for my site?","acceptedAnswer":{"@type":"Answer","text":"From the load backwards. Your continuous and peak load, your location and its worst-month solar resource, the site conditions and the mission profile decide the array, the battery, the reserve and the tier, in that order."}}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/lockup-horizontal-dark.png" alt="Melrakki Systems"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/#sectors">Sectors</a></li>
+        <li><a href="/resilience/">Notes</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="deep phero">
+  <div class="wrap">
+    <div class="head">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a><span class="sep">/</span><span aria-current="page">Harka platforms</span>
+      </nav>
+      <p class="eyebrow" style="margin-top:1.6rem;">The Harka platforms</p>
+      <h1>Power wherever you need it. Without the grid or the convoy.</h1>
+      <p class="standfirst">Harka is Melrakki's autonomous off-grid power platform, in two tiers. It generates and stores its own electricity on site, so surveillance, communications, sensors and drones keep running where there is no mains connection and no reliable way to keep a generator fuelled.</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:hello@melrakki.systems?subject=Harka%20enquiry">Talk to an engineer</a>
+      <a class="btn btn-secondary" href="#specifications">See the specifications</a>
+    </div>
+    <div class="spec-strip">
+      <div><div class="n">1080 W</div><div class="l">Solar array</div></div>
+      <div><div class="n">400 Ah</div><div class="l">Battery, Harka Solar</div></div>
+      <div><div class="n">75 h</div><div class="l">Reserve at 100 W, Solar</div></div>
+      <div><div class="n">HVO</div><div class="l">Stage V backup, Hybrid</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Power without infrastructure</p>
+      <h2>The systems that matter most now run beyond the grid.</h2>
+      <p>Cameras, radios, sensors and drones are pushed further from mains power every year, onto sites a connection was never going to reach. Every one of them stops the moment its power does. The usual answer is a diesel generator, and it brings a convoy of its own. Harka removes three dependencies at once.</p>
+    </div>
+    <div class="grid-3">
+      <div class="panel">
+        <p class="k">01</p>
+        <h3>No grid to connect to</h3>
+        <p>Harka generates and stores its own electricity. No mains connection, no trenching, no cable runs, no civil works to programme and pay for before the site is even live.</p>
+      </div>
+      <div class="panel">
+        <p class="k">02</p>
+        <h3>No fuel convoy to run</h3>
+        <p>Harka Solar burns nothing. Harka Hybrid carries fuelled backup that runs only when it is needed, so the recurring deliveries, storage and theft risk of a running generator largely disappear.</p>
+      </div>
+      <div class="panel">
+        <p class="k">03</p>
+        <h3>No routine site visits</h3>
+        <p>The platform is built to run unattended and to report its own health remotely, so the site holds while you are somewhere else, and a visit becomes the exception rather than the schedule.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HARKA IS -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What Harka is</p>
+      <h2>A power system, engineered from the load backwards.</h2>
+    </div>
+    <div class="measure">
+      <p>Harka is not a solar panel on a pole. It is a designed power system: generation, storage, power management and remote monitoring, integrated around proven hardware so that nothing critical rests on an unproven part. It is the power platform beneath the payload, built to sustain the surveillance, communications, sensors and drones that a remote site depends on.</p>
+      <p>Every platform is sized to the exact load it has to carry, its continuous draw, its duty cycle and the conditions it has to survive, rather than picked off a catalogue. That method is the difference between a system that runs beautifully all summer and one that holds through a bad December. We set it out in full in <a href="/resilience/designing-power-from-the-load-backwards/">designing power from the load backwards</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TWO TIERS -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Two tiers, one engineering standard</p>
+      <h2>Choose by the site, not by preference.</h2>
+      <p>The two platforms share the same engineering. They differ in one thing: what happens when the sun cannot keep up. That is a site question, and the honest answer decides the tier.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <p class="tag">Clean tier</p>
+        <h3>Harka Solar</h3>
+        <p class="model">MK-HK-S6</p>
+        <p class="desc">Solar and battery only. No fuel, no emissions, no noise, for the lowest signature and the lowest running cost where irradiance allows. Solar sustains continuous operation in adequate light.</p>
+        <ul class="keyspec">
+          <li><span>Mast</span><span>6 m galvanised</span></li>
+          <li><span>Solar array</span><span>1080 W (3&#215;360 W)</span></li>
+          <li><span>Battery</span><span>24 VDC, 400 Ah</span></li>
+          <li><span>Reserve</span><span>75 h at 100 W</span></li>
+          <li><span>Fuel</span><span>None</span></li>
+        </ul>
+        <p class="suits"><strong>Suits</strong> sites where the worst-month solar resource covers the load, and where a silent, heatless, zero-emission signature is worth the most.</p>
+      </div>
+      <div class="tier">
+        <p class="tag">Endurance tier</p>
+        <h3>Harka Hybrid</h3>
+        <p class="model">MK-HK-H6</p>
+        <p class="desc">Solar and battery carry the load in silence, and a Stage V generator on HVO renewable diesel engages only to recharge the pack, then shuts down. Silent and zero emission in battery mode, with fuel burned only in the window the sun cannot cover.</p>
+        <ul class="keyspec">
+          <li><span>Mast</span><span>6 m galvanised</span></li>
+          <li><span>Solar array</span><span>1080 W (3&#215;360 W)</span></li>
+          <li><span>Battery</span><span>24 VDC, 220 Ah</span></li>
+          <li><span>Runtime</span><span>up to 1840 h at 100 W</span></li>
+          <li><span>Backup</span><span>HVO Stage V generator</span></li>
+        </ul>
+        <p class="suits"><strong>Suits</strong> a latitude, a season or a heavy load where solar alone cannot close the gap, and where guaranteed uptime matters more than removing fuel entirely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIFICATIONS -->
+<section class="section" id="specifications" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Specifications</p>
+      <h2>The published figures, side by side.</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table class="spec">
+        <thead>
+          <tr><th scope="col">&nbsp;</th><th scope="col">Harka Solar</th><th scope="col">Harka Hybrid</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Model</th><td>MK-HK-S6</td><td>MK-HK-H6</td></tr>
+          <tr><th scope="row">Tier</th><td>Clean</td><td>Endurance</td></tr>
+          <tr><th scope="row">Mast</th><td>6 m galvanised</td><td>6 m galvanised</td></tr>
+          <tr><th scope="row">Solar array</th><td>1080 W (3&#215;360 W)</td><td>1080 W (3&#215;360 W)</td></tr>
+          <tr><th scope="row">Battery</th><td>24 VDC, 400 Ah</td><td>24 VDC, 220 Ah</td></tr>
+          <tr><th scope="row">Endurance at 100 W</th><td>75 h reserve (battery)</td><td>up to 1840 h (with backup)</td></tr>
+          <tr><th scope="row">Backup</th><td>None</td><td>HVO Stage V generator</td></tr>
+          <tr><th scope="row">Fuel</th><td>None</td><td>HVO renewable diesel (backup only)</td></tr>
+          <tr><th scope="row">Signature</th><td>Silent, zero emission</td><td>Silent, zero emission on battery</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">Runtimes are stated at a 100 W continuous reference load. Endurance scales with the actual draw: roughly double the load and you roughly halve the endurance.</p>
+  </div>
+</section>
+
+<!-- WHERE IT FITS -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where Harka fits</p>
+      <h2>Built for the places that defeat other power.</h2>
+      <p>Melrakki is built for operations where intervention is expensive or impossible and a failure is a redeployment, not a callout. These are the environments where autonomous power earns its place.</p>
+    </div>
+    <div class="grid-4">
+      <div class="sector">Oil and gas<span>Priority sector</span></div>
+      <div class="sector">Defence and public sector<span>Priority sector</span></div>
+      <div class="sector">Extreme and hostile sites<span>Priority sector</span></div>
+      <div class="sector">Critical national infrastructure<span>Also powered</span></div>
+      <div class="sector">Security and surveillance<span>Also powered</span></div>
+      <div class="sector">Telecoms and remote networks<span>Also powered</span></div>
+      <div class="sector">Border and perimeter security<span>Also powered</span></div>
+      <div class="sector">Remote construction<span>Also powered</span></div>
+      <div class="sector">Emergency and disaster response<span>Also powered</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VS DIESEL -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Harka vs a diesel generator</p>
+      <h2>The real comparison is dependency, not fuel price.</h2>
+      <p>A diesel generator is a capable machine, and on an accessible site for a short job it is often the right one. On a remote site, its true cost is rarely the fuel. It is the convoy that delivers it, the servicing, the site visits, the emissions and the signature.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="spec">
+        <thead>
+          <tr><th scope="col">&nbsp;</th><th scope="col">Remote diesel generator</th><th scope="col">Harka</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Fuel</th><td>Continuous, delivered</td><td>None (Solar) / backup only (Hybrid)</td></tr>
+          <tr><th scope="row">Logistics</th><td>Recurring fuel convoy</td><td>Little to none</td></tr>
+          <tr><th scope="row">Site visits</th><td>Fuelling and servicing</td><td>Unattended, self-reporting</td></tr>
+          <tr><th scope="row">Signature</th><td>Noise, heat, exhaust</td><td>Silent and heatless on battery</td></tr>
+          <tr><th scope="row">Emissions</th><td>Continuous at the site</td><td>None, or backup only</td></tr>
+          <tr><th scope="row">Theft target</th><td>Stored fuel</td><td>No fuel to steal (Solar)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note" style="margin-top:1.1rem;">We set out the full argument in <a class="inline-link" href="/resilience/the-true-cost-of-a-diesel-generator/">the true cost of a diesel generator on a remote site</a>.</p>
+  </div>
+</section>
+
+<!-- VIABILITY -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Will it hold at your site?</p>
+      <h2>Good off-grid power starts with the site, not the panel.</h2>
+    </div>
+    <div class="measure">
+      <p>Whether a site runs on the clean tier or needs the endurance tier is not a matter of taste. It falls out of four things: the <strong>load</strong> it has to carry, the <strong>location</strong> and its worst-month solar resource, the <strong>conditions</strong> the platform has to survive, and the <strong>mission profile</strong>, what has to run, how hard, and how often.</p>
+      <p>The test that matters is the worst credible week, not the best day: low sun, cold, snow, a heavier load than usual, and no one able to attend. Size for that and the platform holds through the season; size for the average and it fails exactly when it is needed. If the worst month still covers the load, Harka Solar is the honest answer. If it does not, Harka Hybrid closes the gap with the smallest amount of fuel, on the days that genuinely need it.</p>
+      <p>The same thinking underpins the whole approach to <a href="/resilience/when-the-grid-goes-away/">resilience at the remote edge</a>, and it is why the power system is designed before anything is bought.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="proof">
+      <p class="eyebrow">Proven where it matters</p>
+      <p class="big">More than a decade deploying off-grid solar power into some of the most demanding sectors on earth.</p>
+      <p>Harka is not a first attempt. The team behind Melrakki has spent over a decade designing and deploying off-grid solar surveillance and autonomous power, from oil and gas to highways, construction and critical infrastructure, including solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan. Melrakki is that experience, engineered into platforms of its own. The name is the Icelandic word for the Arctic fox, the only animal that thrives unaided through the polar winter. We build power that behaves the same way.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What you need to know</p>
+      <h2>Common questions.</h2>
+    </div>
+    <div class="faq measure" style="max-width:52rem;">
+      <details><summary>Does Harka need a mains connection?</summary><p>No. Harka is an autonomous off-grid platform that generates and stores its own power from solar and battery. There is no mains connection, no trenching and no conventional cable runs.</p></details>
+      <details><summary>How long does it run without any sun?</summary><p>Harka Solar holds a published reserve of 75 hours at 100 W from the battery alone, and runs indefinitely where irradiance supports the duty cycle. Endurance scales with the actual load: a lighter load lasts longer, a heavier one shorter.</p></details>
+      <details><summary>What is the difference between Harka Solar and Harka Hybrid?</summary><p>Harka Solar is the clean tier, solar and battery only, with no fuel, emissions or noise. Harka Hybrid is the endurance tier: it adds a Stage V generator on HVO renewable diesel that engages only to recharge the battery, for guaranteed uptime through deep winter or heavy loads.</p></details>
+      <details><summary>What can a Harka platform power?</summary><p>Harka is the power platform beneath the payload. It is built to sustain surveillance, communications, sensors, drones and other remote loads. You supply the equipment; Harka keeps it running.</p></details>
+      <details><summary>Does it work in winter?</summary><p>Yes, when it is sized for the worst month rather than the average. Solar output is seasonal, which is why each platform is engineered from the load backwards, and why the Hybrid tier exists for sites and seasons where solar alone cannot close the gap. See <a href="/resilience/designing-power-from-the-load-backwards/">designing power from the load backwards</a>.</p></details>
+      <details><summary>What fuel does the Hybrid use?</summary><p>HVO renewable diesel, in a Stage V generator that runs only when the battery needs recharging. In battery mode the platform is silent and zero emission.</p></details>
+      <details><summary>How is a Harka platform sized for my site?</summary><p>From the load backwards. Your continuous and peak load, your location and its worst-month solar resource, the site conditions and the mission profile decide the array, the battery, the reserve and the tier, in that order, before anything is bought.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CTA -->
+<section class="section-tight cta">
+  <div class="wrap">
+    <h2>Bring us the load, the location, the conditions and the mission.</h2>
+    <p>We will size the platform, choose the tier honestly, and engineer the power that keeps your site alive.</p>
+    <a class="btn btn-primary" href="mailto:hello@melrakki.systems?subject=Harka%20enquiry">Talk to an engineer</a>
+    <p class="foot-back"><a href="/resilience/">Read the field notes &rarr;</a></p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/lockup-horizontal-dark.png" alt="Melrakki Systems">
+        <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
+        <p class="foot-strap">Power that holds.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/#platforms">Platforms</a></li>
+          <li><a href="/#sectors">Sectors</a></li>
+          <li><a href="/#story">Story</a></li>
+          <li><a href="/resilience/">Notes</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="/Melrakki-Harka-Hybrid.pdf">Harka Hybrid brochure</a></li>
+          <li><a href="/Melrakki-Harka-Solar.pdf">Harka Solar brochure</a></li>
+          <li><a href="mailto:hello@melrakki.systems">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>hello@melrakki.systems &nbsp;|&nbsp; &copy; 2026 Melrakki Systems.</p>
+      <p class="foot-desc">Autonomous power for the hardest places on earth.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(t&&l){t.addEventListener('click',function(){
+    var open=l.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });}
+})();
+</script>
+</body>
+</html>
