@@ -1,1 +1,547 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bespoke off-grid power engineering | Melrakki Systems</title>
+<meta name="description" content="When a standard platform will not do, Melrakki engineers off-grid power around your device, your site and your constraints. Develop your requirement with our brief builder.">
+<link rel="canonical" href="https://www.melrakki.systems/bespoke/">
+<meta name="theme-color" content="#071A2B">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
 
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Melrakki Systems">
+<meta property="og:title" content="Bespoke off-grid power engineering">
+<meta property="og:description" content="When a standard platform will not do, Melrakki engineers off-grid power around your device, your site and your constraints.">
+<meta property="og:url" content="https://www.melrakki.systems/bespoke/">
+<meta property="og:image" content="https://www.melrakki.systems/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bespoke off-grid power engineering">
+<meta name="twitter:description" content="When a standard platform will not do, Melrakki engineers off-grid power around your requirement.">
+<meta name="twitter:image" content="https://www.melrakki.systems/social-preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#071A2B; --navy-900:#04101B; --navy-800:#0A2135; --navy-700:#12314A;
+  --white:#FFFFFF; --ink:#0C2233;
+  --cyan:#00D4FF; --aqua:#4EE6FF; --cyan-ink:#0090B4;
+  --slate:#7A8CA3; --text:#C4D2DE; --mist:#EAF2F8;
+  --max:1180px; --prose:40rem;
+  --pad:clamp(1.25rem,4vw,2.5rem); --sy:clamp(4rem,8vw,7rem); --r:6px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--navy-900);color:var(--text);font-family:'Montserrat',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{line-height:1.12;letter-spacing:-0.015em;margin:0;color:#fff;font-weight:700;}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad);}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin:0 0 1.2rem;}
+.mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;}
+.skip{position:absolute;left:-999px;top:auto;}
+.skip:focus{left:1rem;top:1rem;z-index:200;background:var(--cyan);color:#04121C;padding:.6rem 1rem;border-radius:var(--r);}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.85rem 1.65rem;border-radius:var(--r);border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s,box-shadow .2s;}
+.btn-primary{background:var(--cyan);color:#04121C;}
+.btn-primary:hover{background:var(--aqua);box-shadow:0 6px 22px rgba(0,180,220,.4);}
+.btn-secondary{background:transparent;border-color:rgba(122,140,163,.5);color:var(--mist);}
+.btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);}
+header.site{position:sticky;top:0;z-index:60;background:rgba(5,17,28,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--navy-700);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem;}
+.brand img{height:44px;width:auto;display:block;}
+nav.primary{display:flex;align-items:center;gap:1rem;}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;margin:0;padding:0;}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--mist);transition:color .2s;}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--cyan);}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem;}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--mist);margin:5px 0;transition:.25s;}
+.deep{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%, #0A2338 0%, var(--navy-900) 72%);}
+.deep::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 8%, rgba(0,212,255,.14), transparent 55%);}
+.deep > .wrap{position:relative;z-index:1;}
+.section{padding-block:var(--sy);}
+.section-tight{padding-block:clamp(2.5rem,5vw,4rem);}
+.crumbs{font-size:.82rem;color:var(--slate);display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;}
+.crumbs a{color:var(--slate);transition:color .2s;}
+.crumbs a:hover{color:var(--cyan);}
+.crumbs .sep{color:var(--navy-700);}
+.crumbs [aria-current="page"]{color:var(--mist);}
+.cta{background:linear-gradient(120deg,#0A2135,#0b3a55 55%,#0e506f);}
+.cta .wrap{text-align:center;display:flex;flex-direction:column;align-items:center;}
+.cta h2{color:#fff;font-size:clamp(1.7rem,4vw,2.8rem);max-width:24ch;}
+.cta p{margin:1.3rem auto 2.2rem;max-width:52ch;color:var(--mist);font-size:1.08rem;font-weight:300;}
+footer.site{background:var(--navy-900);border-top:1px solid var(--navy-700);padding-block:clamp(3rem,6vw,4rem) 2rem;}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem;}
+.foot-brand img{width:200px;height:auto;margin-bottom:1.2rem;}
+.foot-brand p{font-size:.92rem;color:var(--slate);max-width:44ch;line-height:1.6;}
+.foot-strap{margin-top:1.2rem;font-weight:600;color:#fff;letter-spacing:.02em;}
+.foot-col h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin:0 0 1.1rem;font-weight:600;}
+.foot-col ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;}
+.foot-col a{font-size:.92rem;color:var(--text);transition:color .2s;}
+.foot-col a:hover{color:var(--cyan);}
+.foot-bottom{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--navy-700);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center;}
+.foot-bottom p{font-size:.82rem;color:var(--slate);}
+.foot-desc{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--cyan);letter-spacing:.03em;}
+a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;}
+
+/* page components */
+.phero{padding-block:clamp(2.6rem,6vw,4rem) clamp(2.5rem,5vw,3.5rem);}
+.phero h1{font-size:clamp(2.2rem,5.4vw,3.7rem);max-width:20ch;margin-top:1.6rem;}
+.phero .standfirst{font-weight:300;font-size:clamp(1.1rem,1.8vw,1.4rem);color:var(--mist);max-width:58ch;margin-top:1.5rem;line-height:1.5;}
+.cta-row{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:1rem;}
+.section-head{max-width:62ch;margin-bottom:clamp(1.8rem,4vw,2.8rem);}
+.section-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem);}
+.section-head p{color:var(--slate);margin-top:.9rem;font-size:1.05rem;line-height:1.6;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.panel{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.7rem 1.8rem;}
+.panel .k{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);}
+.panel h3{font-size:1.15rem;margin:.7rem 0 .55rem;color:#fff;}
+.panel p{font-size:.96rem;color:var(--text);line-height:1.6;}
+.measure{max-width:64ch;}
+.measure p{color:var(--text);font-size:1.05rem;line-height:1.75;}
+.measure p + p{margin-top:1.1rem;}
+.measure a,.inline-link{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(78,230,255,.4);}
+.proof{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:clamp(1.8rem,4vw,2.6rem);}
+.proof .big{font-size:clamp(1.4rem,3vw,2rem);color:#fff;max-width:32ch;line-height:1.25;}
+.proof p{margin-top:1.1rem;color:var(--text);max-width:64ch;line-height:1.65;font-size:1.02rem;}
+.proof p a{color:var(--aqua);text-decoration:underline;text-underline-offset:3px;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.opt{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.8rem 1.9rem;display:flex;flex-direction:column;}
+.opt .tag{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);}
+.opt h3{font-size:1.35rem;margin:.55rem 0 .5rem;}
+.opt p{color:var(--text);font-size:.98rem;line-height:1.6;flex:1;}
+.opt .go{margin-top:1.2rem;font-weight:600;color:var(--aqua);font-size:.95rem;}
+.opt .go:hover{color:#fff;}
+
+/* brief builder */
+.brief{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:clamp(1.6rem,4vw,2.4rem);}
+.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem;}
+.fs{border:0;padding:0;margin:0;min-width:0;}
+.fs legend{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;padding:0;}
+.field{margin-bottom:1.1rem;}
+.field label{display:block;font-size:.82rem;font-weight:600;color:var(--mist);margin-bottom:.45rem;}
+.field input[type=text],.field input[type=number],.field input[type=email],.field select,.field textarea{
+  width:100%;background:var(--navy-900);border:1px solid var(--navy-700);border-radius:var(--r);color:#fff;
+  font-family:'Montserrat',sans-serif;font-size:.98rem;padding:.7rem .85rem;outline:none;}
+.field .mono-in{font-family:'IBM Plex Mono',monospace;}
+.field textarea{resize:vertical;min-height:80px;line-height:1.5;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--cyan);}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--slate) 50%),linear-gradient(135deg,var(--slate) 50%,transparent 50%);background-position:calc(100% - 18px) 1.1rem,calc(100% - 12px) 1.1rem;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:2.2rem;}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .9rem;}
+.checks label{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:400;color:var(--text);cursor:pointer;margin:0;}
+.checks input{accent-color:var(--cyan);width:16px;height:16px;}
+.brief-preview{margin-top:1.8rem;border-top:1px solid var(--navy-700);padding-top:1.6rem;}
+.brief-preview h4{font-size:.9rem;color:#fff;margin-bottom:.8rem;}
+.brief-preview pre{background:var(--navy-900);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.1rem 1.2rem;color:var(--mist);font-family:'IBM Plex Mono',monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word;max-height:340px;overflow:auto;margin:0;}
+.brief-actions{margin-top:1.3rem;display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;}
+.brief-note{font-size:.78rem;color:var(--slate);margin-top:1rem;line-height:1.55;}
+.copied{font-size:.82rem;color:var(--aqua);font-family:'IBM Plex Mono',monospace;}
+@media (max-width:820px){
+  .grid-3{grid-template-columns:1fr;}
+  .opts{grid-template-columns:1fr;}
+  .brief-grid{grid-template-columns:1fr;}
+  .checks{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;gap:2rem;}
+  .nav-links{position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--navy-800);border-bottom:1px solid var(--navy-700);padding:0;max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .nav-links.open{max-height:520px;}
+  .no-js .nav-links{max-height:none;}
+  .nav-links li{width:100%;border-top:1px solid var(--navy-700);}
+  .nav-links li:first-child{border-top:0;}
+  .nav-links a{display:block;padding:1rem var(--pad);width:100%;}
+  .nav-cta{margin:1rem var(--pad);}
+  .nav-toggle{display:block;}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Service","name":"Bespoke off-grid power engineering","serviceType":"Off-grid power system engineering",
+     "provider":{"@type":"Organization","name":"Melrakki Systems","url":"https://www.melrakki.systems/"},
+     "areaServed":"Worldwide",
+     "description":"Custom autonomous off-grid power systems engineered around a customer's device, site and constraints, where a standard platform cannot meet the requirement.",
+     "url":"https://www.melrakki.systems/bespoke/"},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.melrakki.systems/"},
+      {"@type":"ListItem","position":2,"name":"Bespoke","item":"https://www.melrakki.systems/bespoke/"}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/lockup-horizontal-dark.png" alt="Melrakki Systems"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/bespoke/" aria-current="page">Bespoke</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/#sectors">Sectors</a></li>
+        <li><a href="/resilience/">Notes</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="deep phero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span><span aria-current="page">Bespoke</span>
+    </nav>
+    <p class="eyebrow" style="margin-top:1.6rem;">Bespoke off-grid power</p>
+    <h1>Off-grid power, engineered to your application.</h1>
+    <p class="standfirst">Our standard platforms cover the common cases. When your requirement does not fit one, that is where Melrakki does its best work: we engineer the autonomous power system around your device, your site and your constraints, with the same discipline and the same proven hardware.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#brief">Develop your requirement</a>
+      <a class="btn btn-secondary" href="mailto:hello@melrakki.systems?subject=Bespoke%20off-grid%20power%20enquiry">Talk to an engineer</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHEN STANDARD ISN'T THE ANSWER -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">When a standard platform will not do</p>
+      <h2>Most off-grid power problems don't come in a standard size.</h2>
+      <p>The Harka range and Greni are productised for the patterns we see most often. Plenty of requirements sit outside them, and those are the ones worth engineering properly rather than forcing into a catalogue.</p>
+    </div>
+    <div class="grid-3">
+      <div class="panel">
+        <p class="k">01</p>
+        <h3>An unusual load or device</h3>
+        <p>A payload with a heavy peak, an odd voltage, a demanding duty cycle, or a piece of equipment that has to be integrated and powered as one system rather than bolted onto a tower.</p>
+      </div>
+      <div class="panel">
+        <p class="k">02</p>
+        <h3>A specific environment</h3>
+        <p>Somewhere a standard platform was never sized for: a harder winter, a hotter climate, a marine or high-altitude site, or an access window that makes a service visit rare and expensive.</p>
+      </div>
+      <div class="panel">
+        <p class="k">03</p>
+        <h3>A hard constraint</h3>
+        <p>A limit on size, weight, portability, signature, mounting or timeline that the requirement has to be built around, not compromised against.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAME ENGINEERING -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The same engineering, built to your brief</p>
+      <h2>We don't start from a catalogue. We start from the load.</h2>
+    </div>
+    <div class="measure">
+      <p>Bespoke does not mean starting from nothing. It means the same method behind every Melrakki platform, applied to a requirement that happens to be one of a kind. We characterise the exact load, its duty cycle and the conditions it has to survive, then engineer generation, storage, power management, backup and monitoring around it, using proven hardware so nothing critical rests on an unproven part. The approach is set out in full in <a href="/resilience/designing-power-from-the-load-backwards/">designing power from the load backwards</a>.</p>
+      <p>That covers a wide space: solar, battery and hybrid architectures; integration with your own equipment; the communications and remote monitoring the site needs; and the form factor the deployment demands, whether that is a mast, a skid, an enclosure or something built to mount on your asset directly. The same resilience thinking applies as everywhere else we work, described in <a href="/resilience/when-the-grid-goes-away/">resilience at the remote edge</a>: reduce the dependencies that can fail, and design for the worst credible week rather than the best day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITY & CAPACITY -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="proof">
+      <p class="eyebrow">Capability and capacity</p>
+      <p class="big">The capability to engineer it, and the capacity to build it.</p>
+      <p>Bespoke work is an extension of proven capability, not a leap into the unknown. Melrakki designs and builds its own platform architecture, drawing on more than a decade of deploying off-grid solar surveillance and autonomous power into demanding sectors, from oil and gas to highways, construction and critical infrastructure, including solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, and granted patents in solar-powered surveillance and autonomous off-grid power. When a requirement falls outside the standard range, that same team engineers the answer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BRIEF BUILDER -->
+<section class="section" id="brief" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Develop your requirement</p>
+      <h2>Build a brief in a couple of minutes.</h2>
+      <p>The better the brief, the faster and sharper the answer. Fill in what you know and leave the rest; the tool assembles a clear requirement you can send us or keep. Nothing is submitted automatically, and nothing is stored: it stays in your browser until you send it.</p>
+    </div>
+    <div class="brief">
+      <form id="briefForm" novalidate>
+        <div class="brief-grid">
+          <fieldset class="fs">
+            <legend>The application</legend>
+            <div class="field">
+              <label for="app">What needs power?</label>
+              <input type="text" id="app" placeholder="e.g. a remote gas-detection sensor array">
+            </div>
+            <div class="field">
+              <label for="runMode">Operating pattern</label>
+              <select id="runMode">
+                <option value="">Select…</option>
+                <option>Continuous, around the clock</option>
+                <option>Scheduled / daytime</option>
+                <option>Event-driven / intermittent</option>
+                <option>Mostly standby, occasional bursts</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend>The power</legend>
+            <div class="field">
+              <label for="loadAvg">Average continuous load (W)</label>
+              <input type="number" id="loadAvg" class="mono-in" min="0" step="1" inputmode="numeric" placeholder="e.g. 40">
+            </div>
+            <div class="field">
+              <label for="loadPeak">Peak load (W), if known</label>
+              <input type="number" id="loadPeak" class="mono-in" min="0" step="1" inputmode="numeric" placeholder="e.g. 150">
+            </div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend>The site</legend>
+            <div class="field">
+              <label for="location">Location</label>
+              <input type="text" id="location" placeholder="e.g. Highlands, Scotland">
+            </div>
+            <div class="field">
+              <label for="access">Access</label>
+              <select id="access">
+                <option value="">Select…</option>
+                <option>Easy, by road</option>
+                <option>Difficult / off-road</option>
+                <option>Seasonal window only</option>
+                <option>Helicopter or convoy</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Conditions to design for</label>
+              <div class="checks" id="conditions">
+                <label><input type="checkbox" value="Extreme cold">Extreme cold</label>
+                <label><input type="checkbox" value="High heat">High heat</label>
+                <label><input type="checkbox" value="Snow / ice">Snow / ice</label>
+                <label><input type="checkbox" value="High wind">High wind</label>
+                <label><input type="checkbox" value="Coastal / marine">Coastal / marine</label>
+                <label><input type="checkbox" value="Dust / sand">Dust / sand</label>
+                <label><input type="checkbox" value="Heavy shade">Heavy shade</label>
+                <label><input type="checkbox" value="High altitude">High altitude</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend>The requirement</legend>
+            <div class="field">
+              <label for="duration">Deployment length</label>
+              <select id="duration">
+                <option value="">Select…</option>
+                <option>Weeks</option>
+                <option>Months</option>
+                <option>A year or more</option>
+                <option>Permanent</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="uptime">Uptime need</label>
+              <select id="uptime">
+                <option value="">Select…</option>
+                <option>Best-effort</option>
+                <option>High</option>
+                <option>Mission-critical</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Communications / monitoring</label>
+              <div class="checks" id="comms">
+                <label><input type="checkbox" value="Cellular 4G/5G">Cellular 4G/5G</label>
+                <label><input type="checkbox" value="Satellite">Satellite</label>
+                <label><input type="checkbox" value="Remote monitoring">Remote monitoring</label>
+                <label><input type="checkbox" value="Local recording">Local recording</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs" style="grid-column:1/-1;">
+            <legend>Constraints and context</legend>
+            <div class="field">
+              <label for="constraints">Anything the design must be built around</label>
+              <textarea id="constraints" placeholder="Size, weight, portability, signature, mounting, budget, timeline, regulatory or security requirements…"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend>You</legend>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="org">Organisation</label>
+              <input type="text" id="org" autocomplete="organization">
+            </div>
+          </fieldset>
+
+          <fieldset class="fs">
+            <legend>&nbsp;</legend>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" autocomplete="email" placeholder="you@organisation.com">
+            </div>
+          </fieldset>
+        </div>
+      </form>
+
+      <div class="brief-preview">
+        <h4>Your brief</h4>
+        <pre id="briefOut" aria-live="polite"></pre>
+        <div class="brief-actions">
+          <a class="btn btn-primary" id="briefSend" href="#">Send this brief</a>
+          <button type="button" class="btn btn-secondary" id="briefCopy">Copy brief</button>
+          <span class="copied" id="copied" hidden>Copied.</span>
+        </div>
+        <p class="brief-note">"Send" opens your own email app with the brief filled in, addressed to hello@melrakki.systems. Nothing leaves your browser until you send it, and nothing is stored.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE STANDARD FITS -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where a standard platform fits</p>
+      <h2>If your need is a common one, start here.</h2>
+      <p>Not every requirement needs bespoke work. Where the pattern is one we have already productised, a standard platform is faster and cheaper, and it is engineered to the same standard.</p>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="tag">Autonomous drones &middot; in production</p>
+        <h3>Greni</h3>
+        <p>An off-grid charging and docking den for autonomous drones, so persistent and beyond-line-of-sight operations keep flying with no power at the landing zone.</p>
+        <a class="go" href="/resilience/off-grid-drone-infrastructure/">Read the thinking behind Greni &rarr;</a>
+      </div>
+      <div class="opt">
+        <p class="tag">Remote surveillance, comms and sensors</p>
+        <h3>The Harka range</h3>
+        <p>Autonomous off-grid power in two tiers: Harka Solar, solar and battery only, and Harka Hybrid, with an HVO Stage V backup for guaranteed uptime through deep winter and heavy loads.</p>
+        <a class="go" href="/harka/">View the Harka platforms &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CTA -->
+<section class="section-tight cta">
+  <div class="wrap">
+    <h2>Tell us what needs power, and where.</h2>
+    <p>Bring us the load, the location, the conditions and the constraints. We will engineer the power that keeps it alive.</p>
+    <a class="btn btn-primary" href="mailto:hello@melrakki.systems?subject=Bespoke%20off-grid%20power%20enquiry">Talk to an engineer</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/lockup-horizontal-dark.png" alt="Melrakki Systems">
+        <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
+        <p class="foot-strap">Power that holds.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/bespoke/">Bespoke</a></li>
+          <li><a href="/harka/">Harka platforms</a></li>
+          <li><a href="/#sectors">Sectors</a></li>
+          <li><a href="/resilience/">Notes</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="/Melrakki-Harka-Hybrid.pdf">Harka Hybrid brochure</a></li>
+          <li><a href="/Melrakki-Harka-Solar.pdf">Harka Solar brochure</a></li>
+          <li><a href="mailto:hello@melrakki.systems">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>hello@melrakki.systems &nbsp;|&nbsp; &copy; 2026 Melrakki Systems.</p>
+      <p class="foot-desc">Autonomous power for the hardest places on earth.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(t&&l){t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});}
+
+  var out=document.getElementById('briefOut'), send=document.getElementById('briefSend'),
+      copy=document.getElementById('briefCopy'), copied=document.getElementById('copied');
+  if(!out) return;
+  function val(id){ var e=document.getElementById(id); return e?e.value.trim():''; }
+  function checks(id){
+    var box=document.getElementById(id); if(!box) return [];
+    return Array.prototype.filter.call(box.querySelectorAll('input:checked'),function(c){return c.checked;}).map(function(c){return c.value;});
+  }
+  function line(label,v){ return v ? label+': '+v+'\n' : ''; }
+  function build(){
+    var cond=checks('conditions').join(', '), comms=checks('comms').join(', ');
+    var b='OFF-GRID POWER REQUIREMENT\n';
+    b+='=========================\n\n';
+    b+='THE APPLICATION\n';
+    b+=line('What needs power', val('app'));
+    b+=line('Operating pattern', val('runMode'));
+    b+='\nTHE POWER\n';
+    b+=line('Average continuous load', val('loadAvg') && val('loadAvg')+' W');
+    b+=line('Peak load', val('loadPeak') && val('loadPeak')+' W');
+    b+='\nTHE SITE\n';
+    b+=line('Location', val('location'));
+    b+=line('Access', val('access'));
+    b+=line('Conditions to design for', cond);
+    b+='\nTHE REQUIREMENT\n';
+    b+=line('Deployment length', val('duration'));
+    b+=line('Uptime need', val('uptime'));
+    b+=line('Communications / monitoring', comms);
+    b+=line('Constraints and context', val('constraints'));
+    b+='\nCONTACT\n';
+    b+=line('Name', val('name'));
+    b+=line('Organisation', val('org'));
+    b+=line('Email', val('email'));
+    return b.replace(/\n{3,}/g,'\n\n').trim();
+  }
+  function refresh(){
+    var text=build();
+    out.textContent=text;
+    send.setAttribute('href','mailto:hello@melrakki.systems?subject='+encodeURIComponent('Bespoke off-grid power requirement')+'&body='+encodeURIComponent(text));
+    if(copied){ copied.hidden=true; }
+  }
+  document.getElementById('briefForm').addEventListener('input',refresh);
+  document.getElementById('briefForm').addEventListener('change',refresh);
+  copy.addEventListener('click',function(){
+    var text=build();
+    function done(){ if(copied){ copied.hidden=false; setTimeout(function(){copied.hidden=true;},2500); } }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done,function(){}); }
+    else { var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); done(); }
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>
