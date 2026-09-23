@@ -1,13 +1,13 @@
 # Melrakki Systems
 
-> Melrakki Systems designs and supplies autonomous off-grid power platforms, solar and battery towers and masts, that keep surveillance, communications and drone systems running in the most remote and hostile places on earth, with no mains power and no fuel convoy.
+> Melrakki Systems engineers autonomous off-grid power for the hardest places on earth, keeping surveillance, communications, drones and other remote devices running with no mains power and no fuel convoy. Its headline offer is bespoke: power systems engineered around a customer's specific device, site and constraints. It also supplies productised platforms, Greni for autonomous drones and the Harka range for remote surveillance, communications and sensors.
 
 Melrakki engineers each platform from the load backwards, sizing it to the exact power draw, duty cycle and conditions it has to sustain, then integrating proven power hardware so nothing critical rests on an unproven part. The company draws on more than a decade of deploying off-grid solar surveillance into demanding sectors. The name is the Icelandic word for the Arctic fox, the only animal that thrives unaided through the polar winter. Strapline: Power that holds. Business to business, worldwide.
 
-## Platforms
-- [Melrakki Harka Hybrid, model MK-HK-H6](https://www.melrakki.systems/harka/): The endurance tier. Solar, battery and a Stage V backup generator running on HVO renewable diesel, for guaranteed uptime through low light, deep winter and heavy loads. Silent and zero emission in battery mode; the generator engages only to recharge.
-- [Melrakki Harka Solar, model MK-HK-S6](https://www.melrakki.systems/harka/): The clean tier. Solar and battery only, no fuel, no emissions and no noise, for the lowest signature and running cost where irradiance allows.
-- [Melrakki Greni, model MK-GR-01](https://www.melrakki.systems/): An off-grid charging and docking station for autonomous drones, so persistent and beyond line of sight operations keep flying with no power at the landing zone. In development.
+## What Melrakki offers
+- [Bespoke off-grid power](https://www.melrakki.systems/bespoke/): The headline offer. When a requirement does not fit a standard platform, Melrakki engineers the autonomous power system around the customer's device, site and constraints, using the same method and proven hardware. A brief builder on the page helps a customer develop their requirement.
+- [Melrakki Greni, model MK-GR-01](https://www.melrakki.systems/): An off-grid charging and docking station for autonomous drones, so persistent and beyond line of sight operations keep flying with no power at the landing zone. In production.
+- [Melrakki Harka range](https://www.melrakki.systems/harka/): The standard platforms for remote surveillance, communications and sensors. Harka Hybrid (MK-HK-H6), the endurance tier, adds a Stage V backup generator on HVO renewable diesel for guaranteed uptime through deep winter and heavy loads. Harka Solar (MK-HK-S6), the clean tier, is solar and battery only, no fuel, emissions or noise.
 
 ## Sectors served
 - Priority: oil and gas, defence and public sector, and extreme and hostile location sites.
