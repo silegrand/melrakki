@@ -205,7 +205,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible{
     background:var(--navy-800);border-bottom:1px solid var(--navy-700);
     padding:0;max-height:0;overflow:hidden;transition:max-height .3s ease;
   }
-  .nav-links.open{max-height:420px;}
+  .nav-links.open{max-height:640px;}
   .no-js .nav-links{max-height:none;}
   .nav-links li{width:100%;border-top:1px solid var(--navy-700);}
   .nav-links li:first-child{border-top:0;}
