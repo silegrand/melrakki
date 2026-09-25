@@ -301,6 +301,12 @@
   .btn{text-align:center;}
   /* hero */
   .hero-fox,.story-fox img{height:auto;}
+  .hero .hero-actions{display:inline-grid;grid-template-columns:1fr;}
+  .hero .hero-actions .btn{justify-content:center;padding-inline:1.3rem;}
+  @media (min-width:901px){ .hero-grid{grid-template-columns:1.3fr .7fr;} }
+  @media (min-width:1140px){ .hero .hero-actions{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .hero .hero-actions{display:grid;} }
+  @media (min-width:901px) and (max-width:1100px){ .nav-links{gap:1.1rem;} .nav-links a{font-size:.88rem;} .brand img{height:38px;} }
   .hero-sub{margin:1.5rem 0 1.2rem;}
   .hero-loads{list-style:none;margin:0 0 2.3rem;padding:0;display:flex;flex-wrap:wrap;gap:.35rem 1.15rem;}
   .hero-loads li{font-weight:600;font-size:.95rem;color:#fff;position:relative;padding-left:1rem;}
@@ -308,7 +314,7 @@
 
   /* problem */
   .deps{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));border-top:1px solid var(--line-d);}
-  .deps li{padding:.8rem 1rem .8rem 0;border-bottom:1px solid var(--line-d);font-size:.95rem;color:var(--mist);}
+  .deps li{padding:.8rem 1rem .8rem 0;border-bottom:1px solid var(--line-d);font-size:.95rem;font-weight:500;color:var(--cyan);}
   .pull{margin-top:2rem;font-size:clamp(1.1rem,1.8vw,1.35rem);line-height:1.45;color:#fff;font-weight:500;max-width:40ch;}
 
   /* dependency diagram */
@@ -359,8 +365,6 @@
   .proc-g.arch li{border-color:var(--cyan-ink);}
   .proc-q{margin-top:clamp(2.2rem,4vw,3rem);display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;}
   .proc-q .ask{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:700;color:var(--ink);line-height:1.2;}
-  .proc-q .not{font-size:.95rem;color:var(--slate-l);margin-bottom:.4rem;}
-  .proc-q .not s{text-decoration-thickness:1px;}
 
   /* pillars */
   .pillar h3 span{display:block;font-weight:500;color:var(--ink-soft);font-size:.98rem;margin-top:.2rem;}
@@ -379,7 +383,7 @@
   /* custom */
   .custom{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;}
   .tellus{list-style:none;margin:0;padding:0;}
-  .tellus li{font-size:clamp(1.5rem,3.2vw,2.3rem);font-weight:300;color:#fff;line-height:1.25;padding:.55rem 0;border-bottom:1px solid var(--line-d);}
+  .tellus li{font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:700;letter-spacing:-0.015em;color:#fff;line-height:1.2;padding:.55rem 0;border-bottom:1px solid var(--line-d);}
   .tellus li:first-child{border-top:1px solid var(--line-d);}
 
   /* sectors */
@@ -683,7 +687,6 @@
     </div>
     <div class="proc-q">
       <div>
-        <p class="not">We do not begin with <s>which product can we sell?</s></p>
         <p class="ask">We begin with what needs to keep running.</p>
       </div>
       <p class="lead" style="margin-top:0">The result is a system built for one job: keeping your equipment alive, unattended, in places where a site visit means a helicopter, a convoy or a shutdown. <a class="tlink" href="/resilience/designing-power-from-the-load-backwards/">How we size a system</a></p>
@@ -725,7 +728,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Platforms</p>
-      <h2 id="platforms-h">The architectures we have already productised.</h2>
+      <h2 id="platforms-h">The architectures we have already created.</h2>
       <p class="lead">Each platform is a proven answer to a recurring class of problem, engineered with the same method as our bespoke work. Where a requirement fits one, it is faster and simpler to deploy. Concept schematics shown; each is supplied ready for your own equipment.</p>
     </div>
     <div class="plat-grid">
@@ -1102,7 +1105,7 @@
     <div class="section-head">
       <p class="eyebrow">Bespoke engineering</p>
       <h2 id="bespoke-h">When the standard platform isn't enough.</h2>
-      <p class="lead">The platforms above are the architectures we have already productised. They are not the limit of what we build. For requirements that don't fit a standard platform, we engineer the system from the load backwards, with the same discipline and the same proven hardware.</p>
+      <p class="lead">The platforms above are the architectures we have already created. They are not the limit of what we build. For requirements that don't fit a standard platform, we engineer the system from the load backwards, with the same discipline and the same proven hardware.</p>
       <div class="plat-actions">
         <a class="btn btn-primary" href="/bespoke/#brief">Develop your requirement</a>
         <a class="btn btn-secondary" href="mailto:hello@melrakki.systems?subject=Bespoke%20off-grid%20power%20enquiry">Talk to an engineer</a>
