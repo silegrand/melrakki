@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The last mile of resilience | Melrakki Systems</title>
+<meta name="description" content="Critical infrastructure is only as resilient as its furthest node. Why resilience has to reach the edge, and what autonomous edge infrastructure means.">
+<link rel="canonical" href="https://www.melrakki.systems/resilience/the-last-mile-of-resilience/">
+<meta name="theme-color" content="#071A2B">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Melrakki Systems">
+<meta property="og:title" content="The last mile of resilience">
+<meta property="og:description" content="Critical infrastructure does not stop at the control room. Why resilience has to reach the furthest point where the mission is performed.">
+<meta property="og:url" content="https://www.melrakki.systems/resilience/the-last-mile-of-resilience/">
+<meta property="og:image" content="https://www.melrakki.systems/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The last mile of resilience">
+<meta name="twitter:description" content="Critical infrastructure does not stop at the control room. Why resilience has to reach the furthest point where the mission is performed.">
+<meta name="twitter:image" content="https://www.melrakki.systems/social-preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .prose .pullquote{margin:2.6rem auto;padding:0 0 0 1.6rem;max-width:var(--prose);border-left:3px solid var(--cyan);}
+  .prose .pullquote p{font-size:clamp(1.3rem,3vw,1.65rem);line-height:1.36;font-weight:300;color:#fff;letter-spacing:-0.01em;margin:0;}
+  .prose a.cite{font-family:'IBM Plex Mono',monospace;font-size:.78em;text-decoration:none;vertical-align:super;line-height:0;margin-left:.1em;}
+  .dep-fig{margin:2.4rem 0;}
+  .dep-fig svg{width:100%;height:auto;background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);}
+  .dep-fig .box{fill:var(--navy-900);stroke:var(--navy-700);stroke-width:1.2;}
+  .dep-fig .box.hi{stroke:var(--cyan);}
+  .dep-fig .box.loc{stroke:var(--aqua);}
+  .dep-fig .box.ext{stroke:var(--slate-l);stroke-dasharray:4 3;}
+  .dep-fig .ln{stroke:var(--slate);stroke-width:1.4;fill:none;}
+  .dep-fig .ah{fill:var(--slate);}
+  .dep-fig .feed{stroke:var(--slate-l);stroke-width:3;}
+  .dep-fig .grad{fill:url(#lmg);}
+  .dep-fig .node.on{fill:var(--cyan);stroke:var(--aqua);stroke-width:2;}
+  .dep-fig .node.off{fill:var(--navy-900);stroke:var(--slate-l);stroke-width:2;stroke-dasharray:3 3;}
+  .dep-fig .pv{fill:var(--aqua);opacity:.8;}
+  .dep-fig .x{fill:#ff6b6b;font-size:22px;font-weight:700;text-anchor:middle;}
+  .dep-fig text{font-family:'Montserrat',sans-serif;}
+  .dep-fig .t{fill:var(--mist);font-size:12.5px;text-anchor:middle;}
+  .dep-fig .t-b{fill:var(--cyan);font-size:10.5px;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;}
+  .dep-fig .t-l{fill:var(--text);font-size:12px;}
+  .dep-fig .t-s{fill:var(--slate);font-size:12.5px;text-anchor:middle;font-style:italic;}
+  .dep-fig figcaption{margin-top:1rem;font-size:.9rem;line-height:1.6;color:var(--slate);}
+  .prose .src-note{font-size:.95rem;color:var(--slate);}
+  .prose ol.sources{margin-top:1rem;padding-left:1.4rem;display:grid;gap:.6rem;}
+  .prose ol.sources li{font-size:.92rem;line-height:1.55;color:var(--text);}
+  @media (max-width:820px){.prose .pullquote{padding-left:1.1rem;}}
+  .dep-fig .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .dep-fig .hint{display:none;font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--slate);margin-top:.5rem;}
+  @media (max-width:600px){.dep-fig .scroll svg{min-width:600px;}.dep-fig .hint{display:block;}}
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "The last mile of resilience",
+ "alternativeHeadline": "Why the most overlooked part of critical infrastructure may be the infrastructure at its edge",
+ "description": "Critical infrastructure is only as resilient as its furthest node. Why resilience has to reach the edge, and what autonomous edge infrastructure means.",
+ "inLanguage": "en-GB",
+ "datePublished": "2026-09-25",
+ "dateModified": "2026-09-25",
+ "wordCount": 3040,
+ "keywords": "critical infrastructure resilience, infrastructure resilience, autonomous edge infrastructure, remote infrastructure, resilient power systems, off-grid infrastructure, CNI resilience, remote power systems",
+ "author": {
+  "@type": "Person",
+  "name": "Simon Legrand",
+  "jobTitle": "Founder, Melrakki Systems",
+  "url": "https://www.melrakki.systems/about/#founder",
+  "sameAs": [
+   "https://www.simonlegrand.co.uk/"
+  ]
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Melrakki Systems",
+  "url": "https://www.melrakki.systems/",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://www.melrakki.systems/icon-512.png"
+  }
+ },
+ "image": "https://www.melrakki.systems/social-preview.png",
+ "mainEntityOfPage": {
+  "@type": "WebPage",
+  "@id": "https://www.melrakki.systems/resilience/the-last-mile-of-resilience/"
+ },
+ "isPartOf": {
+  "@type": "CollectionPage",
+  "name": "Where the Grid Ends",
+  "url": "https://www.melrakki.systems/resilience/"
+ },
+ "citation": [
+  "https://www.gov.uk/government/publications/storm-arwen-electricity-distribution-disruption-review",
+  "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1081116/storm-arwen-review-final-report.pdf",
+  "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1055504/arwen-review-interim-report.pdf",
+  "https://assets.publishing.service.gov.uk/media/62828be08fa8f556165a1dec/GOV.UK_ECRRG_Post_Incident_Report_-_2021_2022_Severe_Storms.pdf",
+  "https://www.ofcom.org.uk/siteassets/resources/documents/consultations/category-1-10-weeks/272921-resilience-guidance-and-mobile-ran-power-back-up/associated-documents/mobile-ran-power-resilience-technical-report-cfi-update.pdf?v=390945",
+  "https://www.gov.uk/government/publications/uk-government-resilience-action-plan/uk-government-resilience-action-plan-html",
+  "https://www.npsa.gov.uk/security-best-practices/protective-security-risk-management-psrm",
+  "https://www.npsa.gov.uk/security-best-practices/build-it-secure/network-connected-security-technologies-ncst",
+  "https://www.mi5.gov.uk/director-general-sir-ken-mccallum-gives-threat-update",
+  "https://assets.publishing.service.gov.uk/media/67b5f85732b2aab18314bbe4/National_Risk_Register_2025.pdf"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://www.melrakki.systems/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Resilience",
+   "item": "https://www.melrakki.systems/resilience/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "The last mile of resilience",
+   "item": "https://www.melrakki.systems/resilience/the-last-mile-of-resilience/"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/#approach">Approach</a></li>
+        <li><a href="/#sectors">Sectors</a></li>
+        <li><a href="/resilience/" aria-current="page">Notes</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+
+<main id="main">
+
+<section class="deep article-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span>
+      <a href="/resilience/">Resilience</a><span class="sep">/</span>
+      <span aria-current="page">The last mile of resilience</span>
+    </nav>
+    <div class="article-head">
+      <p class="eyebrow" style="margin-top:1.8rem;">Autonomous edge infrastructure</p>
+      <h1>The last mile of resilience</h1>
+      <p class="standfirst">Why the most overlooked part of critical infrastructure may be the infrastructure at its edge.</p>
+      <div class="article-meta">
+        <span>By Simon Legrand</span>
+        <span class="dotsep">&middot;</span>
+        <span>Critical infrastructure</span>
+        <span class="dotsep">&middot;</span>
+        <span>14 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="section" style="padding-top:clamp(1.5rem,4vw,2.5rem);">
+  <div class="wrap">
+    <div class="prose">
+
+      <p class="lead-para">Picture a well-run operator of distributed infrastructure. A staffed monitoring centre. Secure networks with more than one path. Trained people, tested procedures, resilient systems at headquarters. The scenario that follows is a composite, not a specific incident.</p>
+
+      <p>A storm crosses a remote part of the network overnight. By morning, the monitoring centre is working normally. The core network is up. The dashboards are up. The people are at their desks.</p>
+
+      <p>But a line of remote monitoring nodes along one section of the network has gone quiet. Their local supply failed in the night. Their backup batteries carried them for a few hours, as designed, and then ran out. The roads to them are blocked, and the earliest anyone can reach them is tomorrow.</p>
+
+      <p>Nothing at the centre has failed.</p>
+
+      <p>The visibility has.</p>
+
+      <p>The problem is not the centre. It is the edge.</p>
+
+      <h2>The edge is part of the system</h2>
+      <p>In <a href="/resilience/when-the-infrastructure-becomes-the-vulnerability/">When the infrastructure becomes the vulnerability</a>, we asked what a security system depends upon, and traced the chain of power, communications and logistics beneath it. This note asks the next question. What happens to that chain when the system reaches the edge?</p>
+      <p>Resilience is usually discussed at the scale of the centre: national generation, telecommunications cores, data centres, control rooms, transport systems. That is where the investment is visible and the engineering is mature.</p>
+      <p>But critical capability does not stop at the control room. It eventually reaches a physical point where the mission is performed: a camera on a pipeline, a sensor on a rail corridor, a radio on a hilltop, a monitoring node at a substation, a drone dock on a remote perimeter. That point may be hundreds of kilometres from the centre. It may be exposed to the weather, have intermittent communications, no mains power, and a helicopter or specialist vehicle as its only means of access.</p>
+      <p>The final node can have very different resilience characteristics from the system it belongs to. It is easy to treat it as an endpoint. It is better understood as part of the architecture.</p>
+
+      <h2>The last mile of resilience</h2>
+      <p>Telecommunications engineers have long used the phrase last mile for the final, hardest and most expensive stretch of a network to reach the customer. Borrowing it, we use <strong>the last mile of resilience</strong> to mean the stretch between a resilient centre and the furthest point where critical capability actually operates.</p>
+      <p>Follow a critical system outwards and the supporting infrastructure thins at every step. National or organisational infrastructure gives way to regional, then remote infrastructure, then a single critical node, and finally the mission equipment itself. At each step it is worth asking the question from the first note: what does this layer depend upon?</p>
+
+      <figure class="dep-fig wide" aria-labelledby="fig1cap">
+        <div class="scroll"><svg viewBox="0 0 640 250" role="img" aria-label="The last mile of resilience: resilience tends to be strongest at the centre and weakest at the edge node where the mission equipment operates, while power, communications and access become harder to provide with distance.">
+          <defs><linearGradient id="lmg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#00D4FF" stop-opacity=".7"/><stop offset="1" stop-color="#5A6C7B" stop-opacity=".25"/></linearGradient><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="ah"/></marker></defs>
+          <g class="stages">
+            <rect x="10" y="40" width="108" height="70" rx="6" class="box hi"/><text x="64" y="70" class="t">National or</text><text x="64" y="88" class="t">organisational</text>
+            <rect x="136" y="40" width="108" height="70" rx="6" class="box"/><text x="190" y="79" class="t">Regional</text>
+            <rect x="262" y="40" width="108" height="70" rx="6" class="box"/><text x="316" y="79" class="t">Remote</text>
+            <rect x="388" y="40" width="108" height="70" rx="6" class="box ext"/><text x="442" y="79" class="t">Edge node</text>
+            <rect x="514" y="40" width="116" height="70" rx="6" class="box loc"/><text x="572" y="70" class="t">Mission</text><text x="572" y="88" class="t">equipment</text>
+            <path d="M118 75 H132" class="ln" marker-end="url(#ar)"/><path d="M244 75 H258" class="ln" marker-end="url(#ar)"/><path d="M370 75 H384" class="ln" marker-end="url(#ar)"/><path d="M496 75 H510" class="ln" marker-end="url(#ar)"/>
+          </g>
+          <text x="10" y="24" class="t-b">WHERE RESILIENCE IS USUALLY DISCUSSED</text>
+          <text x="630" y="24" class="t-b" text-anchor="end">WHERE THE MISSION IS PERFORMED</text>
+          <rect x="10" y="140" width="620" height="10" rx="5" class="grad"/>
+          <text x="10" y="172" class="t-l">Grid, networks, staff and spares close at hand</text>
+          <text x="630" y="172" class="t-l" text-anchor="end">Power, communications and access harder to provide</text>
+          <text x="320" y="215" class="t-s">At each step, ask what this layer depends upon.</text>
+        </svg></div>
+        <p class="hint" aria-hidden="true">Swipe to see the full diagram</p>
+        <figcaption id="fig1cap"><strong>The last mile of resilience.</strong> Critical capability runs from the centre to the furthest node where the mission is actually performed. The supporting infrastructure thins with every step outwards. Melrakki's framing.</figcaption>
+      </figure>
+
+      <p>The answer changes as you move outwards. At the centre, power, communications, spares and people are close at hand. At the edge, each of them has to be brought, engineered in, or done without.</p>
+
+      <h2>What happened at the edge during Storm Arwen</h2>
+      <p>The last mile is not a hypothetical. Storm Arwen, in November 2021, disrupted electricity supply to just over a million customers. According to the government's review, 83% had power restored within 24 hours, but a small and significant proportion were without it for up to 13 days <a href="#src-1" class="cite" aria-label="Source 1">[1]</a>.</p>
+      <p>That distribution is the point. The system as a whole recovered quickly. The edge did not.</p>
+      <p>The industry's own post-incident report on communications is more telling still. Thousands of mobile cell sites were disrupted by power outages, affecting all four mobile network operators. Battery resilience at key sites was used, but was depleted after a number of hours, because it was intended for brief, intermittent outages rather than a prolonged one <a href="#src-4" class="cite" aria-label="Source 4">[4]</a>. The review of the storm noted that some customers lost not only power but water and communications as well, because other essential services lacked full resilience to power loss on that scale <a href="#src-3" class="cite" aria-label="Source 3">[3]</a>, and concluded that growing electricity dependency for essential services will make storms, even less severe ones, increasingly impactful <a href="#src-2" class="cite" aria-label="Source 2">[2]</a>.</p>
+      <p>Nothing about this was a failure of the centre. It was the last mile, behaving exactly as it had been designed to, in conditions it had not been designed for.</p>
+
+      <h2>Why the edge is different</h2>
+      <p>Remote systems are not inherently less resilient. But their resilience has to be engineered differently, because the things that make resilience cheap at the centre are scarce at the edge.</p>
+      <p>Distance lengthens every response. Weather and terrain decide when a site can be reached, not the maintenance schedule. A grid connection may not exist, or may be a long, exposed spur. Communications may be weak or single-path. Fuel has to be delivered. Personnel are few and spread thinly across many sites. And an emergency response that takes an hour in a town can take a day at the edge.</p>
+      <p>There is also a matter of scale. Resilience at the centre is a handful of large investments. Resilience at the edge is thousands of small ones, multiplied across every node. Ofcom's technical work on mobile network power illustrates this: existing backup at mobile sites varies widely, from days at some remote or hub sites to 10 to 15 minutes at others, and Ofcom estimated that a minimum of one hour of backup at all mobile sites would cost the industry between £0.9 billion and £1.8 billion <a href="#src-5" class="cite" aria-label="Source 5">[5]</a>.</p>
+      <p>The edge is where resilience becomes expensive, because it has to be bought many times over. That is exactly why it is where compromises tend to be made.</p>
+
+      <h2>When normal supporting infrastructure is unavailable</h2>
+      <p>The first note set out the wider disruption environment, and it does not need repeating in full. Critical infrastructure planning now has to account for deliberate threats, which MI5 describes as including state actors commissioning sabotage and arson in the UK <a href="#src-9" class="cite" aria-label="Source 9">[9]</a>, alongside the risks the National Risk Register assesses, from failure of the electricity transmission system to severe weather <a href="#src-10" class="cite" aria-label="Source 10">[10]</a>. NPSA's risk management model asks organisations to identify threats of both kinds and review their risks when the operational environment changes <a href="#src-7" class="cite" aria-label="Source 7">[7]</a>.</p>
+      <p>For the purpose of this note, the question is narrower, and more practical:</p>
+      <div class="pullquote"><p>What happens to the edge of the system when normal supporting infrastructure becomes unavailable?</p></div>
+      <p>Whatever the cause, the answer tends to be the same. The centre copes. The edge waits.</p>
+
+      <h2>Redundancy, diversity, independence and recovery</h2>
+      <p>The first note drew a distinction between redundancy and independence. At the edge, it is worth taking further, because resilience normally depends on four properties working together rather than any one of them.</p>
+      <ul>
+        <li><strong>Redundancy</strong> duplicates a component, so one can fail without loss: two generators, two batteries, two routers.</li>
+        <li><strong>Diversity</strong> makes the duplicates different, so a single cause is less likely to defeat both: two communications providers, two technologies, two routes.</li>
+        <li><strong>Independence</strong> reduces reliance on the dependency itself: generating energy on site rather than receiving it.</li>
+        <li><strong>Recovery</strong> restores service after a failure: spares, people, access and time.</li>
+      </ul>
+      <p>A remote site may have two generators, both of which still need fuel. Two communications providers may share a mast or a backhaul route. A backup system may still need someone to reach the site to bring it into service. Redundancy protects against some failures. Independence reduces exposure to the dependency itself.</p>
+      <p>Independence is not always preferable, and it is not always technically possible. But there is a pattern worth noticing. Recovery is the property that weakens fastest with distance, because it depends on access. So the further out a node sits, the more its resilience has to come from the properties it carries with it.</p>
+      <p>Put simply, the value of independence rises with the cost of recovery.</p>
+
+      <h2>Autonomous edge infrastructure</h2>
+      <p>This is the idea at the centre of this note. We offer it as a useful way of thinking about an emerging engineering problem, not as an established industry category, and not as something Melrakki has invented. A working definition:</p>
+      <div class="pullquote"><p>Autonomous edge infrastructure is infrastructure designed to maintain critical functions at remote locations with reduced dependence on external power, logistics, communications and routine human attendance.</p></div>
+      <p>The word reduced is deliberate. Autonomy at the edge is a matter of degree, and it can exist in several layers:</p>
+      <ul>
+        <li><strong>Energy autonomy:</strong> local generation and storage, sized to the load.</li>
+        <li><strong>Operational autonomy:</strong> remote monitoring and management, so the state of a node is known without visiting it.</li>
+        <li><strong>Communications resilience:</strong> more than one communications path, where the mission justifies it.</li>
+        <li><strong>Physical autonomy:</strong> a reduced need for routine site attendance.</li>
+        <li><strong>Mission autonomy:</strong> sensors, cameras or autonomous systems able to continue their defined task without constant human intervention.</li>
+      </ul>
+      <p>These layers are not always needed together, and adding one does not require all the others. A sensor that reports once an hour needs a very different combination from a node supporting a docked drone. The discipline is to decide which layers the mission genuinely requires, and engineer those properly.</p>
+
+      <h2>Power as the enabling layer</h2>
+      <p>Of the five, one comes first. Without power, cameras stop, sensors stop, radios and routers stop, computers stop, environmental controls stop, and autonomous systems cannot recharge. Remote monitoring cannot report a fault if the node reporting it is dark.</p>
+      <p>Power is not merely one component of a remote system. It is the enabling layer for every system above it.</p>
+      <p>That is where Melrakki's work sits. We design autonomous off-grid power platforms for critical equipment operating where reliable infrastructure cannot be assumed. The method starts with the mission, then the load, then the environment, then the energy architecture, and only then the platform. We call it being <a href="/resilience/designing-power-from-the-load-backwards/">engineered from the load backwards</a>, and at the edge it matters more than anywhere, because an undersized system does not fail at the centre where someone will notice. It fails at the edge, in the worst week of the year.</p>
+
+      <h2>Harka: energy autonomy in practice</h2>
+      <p>The <a href="/harka/">Harka platforms</a> are an example of the energy layer built this way. Harka Solar uses solar and battery alone, for clean autonomous operation where the load and the site's solar resource allow it. Harka Hybrid adds a controlled backup generator that runs only to recharge the battery, for sites and seasons where solar alone cannot carry the load and a longer reserve is needed.</p>
+      <p>Neither is universally better. The right architecture depends on the load, the duty cycle, the location, the solar resource, the environmental conditions, the autonomy required and, above all, the consequence of failure. Hybrid deliberately reintroduces a fuel dependency, smaller and better managed than a generator running continuously. Choosing it is not a compromise when the site demands it. It is the honest answer.</p>
+
+      <h2>Greni: from drone charger to edge node</h2>
+      <p>It would be easy to describe <a href="/greni/">Greni</a>, the drone docking and charging platform Melrakki is bringing to market and which is currently in field test, as a drone charger. That undersells the idea.</p>
+      <p>A docked drone at a remote site is not a standalone device. It sits on top of a stack: local power and storage, communications to send what it sees, sensing to tell it when to fly, remote monitoring to know it is healthy, and the docking and charging that return it to readiness after every sortie. As we argued in <a href="/resilience/off-grid-drone-infrastructure/">When the drone has its own power station</a>, a drone can only be as autonomous as the infrastructure that supports it.</p>
+      <p>Seen through this note, that stack is an <strong>autonomous edge node</strong>: several layers of autonomy combined at one remote point, so that an aerial capability can exist where there is no power, no staff and no convenient access. The drone is not the whole system. The infrastructure supporting it is part of the mission architecture.</p>
+
+      <h2>The economics of the edge</h2>
+      <p>Every remote site carries a cost that rarely appears in the equipment price: the cost of keeping it alive. A visit to a remote node can involve travel time, specialist personnel, vehicles or aircraft, fuel, access permissions, safety planning and weather windows, and the downtime while the site waits for all of those to line up.</p>
+      <p>Not every site has these characteristics, and it would be wrong to assume they do. But for the ones that do, a useful question is simple:</p>
+      <div class="pullquote"><p>What does a site visit actually cost when the site is 200 kilometres away, inaccessible for several days, or reachable only by specialist transport?</p></div>
+      <p>We will not put a number on it here, because the honest number is site-specific. The principle is what matters. Where visits are expensive, a node that costs somewhat more to build but needs visiting far less often can change the operational economics of an entire installation. The comparison that counts is not purchase price against purchase price. It is the lifetime cost of keeping the capability alive.</p>
+      <p>We look at one part of that calculation, the fuel and logistics burden of remote generators, in <a href="/resilience/the-true-cost-of-a-diesel-generator/">the true cost of a diesel generator on a remote site</a>.</p>
+
+      <h2>The site that does not need a visit</h2>
+      <p>The best remote infrastructure is not only infrastructure that survives bad weather. It is infrastructure designed so that routine intervention becomes unnecessary.</p>
+      <p>That can mean autonomous power management, local energy storage, remote health monitoring, predictive maintenance, remote configuration, autonomous charging and reduced fuel dependency. None of these is exotic. What is unusual is designing them in from the start, with the visit schedule treated as a design output rather than an assumption.</p>
+      <p>The objective is not zero human involvement. Equipment still needs servicing, and people still need to make decisions. The objective is human intervention when it is necessary, rather than because the infrastructure requires it to stay alive.</p>
+
+      <h2>From one node to a resilient network</h2>
+      <p>A single autonomous node is useful. A network of them is different in kind.</p>
+      <p>Picture a pipeline, a rail corridor, a border or a string of distributed utility assets, each watched by a line of nodes. If every node draws power from a shared upstream supply, a single upstream fault can darken a whole section at once. If each node carries its own power, the same fault stays local, and the rest of the line keeps working.</p>
+
+      <figure class="dep-fig wide" aria-labelledby="fig2cap">
+        <div class="scroll"><svg viewBox="0 0 640 300" role="img" aria-label="Two corridors of edge nodes. In the first, every node draws power from a shared upstream supply, so one upstream failure takes out several nodes. In the second, each node carries its own power, so a failure stays local.">
+          <text x="10" y="24" class="t-b">DEPENDENT NODES: SHARED UPSTREAM SUPPLY</text>
+          <line x1="40" y1="60" x2="600" y2="60" class="feed"/>
+          <text x="600" y="50" class="t-l" text-anchor="end">Shared supply</text>
+          <g class="dep">
+            <line x1="90" y1="60" x2="90" y2="96" class="ln"/><line x1="210" y1="60" x2="210" y2="96" class="ln"/><line x1="330" y1="60" x2="330" y2="96" class="ln"/><line x1="450" y1="60" x2="450" y2="96" class="ln"/><line x1="570" y1="60" x2="570" y2="96" class="ln"/>
+            <circle cx="90" cy="108" r="12" class="node off"/><circle cx="210" cy="108" r="12" class="node off"/><circle cx="330" cy="108" r="12" class="node off"/><circle cx="450" cy="108" r="12" class="node on"/><circle cx="570" cy="108" r="12" class="node on"/>
+            <path d="M102 108 H198 M222 108 H318 M342 108 H438 M462 108 H558" class="ln"/>
+          </g>
+          <text x="148" y="80" class="x">&#215;</text>
+          <text x="10" y="142" class="t-l">One upstream fault can darken a whole section.</text>
+
+          <text x="10" y="186" class="t-b">AUTONOMOUS NODES: EACH CARRIES ITS OWN POWER</text>
+          <g>
+            <circle cx="90" cy="236" r="12" class="node on"/><circle cx="210" cy="236" r="12" class="node on"/><circle cx="330" cy="236" r="12" class="node off"/><circle cx="450" cy="236" r="12" class="node on"/><circle cx="570" cy="236" r="12" class="node on"/>
+            <path d="M102 236 H198 M222 236 H318 M342 236 H438 M462 236 H558" class="ln"/>
+            <rect x="80" y="206" width="20" height="8" rx="2" class="pv"/><rect x="200" y="206" width="20" height="8" rx="2" class="pv"/><rect x="320" y="206" width="20" height="8" rx="2" class="pv"/><rect x="440" y="206" width="20" height="8" rx="2" class="pv"/><rect x="560" y="206" width="20" height="8" rx="2" class="pv"/>
+          </g>
+          <text x="10" y="282" class="t-l">A fault stays local. The rest of the line keeps watching.</text>
+        </svg></div>
+        <p class="hint" aria-hidden="true">Swipe to see the full diagram</p>
+        <figcaption id="fig2cap"><strong>Distributed resilience.</strong> The same corridor of edge nodes with two power architectures. Autonomous nodes do not remove every shared dependency, since communications and servicing remain, but they stop a single power failure spreading along the line. Melrakki's framing.</figcaption>
+      </figure>
+
+      <p>This suggests a broader idea: resilience can be distributed rather than centralised. Each node becomes an independently resilient element of a wider network, and the network degrades gracefully instead of failing in sections.</p>
+      <p>The limitations need stating as clearly as the advantages. Distributed nodes still share dependencies: the communications that carry their data home, the platform that manages them, and the people who service them. Every node must be engineered, secured and maintained, and a fleet of a hundred small systems brings fleet management problems that one large system does not. Distributing resilience moves the engineering effort. It does not remove it.</p>
+
+      <h2>What this means for critical infrastructure</h2>
+      <p>For those responsible for distributed critical assets, none of this requires a new framework. It fits within the risk management cycle most organisations already run. It does suggest some questions worth asking of the edge specifically:</p>
+      <div class="checklist">
+        <ul>
+          <li>Where is the furthest point at which each critical capability is actually performed?</li>
+          <li>How long can that node keep working with no external power, and is that figure tested or assumed?</li>
+          <li>How long would it take to reach it in the worst week of the year?</li>
+          <li>How many nodes share a single upstream supply or communications route?</li>
+          <li>Which visits are made because something needs a decision, and which only because the node needs keeping alive?</li>
+          <li>Is the edge given the same design attention as the centre?</li>
+        </ul>
+      </div>
+      <p>The answers will often be reassuring. Where they are not, they tend to point to the same place.</p>
+
+      <h2>Conclusion</h2>
+      <p>The future of resilient infrastructure may not only be about making central systems stronger. It may also involve making the systems at the edge less dependent on the centre.</p>
+      <p>Critical infrastructure does not stop at the control room. Its resilience ultimately has to reach the furthest point where the mission is performed.</p>
+      <p>That is where autonomous infrastructure becomes strategically important, and it is the problem Melrakki exists to work on.</p>
+
+      <h2>About the author</h2>
+      <div class="checklist">
+        <p><strong>Simon Legrand</strong> is the founder of Melrakki Systems and co-founder of Sunstone Systems. Over more than twenty-five years across technology, infrastructure and the public sector, including thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems, his work has centred on keeping systems alive at the edge of the network.</p>
+        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, and deployments across oil and gas, highways, construction and critical infrastructure. <a href="/about/">More about Melrakki</a>.</p>
+      </div>
+
+      <h2>Sources and a note on attribution</h2>
+      <p class="src-note">Established guidance, reviews and public statements are cited below from their primary sources. The last mile of resilience, autonomous edge infrastructure and its layers, and the questions above are Melrakki's own engineering interpretation. They are not NPSA, NCSC, Ofcom or government methodology, and nothing in this note implies endorsement by, or any relationship with, any government body or regulator.</p>
+      <ol class="sources">
+        <li id="src-1"><a href="https://www.gov.uk/government/publications/storm-arwen-electricity-distribution-disruption-review" rel="noopener">Department for Energy Security and Net Zero (formerly BEIS), Storm Arwen electricity distribution disruption review</a></li>
+        <li id="src-2"><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1081116/storm-arwen-review-final-report.pdf" rel="noopener">Energy Emergencies Executive Committee, Storm Arwen Review: Final Report, June 2022</a></li>
+        <li id="src-3"><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1055504/arwen-review-interim-report.pdf" rel="noopener">Energy Emergencies Executive Committee, Storm Arwen Review: Interim Report, February 2022</a></li>
+        <li id="src-4"><a href="https://assets.publishing.service.gov.uk/media/62828be08fa8f556165a1dec/GOV.UK_ECRRG_Post_Incident_Report_-_2021_2022_Severe_Storms.pdf" rel="noopener">Electronic Communications Resilience and Response Group, Post Incident Report: 2021/2022 Severe Storms</a></li>
+        <li id="src-5"><a href="https://www.ofcom.org.uk/siteassets/resources/documents/consultations/category-1-10-weeks/272921-resilience-guidance-and-mobile-ran-power-back-up/associated-documents/mobile-ran-power-resilience-technical-report-cfi-update.pdf?v=390945" rel="noopener">Ofcom, Mobile RAN power resilience: technical report, February 2025</a></li>
+        <li id="src-6"><a href="https://www.gov.uk/government/publications/uk-government-resilience-action-plan/uk-government-resilience-action-plan-html" rel="noopener">Cabinet Office, UK Government Resilience Action Plan, July 2025</a></li>
+        <li id="src-7"><a href="https://www.npsa.gov.uk/security-best-practices/protective-security-risk-management-psrm" rel="noopener">NPSA, Protective Security Risk Management (PSRM)</a></li>
+        <li id="src-8"><a href="https://www.npsa.gov.uk/security-best-practices/build-it-secure/network-connected-security-technologies-ncst" rel="noopener">NPSA and NCSC, Network Connected Security Technologies (NCST)</a></li>
+        <li id="src-9"><a href="https://www.mi5.gov.uk/director-general-sir-ken-mccallum-gives-threat-update" rel="noopener">MI5, Director General Sir Ken McCallum gives threat update, 16 October 2025</a></li>
+        <li id="src-10"><a href="https://assets.publishing.service.gov.uk/media/67b5f85732b2aab18314bbe4/National_Risk_Register_2025.pdf" rel="noopener">Cabinet Office, National Risk Register, 2025 edition</a></li>
+      </ol>
+
+    </div>
+
+    <div class="article-foot">
+      <a class="back" href="/resilience/">&larr; All resilience notes</a>
+    </div>
+  </div>
+</article>
+
+<section class="section-tight cta">
+  <div class="wrap">
+    <h2>Bring us the load, the location and the conditions.</h2>
+    <p>We will engineer the platform that keeps it alive.</p>
+    <a class="btn btn-primary" href="mailto:hello@melrakki.systems?subject=Melrakki%20enquiry">Start a conversation</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems">
+        <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
+        <p class="foot-strap">Power that holds.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/#platforms">Platforms</a></li>
+          <li><a href="/#sectors">Sectors</a></li>
+          <li><a href="/#story">Story</a></li>
+          <li><a href="/greni/">Greni</a></li>
+          <li><a href="/resilience/">Notes</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="/Melrakki-Harka-Hybrid.pdf">Harka Hybrid brochure</a></li>
+          <li><a href="/Melrakki-Harka-Solar.pdf">Harka Solar brochure</a></li>
+          <li><a href="mailto:hello@melrakki.systems">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>hello@melrakki.systems &nbsp;|&nbsp; &copy; 2026 Melrakki Systems.</p>
+      <p class="foot-desc">Autonomous power for the hardest places on earth.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(t&&l){t.addEventListener('click',function(){
+    var open=l.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });}
+})();
+</script>
+</body>
+</html>
