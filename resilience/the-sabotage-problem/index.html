@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The sabotage problem: resilient infrastructure | Melrakki</title>
+<meta name="description" content="Sabotage is not only a security problem. It is a dependency problem. Designing remote infrastructure that keeps working when something around it is disrupted.">
+<link rel="canonical" href="https://www.melrakki.systems/resilience/the-sabotage-problem/">
+<meta name="theme-color" content="#071A2B">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Melrakki Systems">
+<meta property="og:title" content="The sabotage problem">
+<meta property="og:description" content="Security asks whether we can stop it. Resilience asks whether we can continue if it happens. Why sabotage is an infrastructure dependency problem.">
+<meta property="og:url" content="https://www.melrakki.systems/resilience/the-sabotage-problem/">
+<meta property="og:image" content="https://www.melrakki.systems/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The sabotage problem">
+<meta name="twitter:description" content="Security asks whether we can stop it. Resilience asks whether we can continue if it happens. Why sabotage is an infrastructure dependency problem.">
+<meta name="twitter:image" content="https://www.melrakki.systems/social-preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .prose .pullquote{margin:2.6rem auto;padding:0 0 0 1.6rem;max-width:var(--prose);border-left:3px solid var(--cyan);}
+  .prose .pullquote p{font-size:clamp(1.3rem,3vw,1.65rem);line-height:1.36;font-weight:300;color:#fff;letter-spacing:-0.01em;margin:0;}
+  .prose a.cite{font-family:'IBM Plex Mono',monospace;font-size:.78em;text-decoration:none;vertical-align:super;line-height:0;margin-left:.1em;}
+  .dep-fig{margin:2.4rem 0;}
+  .dep-fig svg{width:100%;height:auto;background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);}
+  .dep-fig .box{fill:var(--navy-900);stroke:var(--navy-700);stroke-width:1.2;}
+  .dep-fig .box.hit{stroke:#ff8a6b;}
+  .dep-fig .box.bad{stroke:var(--slate-l);stroke-dasharray:4 3;fill:transparent;}
+  .dep-fig .box.ok{stroke:var(--cyan);}
+  .dep-fig .box.mid{stroke:var(--aqua);stroke-dasharray:2 3;}
+  .dep-fig .ln{stroke:var(--slate);stroke-width:1.3;fill:none;}
+  .dep-fig .ln.ok{stroke:var(--cyan);}
+  .dep-fig text{font-family:'Montserrat',sans-serif;}
+  .dep-fig .t{fill:var(--mist);font-size:12.5px;text-anchor:middle;}
+  .dep-fig .t.bad{fill:var(--slate);}
+  .dep-fig .t-h{fill:#fff;font-size:14px;font-weight:700;text-anchor:middle;}
+  .dep-fig .t-s{fill:var(--slate);font-size:12px;text-anchor:middle;font-style:italic;}
+  .dep-fig figcaption{margin-top:1rem;font-size:.9rem;line-height:1.6;color:var(--slate);}
+  .dep-fig .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .dep-fig .hint{display:none;font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--slate);margin-top:.5rem;}
+  .prose .stages{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.4rem;}
+  .prose .stages > div{background:var(--navy-800);border:1px solid var(--navy-700);border-radius:var(--r);padding:1.1rem 1.1rem 1.2rem;}
+  .prose .stages .k{display:block;font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--cyan);margin-bottom:.4rem;}
+  .prose .stages strong{display:block;color:#fff;font-size:1rem;margin-bottom:.35rem;}
+  .prose .stages p{font-size:.95rem;line-height:1.5;margin:0;}
+  .prose .src-note{font-size:.95rem;color:var(--slate);}
+  .prose ol.sources{margin-top:1rem;padding-left:1.4rem;display:grid;gap:.6rem;}
+  .prose ol.sources li{font-size:.92rem;line-height:1.55;color:var(--text);}
+  @media (max-width:820px){.prose .pullquote{padding-left:1.1rem;}}
+  @media (max-width:600px){.dep-fig .scroll svg{min-width:560px;}.dep-fig .hint{display:block;}.prose .stages{grid-template-columns:1fr;}}
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "The sabotage problem",
+ "alternativeHeadline": "Why resilient infrastructure must keep working when someone is trying to make it fail",
+ "description": "Sabotage is not only a security problem. It is a dependency problem. Designing remote infrastructure that keeps working when something around it is disrupted.",
+ "inLanguage": "en-GB",
+ "datePublished": "2026-09-25",
+ "dateModified": "2026-09-25",
+ "wordCount": 2915,
+ "keywords": "infrastructure sabotage, critical infrastructure resilience, sabotage risk UK, critical infrastructure protection, infrastructure resilience UK, autonomous edge infrastructure, off-grid resilience, remote power systems",
+ "author": {
+  "@type": "Person",
+  "name": "Simon Legrand",
+  "jobTitle": "Founder, Melrakki Systems",
+  "url": "https://www.melrakki.systems/about/#founder",
+  "sameAs": [
+   "https://www.simonlegrand.co.uk/"
+  ]
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Melrakki Systems",
+  "url": "https://www.melrakki.systems/",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://www.melrakki.systems/icon-512.png"
+  }
+ },
+ "image": "https://www.melrakki.systems/social-preview.png",
+ "mainEntityOfPage": {
+  "@type": "WebPage",
+  "@id": "https://www.melrakki.systems/resilience/the-sabotage-problem/"
+ },
+ "isPartOf": {
+  "@type": "CollectionPage",
+  "name": "Where the Grid Ends",
+  "url": "https://www.melrakki.systems/resilience/"
+ },
+ "citation": [
+  "https://gov.uk/government/publications/national-security-strategy-2025-security-for-the-british-people-in-a-dangerous-world/national-security-strategy-2025-security-for-the-british-people-in-a-dangerous-world-html",
+  "https://www.gov.uk/government/publications/national-security-state-threats-act-2026-factsheet/national-security-state-threats-act-2026-factsheet",
+  "https://www.gov.uk/government/publications/understanding-the-national-security-state-threats-act-2026/national-security-state-threats-act-2026-information-for-organisations",
+  "https://www.mi5.gov.uk/director-general-sir-ken-mccallum-gives-threat-update",
+  "https://www.gov.uk/government/news/plan-to-toughen-protections-for-subsea-internet-cables-amid-heightened-russian-activity",
+  "https://www.gov.uk/government/publications/national-risk-register-2026",
+  "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/09/15/2026-resilience-baseline-requirements",
+  "https://www.nato.int/en/news-and-events/articles/news/2026/09/17/prepare-protect-prevail-nato-publishes-baseline-requirements-for-resilience",
+  "https://www.npsa.gov.uk/building-protection/building-infrastructure/security-planning-guidance"
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://www.melrakki.systems/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Resilience",
+   "item": "https://www.melrakki.systems/resilience/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "The sabotage problem",
+   "item": "https://www.melrakki.systems/resilience/the-sabotage-problem/"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/#approach">Approach</a></li>
+        <li><a href="/#sectors">Sectors</a></li>
+        <li><a href="/resilience/" aria-current="page">Notes</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+
+<main id="main">
+
+<section class="deep article-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span>
+      <a href="/resilience/">Resilience</a><span class="sep">/</span>
+      <span aria-current="page">The sabotage problem</span>
+    </nav>
+    <div class="article-head">
+      <p class="eyebrow" style="margin-top:1.8rem;">Operational continuity</p>
+      <h1>The sabotage problem</h1>
+      <p class="standfirst">Why resilient infrastructure must keep working when someone is trying to make it fail.</p>
+      <div class="article-meta">
+        <span>By Simon Legrand</span>
+        <span class="dotsep">&middot;</span>
+        <span>Critical infrastructure</span>
+        <span class="dotsep">&middot;</span>
+        <span>13 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="section" style="padding-top:clamp(1.5rem,4vw,2.5rem);">
+  <div class="wrap">
+    <div class="prose">
+
+      <p class="lead-para">What follows is a hypothetical scenario, a composite rather than a description of any real incident.</p>
+
+      <p>A little after three in the morning, a camera on a remote section of a critical site stops sending pictures. A few minutes later, the communications node beside it stops responding. A sensor further along the line drops off the dashboard. On a nearby compound, a docked drone reports that it cannot launch, because its charging infrastructure has lost power.</p>
+
+      <p>In the control room, nothing else has changed. The operators are at their desks. The network to the rest of the estate is working. The screens are on.</p>
+
+      <p>But the edge has gone dark.</p>
+
+      <p>It could be an equipment fault. It could be the weather, a failed supply upstream, or theft. It could also be deliberate. At three in the morning, nobody knows yet.</p>
+
+      <p>The question that matters is not yet what caused it.</p>
+
+      <p>It is what happens next.</p>
+
+      <h2>A question the series has been building towards</h2>
+      <p>This is the third in a sequence. <a href="/resilience/when-the-infrastructure-becomes-the-vulnerability/">When the infrastructure becomes the vulnerability</a> asked what a security system depends upon. <a href="/resilience/the-last-mile-of-resilience/">The last mile of resilience</a> asked what happens when critical infrastructure reaches the edge. This note asks what happens when someone deliberately tries to disrupt those dependencies.</p>
+      <p>The answer we will argue for is not that every attack can be prevented. It is narrower and more useful: reduce the dependencies that turn a local disruption into an operational failure.</p>
+
+      <h2>What the evidence says, and what it does not</h2>
+      <p>This subject invites exaggeration, so it is worth being precise about what authoritative sources actually say.</p>
+      <p>The UK's National Security Strategy, published in June 2025, states plainly that hostile state activity takes place on British soil, and sets out, as the first pillar of its framework, security at home: defending the UK's territory, making it a harder target and building resilience to future threats <a href="#src-1" class="cite" aria-label="Source 1">[1]</a>.</p>
+      <p>Sabotage is named in law. The National Security (State Threats) Act 2026, which received Royal Assent on 8 July 2026, allows the Home Secretary to designate bodies involved in foreign power threat activity, a term defined under the National Security Act 2023 to include espionage and sabotage carried out for, on behalf of, or to benefit a foreign power <a href="#src-2" class="cite" aria-label="Source 2">[2]</a><a href="#src-3" class="cite" aria-label="Source 3">[3]</a>. The government's factsheet for the Act cites MI5's report of a 35 per cent increase in state threat activity on the previous year <a href="#src-2" class="cite" aria-label="Source 2">[2]</a>, and in October 2025 the Director General of MI5 said his teams were routinely uncovering attempts by state actors to commission surveillance, sabotage, arson or physical violence in the UK <a href="#src-4" class="cite" aria-label="Source 4">[4]</a>.</p>
+      <p>Infrastructure is part of the picture. In May 2026 the government announced plans for tougher penalties, new security obligations and emergency powers to protect subsea telecommunications cables, following what it described as a rise in suspicious activity by Russian vessels <a href="#src-5" class="cite" aria-label="Source 5">[5]</a>. The same announcement is careful to note that faults are rare and that the overwhelming majority, up to 97 per cent, arise from fishing activity or dragged anchors rather than malice <a href="#src-5" class="cite" aria-label="Source 5">[5]</a>.</p>
+      <p>Across the Alliance, NATO's 2026 Resilience Baseline Requirements, published in September 2026, list among the risks considered in their revision the potential for physical attack on critical infrastructure, including acts of sabotage, more frequent and damaging cyberattacks, strategic dependencies, and extreme weather that may compound the effects of hostile activity. They also identify the need for stronger and more reliable restoration and repair capabilities <a href="#src-7" class="cite" aria-label="Source 7">[7]</a>. NATO's announcement observed that hybrid attacks on societies, infrastructure and digital networks are occurring more frequently <a href="#src-8" class="cite" aria-label="Source 8">[8]</a>.</p>
+      <p>Now the other side of the ledger. None of these sources predicts a particular attack, on a particular type of site, at a particular time. The National Risk Register, most recently updated in July 2026, is a planning tool for risk and resilience practitioners, not a forecast <a href="#src-6" class="cite" aria-label="Source 6">[6]</a>. Most infrastructure faults are still accidental. The honest summary is this:</p>
+      <div class="checklist">
+        <ul>
+          <li><strong>Documented:</strong> UK authorities describe state-linked sabotage as a real form of hostile activity, now specifically addressed in legislation.</li>
+          <li><strong>Documented:</strong> UK and NATO policy treat sabotage, cyber disruption, strategic dependencies and weather as interconnected resilience concerns.</li>
+          <li><strong>Not claimed here, or by those sources:</strong> that any specific attack is expected, imminent, or likely at any given site.</li>
+        </ul>
+      </div>
+      <p>This is an argument about preparedness, not prediction. And it would hold even if deliberate disruption never reached a single remote site, because the engineering it recommends pays for itself against storms, faults and theft as well.</p>
+
+      <h2>Security asks one question. Resilience asks another.</h2>
+      <p>Traditional protective security asks: can we stop it?</p>
+      <p>Resilience asks: can we continue if it happens?</p>
+      <p>A mature architecture needs both, and they are different engineering problems. Stopping an incident is about deterrence, detection, delay and response. Continuing after one is about what the system still has when part of it is gone. NPSA's security planning guidance places particular emphasis on managing terrorist and state threats, and on plans that also help an organisation respond to any type of incident <a href="#src-9" class="cite" aria-label="Source 9">[9]</a>. NATO frames the aim of resilience as the ability to prepare for, resist, respond to and quickly recover from shocks <a href="#src-7" class="cite" aria-label="Source 7">[7]</a>.</p>
+      <p>The two should be designed together. In practice they often are not. Detection is specified in detail. Continuity is assumed.</p>
+      <p>And there is a practical reason to design for continuity. In the first hours after the edge goes dark, the cause is usually unknown. A design that depends on correctly diagnosing the cause before it can recover is fragile by definition. A design that holds its capability whatever the cause is robust against sabotage, weather and failure alike.</p>
+
+      <h2>The sabotage cascade</h2>
+      <p>This note will not describe how disruption is caused, and does not need to. What matters for engineering is what follows it: the dependency cascade after a disruption.</p>
+      <p>A local physical disruption makes some nearby infrastructure unavailable. If the site draws its power from that infrastructure, power is lost. Without power, communications stop. Without communications, monitoring stops. Without monitoring, situational awareness falls. Reduced awareness means human intervention is needed, which means someone has to reach the site. And reaching the site, after an incident, is slower and more expensive than on any ordinary day.</p>
+      <div class="pullquote"><p>The initial disruption may be local. The operational consequences do not have to be.</p></div>
+
+      <figure class="dep-fig wide" aria-labelledby="fig1cap">
+        <div class="scroll"><svg viewBox="0 0 600 420" role="img" aria-label="The sabotage cascade. In a conventional architecture, a local disruption leads to loss of upstream supply, site power, communications, monitoring and awareness, and finally a forced site visit and slow restoration. With autonomous power at the node, power continues, local sensing and recording continue, communications depend on the path, and a visit is needed only if the node itself is damaged.">
+<text x="140" y="26" class="t-h">Conventional</text>
+<rect x="20" y="44" width="240" height="32" rx="5" class="box hit"/><text x="140" y="65" class="t hit">Local disruption</text>
+<path d="M140 76 V88" class="ln hit"/>
+<rect x="20" y="88" width="240" height="32" rx="5" class="box bad"/><text x="140" y="109" class="t bad">Upstream supply lost</text>
+<path d="M140 120 V132" class="ln bad"/>
+<rect x="20" y="132" width="240" height="32" rx="5" class="box bad"/><text x="140" y="153" class="t bad">Site power lost</text>
+<path d="M140 164 V176" class="ln bad"/>
+<rect x="20" y="176" width="240" height="32" rx="5" class="box bad"/><text x="140" y="197" class="t bad">Communications lost</text>
+<path d="M140 208 V220" class="ln bad"/>
+<rect x="20" y="220" width="240" height="32" rx="5" class="box bad"/><text x="140" y="241" class="t bad">Monitoring lost</text>
+<path d="M140 252 V264" class="ln bad"/>
+<rect x="20" y="264" width="240" height="32" rx="5" class="box bad"/><text x="140" y="285" class="t bad">Awareness reduced</text>
+<path d="M140 296 V308" class="ln bad"/>
+<rect x="20" y="308" width="240" height="32" rx="5" class="box bad"/><text x="140" y="329" class="t bad">Site visit required</text>
+<path d="M140 340 V352" class="ln bad"/>
+<rect x="20" y="352" width="240" height="32" rx="5" class="box bad"/><text x="140" y="373" class="t bad">Slow, costly restoration</text>
+<text x="140" y="414" class="t-s">The disruption travels through every layer</text>
+<text x="460" y="26" class="t-h">Autonomous power at the node</text>
+<rect x="340" y="44" width="240" height="32" rx="5" class="box hit"/><text x="460" y="65" class="t hit">Local disruption</text>
+<path d="M460 76 V88" class="ln hit"/>
+<rect x="340" y="88" width="240" height="32" rx="5" class="box bad"/><text x="460" y="109" class="t bad">Upstream supply lost</text>
+<path d="M460 120 V132" class="ln bad"/>
+<rect x="340" y="132" width="240" height="32" rx="5" class="box ok"/><text x="460" y="153" class="t ok">Node power continues</text>
+<path d="M460 164 V176" class="ln ok"/>
+<rect x="340" y="176" width="240" height="32" rx="5" class="box mid"/><text x="460" y="197" class="t mid">Communications: depends on path</text>
+<path d="M460 208 V220" class="ln mid"/>
+<rect x="340" y="220" width="240" height="32" rx="5" class="box ok"/><text x="460" y="241" class="t ok">Local sensing and recording continue</text>
+<path d="M460 252 V264" class="ln ok"/>
+<rect x="340" y="264" width="240" height="32" rx="5" class="box mid"/><text x="460" y="285" class="t mid">Awareness partly retained</text>
+<path d="M460 296 V308" class="ln mid"/>
+<rect x="340" y="308" width="240" height="32" rx="5" class="box ok"/><text x="460" y="329" class="t ok">Visit only if the node is damaged</text>
+<path d="M460 340 V352" class="ln ok"/>
+<rect x="340" y="352" width="240" height="32" rx="5" class="box ok"/><text x="460" y="373" class="t ok">Restoration prioritised, not forced</text>
+<text x="460" y="414" class="t-s">The cascade is interrupted, not abolished</text>
+        </svg></div>
+        <p class="hint" aria-hidden="true">Swipe to see the full diagram</p>
+        <figcaption id="fig1cap"><strong>The sabotage cascade.</strong> What follows a local disruption, not how one is caused. On the right, the node carries its own power, so the cascade is interrupted at the power layer. Communications may still be lost if their path depends on external infrastructure. Melrakki's framing.</figcaption>
+      </figure>
+
+      <p>Every arrow in that cascade is a dependency. Each one is a place where the cascade can either continue or stop, depending on how the system was designed.</p>
+
+      <h2>The single point of failure is not always a component</h2>
+      <p>Engineers are trained to look for single points of failure in equipment: the one controller, the one cable, the one power supply. That discipline is sound. But at the edge, the more important single point is often not a component. It is a dependency.</p>
+      <p>A surveillance system may have many cameras, each backing up the others' coverage. If every camera draws on the same external power source, power remains a common dependency. A remote site may have two generators. Both depend on fuel deliveries. A communications installation may have duplicated equipment, all in one cabinet, on one site, fed by one supply.</p>
+      <p>Redundancy inside a system does not necessarily remove dependency outside it.</p>
+      <p>This is the practical form of the distinction drawn in the first note: redundancy is not independence. Whatever the cause of a disruption, a shared dependency is where a single event does the most damage. Identifying those shared dependencies, and deciding which of them to remove, is some of the most valuable resilience work an operator can do.</p>
+
+      <h2>Moving the dependency boundary</h2>
+      <p>In the first note we described moving the dependency boundary: shifting it closer to the asset, so that more of what the equipment needs is carried at the point of use.</p>
+      <p>A conventional remote security installation depends on communications, external power, and behind that the grid or a generator with its fuel logistics, and finally human intervention to restore any of them. A more autonomous installation keeps the security equipment and its communications, but supplies them from a local power platform: solar generation, battery storage and, where the site demands it, a controlled backup.</p>
+      <p>This does not make a site immune to sabotage, and it would be irresponsible to suggest it does. The local platform has its own physical exposure and needs its own protection, which belongs in the site's wider security design. What changes is the number of external dependencies whose failure can disable the mission. There are fewer of them, and the ones that remain are within the operator's own boundary, where they can be protected, monitored and tested.</p>
+
+      <h2>The vulnerable edge</h2>
+      <p>As <a href="/resilience/the-last-mile-of-resilience/">the last mile of resilience</a> set out, critical infrastructure depends increasingly on distributed assets at its edge: remote substations, pipelines, rail infrastructure, communications nodes, border and perimeter systems, water and energy infrastructure, remote industrial installations, surveillance and autonomous systems, and emergency communications.</p>
+      <p>These sites tend to share a profile. They may be geographically isolated, difficult to reach, expensive to service, fed by weak infrastructure, exposed to weather, and reliant on communications, fuel and routine human attendance.</p>
+      <p>That profile creates a particular kind of exposure. The most vulnerable point in a system may not be its most technologically sophisticated point. It may simply be the point that is hardest to reach.</p>
+
+      <h2>A site visit is not free</h2>
+      <p>At a remote installation, intervention can involve vehicles, specialist personnel, travel, fuel, permissions, equipment, weather windows and security arrangements, and the downtime while all of those are assembled.</p>
+      <p>On an ordinary day that may be manageable. After a disruption it can become much harder. Access may be restricted. The people and vehicles needed may be committed elsewhere. If the cause might be deliberate, the site may first need to be made safe and examined before anyone can restore it.</p>
+      <p>Restoration capacity is also finite, a point NATO's emphasis on repair and restoration makes at national scale <a href="#src-7" class="cite" aria-label="Source 7">[7]</a>. After a widespread event, every node that does not need a visit is capacity released for one that does.</p>
+      <div class="pullquote"><p>The resilience value of autonomous infrastructure is not simply that it generates electricity. It is that it can reduce the number of reasons a person has to physically reach the site.</p></div>
+
+      <h2>Power as the enabling layer</h2>
+      <p>Beneath almost everything at the edge sits power. Without it, cameras, sensors, communications equipment, computing, charging and monitoring all stop, and autonomous systems become unavailable.</p>
+      <p>Power is not just another component of resilient infrastructure. It is an enabling layer beneath the mission. That is why it is where the sabotage cascade is most usefully interrupted, and why it is where Melrakki works: not as a solar company, but as an engineering company addressing one of the foundational dependencies of <a href="/resilience/the-last-mile-of-resilience/">autonomous edge infrastructure</a>.</p>
+
+      <h2>Engineered from the load backwards, for consequence</h2>
+      <p>A generic backup power system is a component. A resilient energy architecture is a design decision.</p>
+      <p>The method we use starts with the mission, then the equipment, its actual load and duty cycle, the location and environmental conditions, and then one parameter that matters especially here: the required autonomy. How long must this node hold its capability with no outside help? Only then come the generation, the storage, whether a backup is needed, and the platform.</p>
+      <p>That required autonomy should be set by the realistic time to restore the site after a serious disruption, not by the length of an average outage. The difference can be large. A system sized for the average outage performs well on paper and poorly on the one occasion it was really needed. We set out the sizing method in <a href="/resilience/designing-power-from-the-load-backwards/">designing power from the load backwards</a>.</p>
+
+      <h2>Harka</h2>
+      <p>The <a href="/harka/">Harka platforms</a> apply this architecture to remote equipment. Harka Solar is an autonomous solar and battery platform for suitable remote loads. Harka Hybrid adds a controlled backup generator that runs only to recharge the battery, for applications where prolonged autonomy and availability justify an additional resilience layer.</p>
+      <p>We are not presenting either platform as resistant to deliberate physical attack, and we would not make that claim without test evidence to support it. Their relevance to this argument is different. If the surrounding infrastructure is disrupted, a local energy architecture reduces the number of dependencies that disappear with it.</p>
+
+      <h2>Greni and the resilient edge node</h2>
+      <p><a href="/greni/">Greni</a>, the drone docking and charging platform Melrakki is bringing to market, currently in field test, is best understood in this context as an example of an autonomous edge node. Such a node can combine local energy, storage, communications, sensing, docking, charging and remote management in one place, so that a capability stays ready without depending on the infrastructure around it.</p>
+      <p>The drone becomes one capability within that infrastructure, not the whole system. In principle, a node that holds its own power after a disruption keeps an aerial capability available at the very moment the surrounding picture is least clear. The edge node becomes resilient infrastructure in its own right.</p>
+
+      <h2>Security by design, resilience by design</h2>
+      <p>Resilience should not be added after a security architecture has been designed. It should be part of the design from the start. It helps to think of three stages:</p>
+      <div class="stages">
+        <div><span class="k">1</span><strong>Security by design</strong><p>Protect the asset.</p></div>
+        <div><span class="k">2</span><strong>Resilience by design</strong><p>Reduce what happens when protection fails.</p></div>
+        <div><span class="k">3</span><strong>Autonomous resilience</strong><p>Reduce the external dependencies the asset needs to keep functioning.</p></div>
+      </div>
+      <p>Each stage builds on the one before. None replaces it.</p>
+
+      <h2>How much autonomy?</h2>
+      <p>None of this means every asset should become autonomous. That would be poor engineering and poor value.</p>
+      <p>The better question is where autonomy creates the greatest resilience value. Typically: remote and difficult-to-access locations; high-consequence sites; distributed infrastructure with many nodes; sites where routine visits are expensive; and places where losing monitoring has serious operational consequences.</p>
+      <p>For a site ten minutes from a depot, on a reliable supply, the right answer may be a well-maintained uninterruptible power supply and a good service contract. For a pipeline section two hours from the nearest road, it may be very different. The answer depends on the mission, the load, the location, the conditions and the consequence of failure. That is what the method is for.</p>
+      <p>A few questions are worth asking before an incident, rather than after one:</p>
+      <div class="checklist">
+        <ul>
+          <li>Which shared dependencies could darken several nodes at once?</li>
+          <li>If a node lost its external supply tonight, how long would it keep working, and is that figure tested?</li>
+          <li>How long would restoration realistically take after a serious disruption, rather than an ordinary fault?</li>
+          <li>Which site visits are made only because the infrastructure needs keeping alive?</li>
+          <li>Does the design depend on knowing the cause of an outage before it can recover?</li>
+        </ul>
+      </div>
+
+      <h2>Harder to disconnect</h2>
+      <p>We cannot design infrastructure on the assumption that nothing will go wrong. We cannot assume every disruption can be prevented. And we cannot assume that help will always arrive quickly.</p>
+      <p>Resilience starts with a different question: what can continue working when something else has stopped?</p>
+      <p>At the edge of critical infrastructure, that question increasingly begins with power. Not because power is the whole resilience problem, but because without it most of the systems above it cannot function at all.</p>
+      <p>The objective is not to make the remote site invulnerable. It is to make it less dependent.</p>
+      <p>The next generation of critical infrastructure will not only be harder to attack. It will be harder to disconnect.</p>
+
+      <h2>About the author</h2>
+      <div class="checklist">
+        <p><strong>Simon Legrand</strong> is the founder of Melrakki Systems and co-founder of Sunstone Systems. Over more than twenty-five years across technology, infrastructure and the public sector, including thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems, his work has centred on keeping systems alive at the edge of the network.</p>
+        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, and deployments across oil and gas, highways, construction and critical infrastructure. <a href="/about/">More about Melrakki</a>.</p>
+      </div>
+
+      <h2>Sources and a note on attribution</h2>
+      <p class="src-note">Factual statements about threats, legislation and policy are drawn from the primary sources below, and are reported only as far as those sources support them. The opening scenario is hypothetical. The sabotage cascade, moving the dependency boundary, autonomous edge infrastructure and the three stages of resilience are Melrakki's own engineering interpretation. Nothing in this note implies endorsement by, or any relationship with, the UK Government, NPSA, MI5 or NATO.</p>
+      <ol class="sources">
+        <li id="src-1"><a href="https://gov.uk/government/publications/national-security-strategy-2025-security-for-the-british-people-in-a-dangerous-world/national-security-strategy-2025-security-for-the-british-people-in-a-dangerous-world-html" rel="noopener">HM Government, National Security Strategy 2025: Security for the British People in a Dangerous World, June 2025</a></li>
+        <li id="src-2"><a href="https://www.gov.uk/government/publications/national-security-state-threats-act-2026-factsheet/national-security-state-threats-act-2026-factsheet" rel="noopener">Home Office, National Security (State Threats) Act 2026: factsheet, July 2026</a></li>
+        <li id="src-3"><a href="https://www.gov.uk/government/publications/understanding-the-national-security-state-threats-act-2026/national-security-state-threats-act-2026-information-for-organisations" rel="noopener">Home Office, National Security (State Threats) Act 2026: information for organisations, July 2026</a></li>
+        <li id="src-4"><a href="https://www.mi5.gov.uk/director-general-sir-ken-mccallum-gives-threat-update" rel="noopener">MI5, Director General Sir Ken McCallum gives threat update, 16 October 2025</a></li>
+        <li id="src-5"><a href="https://www.gov.uk/government/news/plan-to-toughen-protections-for-subsea-internet-cables-amid-heightened-russian-activity" rel="noopener">Department for Science, Innovation and Technology, Plan to toughen protections for subsea internet cables amid heightened Russian activity, 29 May 2026</a></li>
+        <li id="src-6"><a href="https://www.gov.uk/government/publications/national-risk-register-2026" rel="noopener">Cabinet Office, National Risk Register 2026, July 2026</a></li>
+        <li id="src-7"><a href="https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2026/09/15/2026-resilience-baseline-requirements" rel="noopener">NATO, 2026 Resilience Baseline Requirements, 15 September 2026</a></li>
+        <li id="src-8"><a href="https://www.nato.int/en/news-and-events/articles/news/2026/09/17/prepare-protect-prevail-nato-publishes-baseline-requirements-for-resilience" rel="noopener">NATO, Prepare, protect, prevail: NATO publishes Baseline Requirements for Resilience, 17 September 2026</a></li>
+        <li id="src-9"><a href="https://www.npsa.gov.uk/building-protection/building-infrastructure/security-planning-guidance" rel="noopener">NPSA, Security Planning Guidance</a></li>
+      </ol>
+
+    </div>
+
+    <div class="article-foot">
+      <a class="back" href="/resilience/">&larr; All resilience notes</a>
+    </div>
+  </div>
+</article>
+
+<section class="section-tight cta">
+  <div class="wrap">
+    <h2>Bring us the load, the location and the conditions.</h2>
+    <p>We will engineer the platform that keeps it alive.</p>
+    <a class="btn btn-primary" href="mailto:hello@melrakki.systems?subject=Melrakki%20enquiry">Start a conversation</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems">
+        <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
+        <p class="foot-strap">Power that holds.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/#platforms">Platforms</a></li>
+          <li><a href="/#sectors">Sectors</a></li>
+          <li><a href="/#story">Story</a></li>
+          <li><a href="/greni/">Greni</a></li>
+          <li><a href="/resilience/">Notes</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="/Melrakki-Harka-Hybrid.pdf">Harka Hybrid brochure</a></li>
+          <li><a href="/Melrakki-Harka-Solar.pdf">Harka Solar brochure</a></li>
+          <li><a href="mailto:hello@melrakki.systems">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>hello@melrakki.systems &nbsp;|&nbsp; &copy; 2026 Melrakki Systems.</p>
+      <p class="foot-desc">Autonomous power for the hardest places on earth.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(t&&l){t.addEventListener('click',function(){
+    var open=l.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });}
+})();
+</script>
+</body>
+</html>
