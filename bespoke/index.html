@@ -182,6 +182,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -191,10 +192,19 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
     <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#platforms">Platforms</a></li>
         <li><a href="/#approach">Approach</a></li>
-        <li><a href="/#sectors">Sectors</a></li>
-        <li><a href="/resilience/">Notes</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/" aria-current="page">Bespoke</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/">Field notes</a></li>
         <li><a href="/about/">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
@@ -257,7 +267,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
       <h2>We don't start from a catalogue. We start from the load.</h2>
     </div>
     <div class="measure">
-      <p>Bespoke does not mean starting from nothing. It means the same method behind every Melrakki platform, applied to a requirement that happens to be one of a kind. We characterise the exact load, its duty cycle and the conditions it has to survive, then engineer generation, storage, power management, backup and monitoring around it, using proven hardware so nothing critical rests on an unproven part. The approach is set out in full in <a href="/resilience/designing-power-from-the-load-backwards/">designing power from the load backwards</a>.</p>
+      <p>Bespoke does not mean starting from nothing. It means the same method behind every Melrakki platform, applied to a requirement that happens to be one of a kind. We characterise the exact load, its duty cycle and the conditions it has to survive, then engineer generation, storage, power management, backup and monitoring around it, using proven hardware so nothing critical rests on an unproven part. The approach is set out in full in <a href="/resilience/designing-power-from-the-load-backwards/">designing power from the load backwards</a>. The architecture choices themselves, from solar-only to hybrid, are compared in <a href="/off-grid-power/">off-grid power systems for remote sites</a>.</p>
       <p>That covers a wide space: solar, battery and hybrid architectures; integration with your own equipment; the communications and remote monitoring the site needs; and the form factor the deployment demands, whether that is a mast, a skid, an enclosure or something built to mount on your asset directly. The same resilience thinking applies as everywhere else we work, described in <a href="/resilience/when-the-grid-goes-away/">resilience at the remote edge</a>: reduce the dependencies that can fail, and design for the worst credible week rather than the best day.</p>
     </div>
   </div>
@@ -269,7 +279,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
     <div class="proof">
       <p class="eyebrow">Capability and capacity</p>
       <p class="big">The capability to engineer it, and the capacity to build it.</p>
-      <p>Bespoke work is an extension of proven capability, not a leap into the unknown. Melrakki designs and builds its own platform architecture, drawing on more than a decade of deploying off-grid solar surveillance and autonomous power into demanding sectors, from oil and gas to highways, construction and critical infrastructure, including solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, and granted patents in solar-powered surveillance and autonomous off-grid power. When a requirement falls outside the standard range, that same team engineers the answer.</p>
+      <p>Bespoke work is an extension of proven capability, not a leap into the unknown. Melrakki designs and builds its own platform architecture, drawing on more than a decade of deploying off-grid solar surveillance and autonomous power into demanding sectors, from oil and gas to highways, construction and critical infrastructure, including solar CCTV infrastructure deployed across 58 sites in Kazakhstan. When a requirement falls outside the standard range, that same team engineers the answer.</p>
     </div>
   </div>
 </section>
@@ -468,14 +478,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <ul>
-          <li><a href="/bespoke/">Bespoke</a></li>
-          <li><a href="/harka/">Harka platforms</a></li>
-          <li><a href="/#sectors">Sectors</a></li>
-          <li><a href="/greni/">Greni</a></li>
-          <li><a href="/resilience/">Notes</a></li>
-          <li><a href="/about/">About</a></li>
-        </ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
       </div>
       <div class="foot-col">
         <h4>Platforms</h4>
@@ -549,5 +552,6 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
   refresh();
 })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
