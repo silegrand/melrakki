@@ -70,6 +70,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -79,10 +80,19 @@
     <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#platforms">Platforms</a></li>
         <li><a href="/#approach">Approach</a></li>
-        <li><a href="/#sectors">Sectors</a></li>
-        <li><a href="/resilience/" aria-current="page">Notes</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/" aria-current="page">Field notes</a></li>
         <li><a href="/about/">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
@@ -189,7 +199,7 @@
       <h2>About the author</h2>
       <div class="checklist">
         <p><strong>Simon Legrand</strong> is the founder of Melrakki Systems and co-founder of Sunstone Systems. Over more than twenty-five years across technology, infrastructure and the public sector, including thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems, his work has centred on one problem: keeping systems alive at the edge of the network, on sites with no grid and difficult access, which is the subject of this article.</p>
-        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, and granted patents and co-inventions in solar-powered surveillance and autonomous off-grid power, including work relating to solar drone charging. The argument here for treating power as the foundation of resilience rather than a commodity beside it comes directly from that work: the last mile is where remote systems actually fail, and it fails at the power long before it fails at the camera.</p>
+        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 sites in Kazakhstan, and deployments across oil and gas, highways, construction and critical infrastructure. The argument here for treating power as the foundation of resilience rather than a commodity beside it comes directly from that work: the last mile is where remote systems actually fail, and it fails at the power long before it fails at the camera.</p>
       </div>
 
       <p>If you are responsible for a remote or hard-to-reach asset that has to keep operating when the supply around it cannot be relied upon, the conversation Melrakki wants to have starts with four things: the load, the location, the conditions and the mission profile, what has to stay alive, where, in what weather, and doing what. Those size the power, and sizing the power honestly is what tells you what the system can survive on its own. Contact <a href="mailto:hello@melrakki.systems?subject=Resilience%20enquiry">hello@melrakki.systems</a>.</p>
@@ -222,14 +232,7 @@
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <ul>
-          <li><a href="/#platforms">Platforms</a></li>
-          <li><a href="/#sectors">Sectors</a></li>
-          <li><a href="/#story">Story</a></li>
-          <li><a href="/greni/">Greni</a></li>
-          <li><a href="/resilience/">Notes</a></li>
-          <li><a href="/about/">About</a></li>
-        </ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
       </div>
       <div class="foot-col">
         <h4>Platforms</h4>
@@ -256,5 +259,6 @@
   });}
 })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
