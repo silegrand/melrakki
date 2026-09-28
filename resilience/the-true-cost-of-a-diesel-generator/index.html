@@ -58,6 +58,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -67,10 +68,19 @@
     <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#platforms">Platforms</a></li>
         <li><a href="/#approach">Approach</a></li>
-        <li><a href="/#sectors">Sectors</a></li>
-        <li><a href="/resilience/" aria-current="page">Notes</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/" aria-current="page">Field notes</a></li>
         <li><a href="/about/">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
@@ -142,16 +152,16 @@
       <p>That reframes the question worth asking. Not how many litres a year does the generator burn, but <strong>how many journeys a year does the power system require</strong>. A site that needs a vehicle down a bad road every fortnight carries a very different cost, and a very different risk, from one that needs a visit twice a year. The litres are visible. The journeys are where the exposure lives.</p>
 
       <h2>The cost of a site visit</h2>
-      <p>Which makes the site visit a unit of cost worth naming in its own right. A visit is never just fuel and a wage. It is the vehicle and its depreciation, the insurance, the planning, the travel time, sometimes a ferry, a flight or a night's accommodation, the safety procedures, the second person because you cannot send anyone out alone, and the work not being done elsewhere while it happens.</p>
+      <p>Which makes the site visit a unit of cost worth naming in its own right. A visit is never just fuel and a wage. It is the vehicle and its depreciation, the insurance, the planning, the travel time, sometimes a ferry, a flight or a night's accommodation, the safety procedures, the second person because you cannot send anyone out alone, and the work not being done elsewhere while it happens. How access shapes the design itself is covered in <a href="/off-grid-power/">off-grid power systems for remote sites</a>.</p>
       <p class="lead-para">The more remote the site, the more every human intervention costs, and the more a system that needs fewer of them is worth.</p>
       <p>Autonomy is not an abstract virtue here. It is the number of visits you do not have to make, multiplied by what each one would have cost. As remoteness rises, that number climbs faster than the fuel bill ever will.</p>
 
       <h2>The energy signature</h2>
-      <p>A running generator does more than make electricity. It announces itself. It has an acoustic signature you can hear across a valley, a thermal signature a camera can pick out in the dark, and a visual footprint, the exhaust, the tank, the fuel store, that makes a site more obvious than it needs to be. The deliveries add a logistic signature, a pattern of vehicles arriving on a rhythm. The visits add a human one.</p>
+      <p>A running generator does more than make electricity. It announces itself. It has an acoustic signature you can hear across a valley, a thermal signature a camera can pick out in the dark, and a visual footprint, the exhaust, the tank, the fuel store, that makes a site more obvious than it needs to be. The deliveries add a logistic signature, a pattern of vehicles arriving on a rhythm. The visits add a human one. What each power architecture gives away is set out in <a href="/defence-and-security/#signature">the signature ledger</a>.</p>
       <p>None of that matters on every site. On some it matters a great deal. For <a href="/#sectors">security, surveillance and border infrastructure</a>, a power source that is silent, cool and needs no resupply is not a green talking point, it is cover. A site that makes no noise, throws no heat and receives no convoy is simply harder to find and harder to read. That is why the clean tier exists, and why low signature sits alongside low running cost as a reason to take the generator off a site where the conditions allow it.</p>
 
       <h2>Fuel is worth stealing</h2>
-      <p>Stored fuel is an asset, and assets on quiet sites attract attention. Diesel can be siphoned, drained, contaminated or simply carried off, and every litre stored is a litre someone else might take. Protecting it, with tanks, locks, alarms or yet more visits, is a cost the fuel quote never mentions, and one that grows on exactly the isolated sites where diesel is hardest to justify in the first place. Remove the tank and you remove the target.</p>
+      <p>Stored fuel is an asset, and assets on quiet sites attract attention. Diesel can be siphoned, drained, contaminated or simply carried off, and every litre stored is a litre someone else might take. Protecting it, with tanks, locks, alarms or yet more visits, is a cost the fuel quote never mentions, and one that grows on exactly the isolated sites where diesel is hardest to justify in the first place. Remove the tank and you remove the target. On remote oil and gas sites the problem is sharper; see <a href="/oil-and-gas/">off-grid power for oil and gas sites</a>.</p>
 
       <h2>Emissions are not only carbon</h2>
       <p>Emissions are part of the real cost now, and they are more than a single number. Burning a litre of diesel releases roughly two and a half to two and three-quarter kilograms of carbon dioxide on the UK government's own conversion factors, before the emissions of getting that litre to site are counted at all. Beyond carbon there is NOx and particulate matter, local air quality and noise, each of which can matter near people, near habitats or under the terms of a permit.</p>
@@ -216,14 +226,7 @@
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <ul>
-          <li><a href="/#platforms">Platforms</a></li>
-          <li><a href="/#sectors">Sectors</a></li>
-          <li><a href="/#story">Story</a></li>
-          <li><a href="/greni/">Greni</a></li>
-          <li><a href="/resilience/">Notes</a></li>
-          <li><a href="/about/">About</a></li>
-        </ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
       </div>
       <div class="foot-col">
         <h4>Platforms</h4>
@@ -250,5 +253,6 @@
   });}
 })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
