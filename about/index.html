@@ -262,6 +262,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
  ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -271,10 +272,19 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
     <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#platforms">Platforms</a></li>
         <li><a href="/#approach">Approach</a></li>
-        <li><a href="/#sectors">Sectors</a></li>
-        <li><a href="/resilience/">Notes</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/">Field notes</a></li>
         <li><a href="/about/" aria-current="page">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
@@ -345,7 +355,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
     <div class="two-col">
       <div class="measure">
         <p>Simon Legrand is the founder of Melrakki Systems and co-founder of Sunstone Systems, founded in 2011. Over more than twenty-five years across technology, infrastructure and the public sector, including thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems, his work has centred on one problem: keeping systems alive at the edge of the network, on sites with no grid and difficult access.</p>
-        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, deployments across oil and gas, highways, construction and critical infrastructure, and granted patents and co-inventions in solar-powered surveillance and autonomous off-grid power, including work relating to solar drone charging, the thinking that now sits behind <a href="/greni/">Greni</a>.</p>
+        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 sites in Kazakhstan, and deployments across oil and gas, highways, construction and critical infrastructure. That work is the thinking that now sits behind the Harka platforms and <a href="/greni/">Greni</a>.</p>
         <p>Simon is a Chartered Marketer (MCIM) and writes Melrakki's field notes on resilience at the remote edge. Melrakki is that experience, engineered into platforms of its own.</p>
       </div>
       <aside class="linkcard" aria-label="Founder links">
@@ -397,14 +407,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <ul>
-          <li><a href="/bespoke/">Bespoke</a></li>
-          <li><a href="/harka/">Harka platforms</a></li>
-          <li><a href="/greni/">Greni</a></li>
-          <li><a href="/#sectors">Sectors</a></li>
-          <li><a href="/resilience/">Notes</a></li>
-          <li><a href="/about/">About</a></li>
-        </ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
       </div>
       <div class="foot-col">
         <h4>Platforms</h4>
@@ -430,5 +433,6 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
     l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');t.setAttribute('aria-expanded','false');}});}
 })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
