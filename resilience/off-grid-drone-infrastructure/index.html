@@ -70,6 +70,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -79,10 +80,19 @@
     <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#platforms">Platforms</a></li>
         <li><a href="/#approach">Approach</a></li>
-        <li><a href="/#sectors">Sectors</a></li>
-        <li><a href="/resilience/" aria-current="page">Notes</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/" aria-current="page">Field notes</a></li>
         <li><a href="/about/">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
@@ -144,7 +154,7 @@
       <p>One word in that sequence deserves care. <strong>Decide</strong> does not have to mean a machine deciding. On the operations this is written for, a person stays firmly in the loop and holds the authority to launch and to act. The purpose of the infrastructure is not to remove the human. It is that once the human has decided, nothing physical has to be carried to the site to act on it. That is the line between automation, which follows a script, and autonomy, which no longer needs you standing next to it. The decision stays human. The logistics disappear.</p>
 
       <h2>Why off-grid changes the problem</h2>
-      <p>Here is the part the drone industry tends to treat as an afterthought, and the part Melrakki treats as the whole job. A charging station is, underneath, an energy system. On a remote site with no grid, the real question is not how do we charge the drone. It is how do we produce and store enough electricity, on site and unattended, to charge an aircraft on demand and run everything around it, in a place that may see very little sun for months.</p>
+      <p>Here is the part the drone industry tends to treat as an afterthought, and the part Melrakki treats as the whole job. A charging station is, underneath, an energy system. On a remote site with no grid, the real question is not how do we charge the drone. It is how do we produce and store enough electricity, on site and unattended, to charge an aircraft on demand and run everything around it, in a place that may see very little sun for months. The dock&#39;s load profile, and how to size for it, is set out in <a href="/drone-dock-power/">powering a drone dock where there is no grid</a>.</p>
       <p>Because the station does not only feed the drone. It has to power the docking mechanism, the communications, the control electronics, the environmental protection that keeps a battery alive in the cold, the sensors and the standby draw that never sleeps. The recharge is a spike on top of a baseline that runs day and night. Size for the spike and forget the baseline, and the system dies quietly between missions.</p>
       <blockquote class="pullquote">
         <p>The drone-charging problem, looked at honestly, is an energy architecture problem wearing a different hat.</p>
@@ -184,7 +194,7 @@
       <h2>About the author</h2>
       <div class="checklist">
         <p><strong>Simon Legrand</strong> is the founder of Melrakki Systems and co-founder of Sunstone Systems. Over more than twenty-five years across technology, infrastructure and the public sector, including thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems, his work has centred on one problem in particular: keeping electronic systems alive, unattended, on sites with no grid and difficult access. That is the same problem this article is about, moved from a fixed camera to a docked aircraft.</p>
-        <p>That experience is first-hand, not theoretical. It includes co-design of solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, and granted patents and co-inventions in solar-powered surveillance and autonomous off-grid power, including work relating to solar drone charging. The argument here for putting the energy architecture before the aircraft comes directly from that history: remote power rarely looks the same on a drawing as it does when someone has to keep it running through a winter, in a place a service visit cannot easily reach.</p>
+        <p>That experience is first-hand, not theoretical. It includes co-design of solar CCTV infrastructure deployed across 58 sites in Kazakhstan, and deployments across oil and gas, highways, construction and critical infrastructure. The argument here for putting the energy architecture before the aircraft comes directly from that history: remote power rarely looks the same on a drawing as it does when someone has to keep it running through a winter, in a place a service visit cannot easily reach.</p>
         <p>The distinction this article has kept is the one that history makes unavoidable, between what has been built and what is being explored. The remote solar surveillance and off-grid power are deployed, working technology. Greni is a working prototype, in field test, that applies the same discipline to a new load. Naming which is which is the whole point.</p>
       </div>
 
@@ -218,14 +228,7 @@
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <ul>
-          <li><a href="/#platforms">Platforms</a></li>
-          <li><a href="/#sectors">Sectors</a></li>
-          <li><a href="/#story">Story</a></li>
-          <li><a href="/greni/">Greni</a></li>
-          <li><a href="/resilience/">Notes</a></li>
-          <li><a href="/about/">About</a></li>
-        </ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
       </div>
       <div class="foot-col">
         <h4>Platforms</h4>
@@ -252,5 +255,6 @@
   });}
 })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
