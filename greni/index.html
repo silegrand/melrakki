@@ -256,7 +256,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
      "name": "Can Melrakki power a drone dock we already own?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes, as a bespoke engagement. If you already operate a mains-dependent dock and need it on a site with no grid, that is an off-grid power problem, and it is exactly what our bespoke service is for."
+      "text": "Only a dock and aircraft combination that Melrakki has tested and passed. We do not assume compatibility from a datasheet, because a dock's standby draw, charge peaks and thermal behaviour decide whether off-grid power holds. Tell us the dock you use and we will tell you where it stands."
      }
     },
     {
@@ -297,6 +297,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
  ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -306,10 +307,19 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
     <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#platforms">Platforms</a></li>
         <li><a href="/#approach">Approach</a></li>
-        <li><a href="/#sectors">Sectors</a></li>
-        <li><a href="/resilience/">Notes</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/">Field notes</a></li>
         <li><a href="/about/">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
@@ -411,7 +421,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
       <p class="eyebrow">Where Greni is now</p>
       <p class="big">A working prototype is in field test with a leading UK organisation.</p>
       <p>That evaluation is confidential, so we are not able to report on it yet, and we will not publish figures or compatibilities until testing lets us stand behind them. In the meantime we are talking to operators who want to be early: to influence how Greni is specified, and to be first in line when it becomes available.</p>
-      <p>Greni is not a first attempt at the underlying problem. It builds on more than a decade of deployed off-grid solar surveillance and power, and on the founder's granted patents and co-inventions in solar-powered surveillance and autonomous off-grid power, including work relating to solar drone charging. <a href="/about/">More about Melrakki</a>.</p>
+      <p>Greni is not a first attempt at the underlying problem. It builds on more than a decade of deployed off-grid solar surveillance and power, on sites where a service visit is the expensive part. <a href="/about/">More about Melrakki</a>.</p>
     </div>
   </div>
 </section>
@@ -544,7 +554,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
       <details><summary>Can I buy Greni now?</summary><p>Not yet. A working prototype is in field test, and Greni will be offered more widely once that evaluation allows us to stand behind it. Registering interest puts you in line for early access and means your requirement is taken into account as the specification is finalised.</p></details>
       <details><summary>Which drones and docks will Greni support?</summary><p>We are not publishing compatibility until testing lets us stand behind it. Tell us the aircraft and dock you use, or are considering, and we will be straight with you about fit.</p></details>
       <details><summary>Will it keep working through a northern winter?</summary><p>Only if it is sized for the worst credible week rather than the average day, which is how we size it. Where the sun alone cannot carry the mission in some seasons, a hybrid architecture with fuelled backup is the honest answer, the same logic that separates Harka Solar and Harka Hybrid.</p></details>
-      <details><summary>Can Melrakki power a drone dock we already own?</summary><p>Yes, as a bespoke engagement. If you already operate a mains-dependent dock and need it on a site with no grid, that is an off-grid power problem, and it is exactly what our <a href="/bespoke/">bespoke service</a> is for.</p></details>
+      <details><summary>Can Melrakki power a drone dock we already own?</summary><p>Only a dock and aircraft combination that Melrakki has tested and passed. We do not assume compatibility from a datasheet, because a dock's standby draw, charge peaks and thermal behaviour decide whether off-grid power holds. Tell us the dock you use and we will tell you where it stands. <a href="/drone-dock-power/">How we think about powering a drone dock off-grid</a>.</p></details>
       <details><summary>Does Greni decide when the drone flies?</summary><p>No. Greni keeps the capability charged, powered and ready. A person keeps the authority to launch and to act. The infrastructure removes the logistics, not the judgement.</p></details>
       <details><summary>What do you need from us to start?</summary><p>Four things: the load, the location, the conditions and the mission profile, meaning what has to fly, how often and in what weather. Those size the power, and sizing the power honestly is what tells you whether the capability will hold through the hardest week of the year.</p></details>
     </div>
@@ -572,14 +582,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <ul>
-          <li><a href="/bespoke/">Bespoke</a></li>
-          <li><a href="/harka/">Harka platforms</a></li>
-          <li><a href="/greni/">Greni</a></li>
-          <li><a href="/#sectors">Sectors</a></li>
-          <li><a href="/resilience/">Notes</a></li>
-          <li><a href="/about/">About</a></li>
-        </ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
       </div>
       <div class="foot-col">
         <h4>Platforms</h4>
@@ -634,5 +637,6 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
   refresh();
 })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
