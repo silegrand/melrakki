@@ -168,17 +168,40 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@graph":[
-    {"@type":"Service","name":"Bespoke off-grid power engineering","serviceType":"Off-grid power system engineering",
-     "provider":{"@type":"Organization","name":"Melrakki Systems","url":"https://www.melrakki.systems/"},
-     "areaServed":"Worldwide",
-     "description":"Custom autonomous off-grid power systems engineered around a customer's device, site and constraints, where a standard platform cannot meet the requirement.",
-     "url":"https://www.melrakki.systems/bespoke/"},
-    {"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.melrakki.systems/"},
-      {"@type":"ListItem","position":2,"name":"Bespoke","item":"https://www.melrakki.systems/bespoke/"}
-    ]}
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Bespoke off-grid power engineering",
+      "serviceType": "Off-grid power system engineering",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.melrakki.systems/#org",
+        "name": "Melrakki Systems",
+        "url": "https://www.melrakki.systems/",
+        "logo": "https://www.melrakki.systems/icon-512.png"
+      },
+      "areaServed": "Worldwide",
+      "description": "Custom autonomous off-grid power systems engineered around a customer's device, site and constraints, where a standard platform cannot meet the requirement.",
+      "url": "https://www.melrakki.systems/bespoke/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.melrakki.systems/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Bespoke",
+          "item": "https://www.melrakki.systems/bespoke/"
+        }
+      ]
+    }
   ]
 }
 </script>
