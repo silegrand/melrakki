@@ -297,6 +297,7 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -306,10 +307,19 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
     <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#platforms">Platforms</a></li>
         <li><a href="/#approach">Approach</a></li>
-        <li><a href="/#sectors">Sectors</a></li>
-        <li><a href="/resilience/">Notes</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/">Field notes</a></li>
         <li><a href="/about/">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
@@ -366,7 +376,7 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
       <div class="panel">
         <p class="k">03</p>
         <h3>Far fewer site visits</h3>
-        <p>The platform is built to run unattended and to report its own health remotely, so the site holds while you are somewhere else, and a visit becomes the exception rather than the schedule.</p>
+        <p>The platform is built to run unattended, and optional remote monitoring reports its health from wherever you are, so a visit becomes the exception rather than the schedule.</p>
       </div>
     </div>
   </div>
@@ -380,8 +390,8 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
       <h2>A power system, engineered from the load backwards.</h2>
     </div>
     <div class="measure">
-      <p>Harka is not a solar panel on a pole. It is a designed power system: generation, storage, power management and remote monitoring, integrated around proven hardware so that nothing critical rests on an unproven part. It is the power platform beneath the payload, built to sustain the surveillance, communications, sensors and drones that a remote site depends on.</p>
-      <p>Every platform is sized to the exact load it has to carry, its continuous draw, its duty cycle and the conditions it has to survive, rather than picked off a catalogue. That method is the difference between a system that runs beautifully all summer and one that holds through a bad December. We set it out in full in <a href="/resilience/designing-power-from-the-load-backwards/">designing power from the load backwards</a>.</p>
+      <p>Harka is not a solar panel on a pole. It is a designed power system: generation, storage and power management, with remote monitoring as an option, integrated around proven hardware so that nothing critical rests on an unproven part. It is the power platform beneath the payload, built to sustain the surveillance, communications, sensors and drones that a remote site depends on.</p>
+      <p>Every platform is sized to the exact load it has to carry, its continuous draw, its duty cycle and the conditions it has to survive, rather than picked off a catalogue. That method is the difference between a system that runs beautifully all summer and one that holds through a bad December. We set it out in full in <a href="/resilience/designing-power-from-the-load-backwards/">designing power from the load backwards</a>. For how Harka compares with grid extension, generators and fuel cells, see <a href="/off-grid-power/">off-grid power systems for remote sites</a>.</p>
     </div>
   </div>
 </section>
@@ -407,7 +417,7 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
           <li><span>Reserve</span><span>75 h at 100 W</span></li>
           <li><span>Fuel</span><span>None</span></li>
         </ul>
-        <p class="suits"><strong>Suits</strong> sites where the worst-month solar resource covers the load, and where a silent, heatless, zero-emission signature is worth the most.</p>
+        <p class="suits"><strong>Suits</strong> sites where the worst-month solar resource covers the load, and where a silent, zero-emission signature with no engine heat is worth the most.</p>
       </div>
       <div class="tier">
         <p class="tag">Endurance tier</p>
@@ -448,11 +458,14 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
           <tr><th scope="row">Endurance at 100 W</th><td>75 h reserve (battery)</td><td>up to 1840 h (with backup)</td></tr>
           <tr><th scope="row">Backup</th><td>None</td><td>HVO Stage V generator</td></tr>
           <tr><th scope="row">Fuel</th><td>None</td><td>HVO renewable diesel (backup only)</td></tr>
+          <tr><th scope="row">Fuel tank</th><td>None</td><td>125 L</td></tr>
+          <tr><th scope="row">Generator start</th><td>n/a</td><td>40% state of charge</td></tr>
+          <tr><th scope="row">Battery only at 100 W</th><td>75 h</td><td>41 h (generator unavailable)</td></tr>
           <tr><th scope="row">Signature</th><td>Silent, zero emission</td><td>Silent, zero emission on battery</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="tbl-note">Runtimes are stated at a 100 W continuous reference load. Endurance scales with the actual draw: roughly double the load and you roughly halve the endurance.</p>
+    <p class="tbl-note">Runtimes are stated at a 100 W continuous reference load, with battery reserve taken to 80% depth of discharge. Endurance scales with the actual draw: roughly double the load and you roughly halve the endurance. Wind loading, insulation and ventilation are engineered to each customer's site requirement. Manufactured to Melrakki Systems designs and specifications.</p>
   </div>
 </section>
 
@@ -465,13 +478,13 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
       <p>Melrakki is built for operations where intervention is expensive or impossible and a failure is a redeployment, not a callout. These are the environments where autonomous power earns its place.</p>
     </div>
     <div class="grid-4">
-      <div class="sector">Oil and gas<span>Priority sector</span></div>
-      <div class="sector">Defence and public sector<span>Priority sector</span></div>
+      <a class="sector" href="/oil-and-gas/">Oil and gas<span>Priority sector</span></a>
+      <a class="sector" href="/defence-and-security/">Defence and public sector<span>Priority sector</span></a>
       <div class="sector">Extreme and hostile sites<span>Priority sector</span></div>
-      <div class="sector">Critical national infrastructure<span>Also powered</span></div>
-      <div class="sector">Security and surveillance<span>Also powered</span></div>
-      <div class="sector">Telecoms and remote networks<span>Also powered</span></div>
-      <div class="sector">Border and perimeter security<span>Also powered</span></div>
+      <a class="sector" href="/critical-infrastructure/">Critical national infrastructure<span>Also powered</span></a>
+      <a class="sector" href="/solar-powered-surveillance/">Security and surveillance<span>Also powered</span></a>
+      <a class="sector" href="/telecommunications/">Telecoms and remote networks<span>Also powered</span></a>
+      <a class="sector" href="/defence-and-security/">Border and perimeter security<span>Also powered</span></a>
       <div class="sector">Remote construction<span>Also powered</span></div>
       <div class="sector">Emergency and disaster response<span>Also powered</span></div>
     </div>
@@ -494,8 +507,8 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
         <tbody>
           <tr><th scope="row">Fuel</th><td>Continuous, delivered</td><td>None (Solar) / backup only (Hybrid)</td></tr>
           <tr><th scope="row">Logistics</th><td>Recurring fuel convoy</td><td>Little to none</td></tr>
-          <tr><th scope="row">Site visits</th><td>Fuelling and servicing</td><td>Unattended, self-reporting</td></tr>
-          <tr><th scope="row">Signature</th><td>Noise, heat, exhaust</td><td>Silent and heatless on battery</td></tr>
+          <tr><th scope="row">Site visits</th><td>Fuelling and servicing</td><td>Unattended; remote monitoring optional</td></tr>
+          <tr><th scope="row">Signature</th><td>Noise, heat, exhaust</td><td>Silent on battery, no engine heat</td></tr>
           <tr><th scope="row">Emissions</th><td>Continuous at the site</td><td>None, or backup only</td></tr>
           <tr><th scope="row">Theft target</th><td>Stored fuel</td><td>No fuel to steal (Solar)</td></tr>
         </tbody>
@@ -552,7 +565,7 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
     <div class="proof">
       <p class="eyebrow">Proven where it matters</p>
       <p class="big">More than a decade deploying off-grid solar power into some of the most demanding sectors on earth.</p>
-      <p>Harka is not a first attempt. The team behind Melrakki has spent over a decade designing and deploying off-grid solar surveillance and autonomous power, from oil and gas to highways, construction and critical infrastructure, including solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan. Melrakki is that experience, engineered into platforms of its own. The name is the Icelandic word for the Arctic fox, the only animal that thrives unaided through the polar winter. We build power that behaves the same way.</p>
+      <p>Harka is not a first attempt. The team behind Melrakki has spent over a decade designing and deploying off-grid solar surveillance and autonomous power, from oil and gas to highways, construction and critical infrastructure, including solar CCTV infrastructure deployed across 58 sites in Kazakhstan. Melrakki is that experience, engineered into platforms of its own. The name is the Icelandic word for the Arctic fox, the only animal that thrives unaided through the polar winter. We build power that behaves the same way.</p>
     </div>
   </div>
 </section>
@@ -598,14 +611,7 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <ul>
-          <li><a href="/#platforms">Platforms</a></li>
-          <li><a href="/#sectors">Sectors</a></li>
-          <li><a href="/#story">Story</a></li>
-          <li><a href="/greni/">Greni</a></li>
-          <li><a href="/resilience/">Notes</a></li>
-          <li><a href="/about/">About</a></li>
-        </ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
       </div>
       <div class="foot-col">
         <h4>Platforms</h4>
@@ -675,5 +681,6 @@ table.spec td{color:var(--mist);font-family:'IBM Plex Mono',monospace;}
   calc();
 })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
