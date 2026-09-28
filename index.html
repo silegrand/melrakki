@@ -443,6 +443,7 @@
     .cta .hero-actions{width:100%;}
   }
 </style>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -454,12 +455,20 @@
         <li><a href="#approach">Approach</a></li>
         <li><a href="#platforms">Platforms</a></li>
         <li><a href="/bespoke/">Bespoke</a></li>
-        <li><a href="#sectors">Sectors</a></li>
-        <li><a href="/resilience/">Notes</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/">Field notes</a></li>
         <li><a href="/about/">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
-    </nav>
+      </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -978,7 +987,7 @@
           <li><span class="k">Mast</span><span class="v">6 m galvanised</span></li>
           <li><span class="k">Solar array</span><span class="v">1080 W (3 x 360 W)</span></li>
           <li><span class="k">Battery</span><span class="v">24 VDC, 220 Ah</span></li>
-          <li><span class="k">Battery only</span><span class="v">45 h at 100 W</span></li>
+          <li><span class="k">Battery only</span><span class="v">41 h at 100 W</span></li>
           <li><span class="k">Before refuelling</span><span class="v">1840 h at 100 W</span></li>
           <li><span class="k">Backup</span><span class="v">HVO Stage V generator</span></li>
         </ul>
@@ -1130,16 +1139,16 @@
       <p class="lead">For operations where intervention is expensive or impossible and a failure is a redeployment, not a callout.</p>
     </div>
     <div class="sectors">
-      <div class="sector"><h3>Critical infrastructure</h3><p>Energy, transport, communications and other distributed infrastructure where a remote node has to stay live.</p></div>
-      <div class="sector"><h3>Remote security</h3><p>Surveillance, perimeter protection, sensing and monitoring where routine access is difficult.</p></div>
-      <div class="sector"><h3>Autonomous systems</h3><p>Drones and other autonomous systems that need persistent off-grid energy and infrastructure.</p></div>
-      <div class="sector"><h3>Remote industrial</h3><p>Oil and gas, construction and industrial operations beyond reliable grid infrastructure.</p></div>
+      <div class="sector"><h3>Critical infrastructure</h3><p>Energy, transport, communications and other distributed infrastructure where a remote node has to stay live. <span class="sector-link"><a href="/critical-infrastructure/">Critical infrastructure power &rarr;</a></span></p></div>
+      <div class="sector"><h3>Remote security</h3><p>Surveillance, perimeter protection, sensing and monitoring where routine access is difficult. <span class="sector-link"><a href="/solar-powered-surveillance/">Solar-powered surveillance &rarr;</a></span></p></div>
+      <div class="sector"><h3>Autonomous systems</h3><p>Drones and other autonomous systems that need persistent off-grid energy and infrastructure. <span class="sector-link"><a href="/drone-dock-power/">Drone dock power &rarr;</a></span></p></div>
+      <div class="sector"><h3>Remote industrial</h3><p>Oil and gas, construction and industrial operations beyond reliable grid infrastructure. <span class="sector-link"><a href="/oil-and-gas/">Oil and gas sites &rarr;</a></span></p></div>
       <div class="sector"><h3>Emergency and resilience</h3><p>Equipment that has to stay operational when normal services cannot be assumed.</p></div>
     </div>
     <div class="also">
       <p class="also-label">Priority sectors</p>
       <ul>
-        <li>Oil and gas</li><li>Defence and public sector</li><li>Extreme and hostile-location sites</li>
+        <li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and public sector</a></li><li>Extreme and hostile-location sites</li>
       </ul>
     </div>
   </div>
@@ -1227,7 +1236,7 @@
       </div>
       <div class="foot-col">
         <h2>Explore</h2>
-        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="#approach">Approach</a></li><li><a href="#sectors">Sectors</a></li><li><a href="/resilience/">Notes</a></li><li><a href="/about/">About</a></li></ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
       </div>
       <div class="foot-col">
         <h2>Contact</h2>
@@ -1252,5 +1261,6 @@
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();t.focus();}});
   })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>

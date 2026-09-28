@@ -13,6 +13,20 @@ Melrakki engineers each platform from the load backwards, sizing it to the exact
 - Priority: oil and gas, defence and public sector, and extreme and hostile location sites.
 - Also: security and surveillance, telecommunications and remote networks, critical national infrastructure, border and perimeter security, remote construction, and emergency and disaster response.
 
+## Applications and sectors
+- [Off-grid power systems for remote sites](https://www.melrakki.systems/off-grid-power/): The pillar guide. Grid extension, diesel, solar and battery, solar hybrid and fuel cell architectures compared by what they depend on; autonomy versus endurance; the UK winter capacity of solar-only power (roughly 25 W average in a southern UK December from a 1,080 W array, 16 W in Scotland); designing for sites that are hard to reach; battery lifecycle.
+- [Solar-powered surveillance](https://www.melrakki.systems/solar-powered-surveillance/): Camera, infrared, router and heater load budgets, a load worksheet, and when solar-only or hybrid power is the honest answer for remote CCTV.
+- [Remote communications power](https://www.melrakki.systems/telecommunications/): Power for radio, telemetry and network nodes; backup versus autonomy; what a small autonomous platform can and cannot carry. Melrakki supplies power, not radios.
+- [Drone dock power](https://www.melrakki.systems/drone-dock-power/): Why a drone dock is a harder load than a camera (continuous baseline plus charge peaks). Melrakki powers only dock and aircraft combinations it has tested and passed; Greni is in development.
+- [Critical infrastructure](https://www.melrakki.systems/critical-infrastructure/): Where remote security and monitoring share a supply with the asset they protect, and where independent power belongs.
+- [Oil and gas](https://www.melrakki.systems/oil-and-gas/): Surveillance and monitoring power for remote oil and gas sites. Harka platforms are not certified for hazardous areas and are sited outside classified zones.
+- [Defence and security](https://www.melrakki.systems/defence-and-security/): Signature (acoustic, thermal, exhaust, resupply) and logistics as design inputs for perimeter, border and compound power. No defence approvals or contracts are claimed.
+
+## Platform figures (100 W continuous reference load)
+- Harka Solar MK-HK-S6: 1,080 W array, 24 V 400 Ah AGM, 75 h battery reserve, no fuel.
+- Harka Hybrid MK-HK-H6: 1,080 W array, 24 V 220 Ah AGM, 41 h battery reserve, Stage V HVO generator that starts at 40% state of charge, 125 L HVO tank, up to 1,840 h before refuelling.
+- Battery reserves are stated to 80% depth of discharge. Remote monitoring is optional. Wind loading, insulation and ventilation are engineered per site. Manufactured to Melrakki Systems designs and specifications.
+
 ## Resilience
 Field notes on off-grid power and operational resilience: keeping critical systems alive where the grid and the fuel convoy end.
 - [Where the grid ends](https://www.melrakki.systems/resilience/): The resilience section overview.

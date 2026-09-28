@@ -29,3 +29,12 @@ With the `CNAME` file in place, set your DNS so `www` points to GitHub Pages, th
 
 ## To update later
 When the content changes, update `<lastmod>` in `sitemap.xml` to the new date. If you add pages, add a `<url>` block for each.
+
+## Shared assets (added September 2026)
+| File | What it does |
+|------|--------------|
+| `assets/solutions.css` | Shared styles for the application and sector pages (`/off-grid-power/` and its six children). Tokens match `/harka/`. |
+| `assets/nav.css` | Applications menu, fourth footer column and a few small link styles. Loaded on every page. |
+| `assets/nav.js` | Closes the Applications menu on outside click, Escape or link choice. Loaded on every page. |
+
+The seven application and sector pages are generated from source in the separate `melrakki-seo/build` folder (`python3 build.py`). Edit the source there and rebuild, rather than editing the HTML by hand.
