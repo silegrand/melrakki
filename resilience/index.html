@@ -33,22 +33,63 @@
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"CollectionPage",
-  "name":"Where the Grid Ends",
-  "description":"Field notes on off-grid power and operational resilience from Melrakki Systems.",
-  "url":"https://www.melrakki.systems/resilience/",
-  "inLanguage":"en-GB",
-  "isPartOf":{"@type":"WebSite","name":"Melrakki Systems","url":"https://www.melrakki.systems/"},
-  "publisher":{"@type":"Organization","name":"Melrakki Systems","url":"https://www.melrakki.systems/","logo":"https://www.melrakki.systems/icon-512.png"},
-  "hasPart":[
-    {"@type":"BlogPosting","headline":"When the grid goes away","url":"https://www.melrakki.systems/resilience/when-the-grid-goes-away/"},
-    {"@type":"BlogPosting","headline":"When the drone has its own power station","url":"https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/"},
-    {"@type":"BlogPosting","headline":"The true cost of a diesel generator on a remote site","url":"https://www.melrakki.systems/resilience/the-true-cost-of-a-diesel-generator/"},
-    {"@type":"BlogPosting","headline":"Designing power from the load backwards","url":"https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/"}
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Where the Grid Ends",
+  "description": "Field notes on off-grid power and operational resilience from Melrakki Systems.",
+  "url": "https://www.melrakki.systems/resilience/",
+  "inLanguage": "en-GB",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Melrakki Systems",
+    "url": "https://www.melrakki.systems/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Melrakki Systems",
+    "url": "https://www.melrakki.systems/",
+    "logo": "https://www.melrakki.systems/icon-512.png"
+  },
+  "hasPart": [
+    {
+      "@type": "BlogPosting",
+      "headline": "When the infrastructure becomes the vulnerability",
+      "url": "https://www.melrakki.systems/resilience/when-the-infrastructure-becomes-the-vulnerability/"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "The last mile of resilience",
+      "url": "https://www.melrakki.systems/resilience/the-last-mile-of-resilience/"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "The sabotage problem",
+      "url": "https://www.melrakki.systems/resilience/the-sabotage-problem/"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "When the grid goes away",
+      "url": "https://www.melrakki.systems/resilience/when-the-grid-goes-away/"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "When the drone has its own power station",
+      "url": "https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "The true cost of a diesel generator on a remote site",
+      "url": "https://www.melrakki.systems/resilience/the-true-cost-of-a-diesel-generator/"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Designing power from the load backwards",
+      "url": "https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/"
+    }
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -58,10 +99,19 @@
     <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#platforms">Platforms</a></li>
         <li><a href="/#approach">Approach</a></li>
-        <li><a href="/#sectors">Sectors</a></li>
-        <li><a href="/resilience/" aria-current="page">Notes</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/" aria-current="page">Field notes</a></li>
         <li><a href="/about/">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
@@ -162,7 +212,7 @@
       <article class="card soon">
         <span class="pillar">The quiet advantage</span>
         <h3>Low signature as an operational advantage</h3>
-        <p class="dek">Silent, heatless, zero-emission power is not a green talking point. It is tactical. Why a running generator is a beacon, and clean power is cover.</p>
+        <p class="dek">Silent, zero-emission power with no engine heat is not a green talking point. It is tactical. Why a running generator is a beacon, and clean power is cover.</p>
         <div class="status"><span class="dot"></span>In preparation</div>
       </article>
     </div>
@@ -183,26 +233,25 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems">
+        <img src="/logo-lockup.png" width="480" height="135" loading="lazy" decoding="async" alt="Melrakki Systems">
         <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
         <p class="foot-strap">Power that holds.</p>
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <ul>
-          <li><a href="/#platforms">Platforms</a></li>
-          <li><a href="/#sectors">Sectors</a></li>
-          <li><a href="/#story">Story</a></li>
-          <li><a href="/greni/">Greni</a></li>
-          <li><a href="/resilience/">Notes</a></li>
-          <li><a href="/about/">About</a></li>
-        </ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Applications</h4>
+        <ul><li><a href="/off-grid-power/">Off-grid power</a></li><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul>
       </div>
       <div class="foot-col">
         <h4>Platforms</h4>
         <ul>
           <li><a href="/Melrakki-Harka-Hybrid.pdf">Harka Hybrid brochure</a></li>
           <li><a href="/Melrakki-Harka-Solar.pdf">Harka Solar brochure</a></li>
+          <li><a href="/greni/#interest">Greni early interest</a></li>
+          <li><a href="/bespoke/#brief">Build a requirement brief</a></li>
           <li><a href="mailto:hello@melrakki.systems">Contact</a></li>
         </ul>
       </div>
@@ -223,5 +272,6 @@
   });}
 })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
