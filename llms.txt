@@ -1,46 +1,50 @@
 # Melrakki Systems
 
-> Melrakki Systems engineers autonomous off-grid power for the hardest places on earth, keeping surveillance, communications, drones and other remote devices running with no mains power and little or no fuel logistics. Its headline offer is bespoke: power systems engineered around a customer's specific device, site and constraints. It also supplies productised platforms, Greni for autonomous drones and the Harka range for remote surveillance, communications and sensors.
+> Melrakki Systems is a UK engineering company, based in Kent, that designs autonomous off-grid power for critical equipment operating beyond reliable infrastructure: surveillance, communications, sensors and autonomous systems such as drones. It offers two standard platforms (Harka Solar and Harka Hybrid), bespoke off-grid power engineering, and Greni, an off-grid drone charging and docking station that is a working prototype in field test and not yet for sale.
 
-Melrakki engineers each platform from the load backwards, sizing it to the exact power draw, duty cycle and conditions it has to sustain, then integrating proven power hardware so nothing critical rests on an unproven part. The company draws on more than a decade of deploying off-grid solar surveillance into demanding sectors. The name is the Icelandic word for the Arctic fox, the only animal that thrives unaided through the polar winter. Strapline: Power that holds. Business to business, worldwide.
+Melrakki designs the power beneath the equipment, not the equipment itself. Every system is "engineered from the load backwards". The method starts with the mission, the load and its duty cycle, then the location and conditions, and only then the generation, storage, backup and platform. Systems are sized for "the worst credible week" the site will see, not the average day. Melrakki treats resilience as reducing dependencies (grid, fuel, site visits) rather than adding a bigger backup. These are Melrakki's own design principles, not external standards.
 
-## What Melrakki offers
-- [Bespoke off-grid power](https://www.melrakki.systems/bespoke/): The headline offer. When a requirement does not fit a standard platform, Melrakki engineers the autonomous power system around the customer's device, site and constraints, using the same method and proven hardware. A brief builder on the page helps a customer develop their requirement.
-- [Melrakki Greni, model MK-GR-01](https://www.melrakki.systems/greni/): An off-grid charging and docking station for autonomous drones, built on skid-mounted solar hybrid power with a tilting solar array and lithium storage, so persistent and beyond visual line of sight (BVLOS) operations keep flying with no power at the landing zone. Status: working prototype in field test with a leading UK organisation; results are confidential. Early interest can be registered on the page.
-- [Melrakki Harka range](https://www.melrakki.systems/harka/): The standard platforms for remote surveillance, communications and sensors. Harka Hybrid (MK-HK-H6), the endurance tier, adds a Stage V backup generator on HVO renewable diesel to hold uptime through deep winter and heavy loads when solar alone cannot. Harka Solar (MK-HK-S6), the clean tier, is solar and battery only, no fuel, emissions or noise.
+Melrakki is a new company name. Its experience comes from its founder and team's earlier work: 13 years building off-grid solar surveillance and power, including co-design of solar CCTV infrastructure across 58 sites in Kazakhstan, plus deployments in oil and gas, highways, construction and critical infrastructure. It does not publish customer names, case studies, certifications or defence approvals.
 
-## Sectors served
-- Priority: oil and gas, defence and public sector, and extreme and hostile location sites.
-- Also: security and surveillance, telecommunications and remote networks, critical national infrastructure, border and perimeter security, remote construction, and emergency and disaster response.
+Published platform figures are at a 100 W continuous load. Where pages differ, the specification table on the Harka page is authoritative for Harka figures, and the Greni page is authoritative for Greni's status. Last reviewed: 2026-09-28.
+
+## Platforms and services
+
+- [Harka platforms](https://www.melrakki.systems/harka/): Two standard autonomous off-grid power platforms on a 6 m manual mast with a 1,080 W solar array (3 × 360 W) at 24 VDC. **Harka Solar (MK-HK-S6)**: 400 Ah AGM battery, 75 h battery reserve at 100 W, no fuel or engine. **Harka Hybrid (MK-HK-H6)**: 220 Ah AGM battery, 41 h battery reserve at 100 W, and a Stage V generator on HVO renewable diesel that starts at 40% state of charge to recharge the battery. It runs up to 1,840 h at 100 W from a 125 L tank before refuelling. Both are commercial. Remote monitoring is optional. Not certified for hazardous areas.
+- [Harka Solar brochure (PDF)](https://www.melrakki.systems/Melrakki-Harka-Solar.pdf): Full technical data for MK-HK-S6, including dimensions, weight, battery type and cycle life, and transport.
+- [Harka Hybrid brochure (PDF)](https://www.melrakki.systems/Melrakki-Harka-Hybrid.pdf): Full technical data for MK-HK-H6, including generator engine and alternator, dimensions and weight.
+- [Greni](https://www.melrakki.systems/greni/): Off-grid charging and docking station for autonomous drones (MK-GR-01): skid-mounted solar hybrid power, tilting solar array, lithium storage. Status: working prototype in field test with a leading UK organisation, results confidential. No performance figures, compatibilities or approvals are published. Early interest can be registered.
+- [Bespoke engineering](https://www.melrakki.systems/bespoke/): Off-grid power engineered around a customer's device, site and constraints when no standard platform fits: unusual loads or voltages, harsher environments, or limits on size, weight, signature or mounting. Includes a requirement brief builder.
+
+## How Melrakki designs power
+
+- [Off-grid power systems for remote sites](https://www.melrakki.systems/off-grid-power/): The main guide. Architectures compared by what they depend on; autonomy versus endurance; what solar alone can carry in a UK winter (about 25 W average in a southern UK December from a 1,080 W array); designing for sites that are hard to reach; battery lifecycle.
+- [Designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/): The sizing method step by step, and the nine numbers to bring to a first conversation.
+- [About Melrakki](https://www.melrakki.systems/about/): The company, its six design principles, and its founder, Simon Legrand (co-founder of Sunstone Systems, 2011), with his documented experience.
 
 ## Applications and sectors
-- [Off-grid power systems for remote sites](https://www.melrakki.systems/off-grid-power/): The pillar guide. Grid extension, diesel, solar and battery, solar hybrid and fuel cell architectures compared by what they depend on; autonomy versus endurance; the UK winter capacity of solar-only power (roughly 25 W average in a southern UK December from a 1,080 W array, 16 W in Scotland); designing for sites that are hard to reach; battery lifecycle.
-- [Solar-powered surveillance](https://www.melrakki.systems/solar-powered-surveillance/): Camera, infrared, router and heater load budgets, a load worksheet, and when solar-only or hybrid power is the honest answer for remote CCTV.
-- [Remote communications power](https://www.melrakki.systems/telecommunications/): Power for radio, telemetry and network nodes; backup versus autonomy; what a small autonomous platform can and cannot carry. Melrakki supplies power, not radios.
-- [Drone dock power](https://www.melrakki.systems/drone-dock-power/): Why a drone dock is a harder load than a camera (continuous baseline plus charge peaks). Melrakki powers only dock and aircraft combinations it has tested and passed; Greni is in development.
-- [Critical infrastructure](https://www.melrakki.systems/critical-infrastructure/): Where remote security and monitoring share a supply with the asset they protect, and where independent power belongs.
-- [Oil and gas](https://www.melrakki.systems/oil-and-gas/): Surveillance and monitoring power for remote oil and gas sites. Harka platforms are not certified for hazardous areas and are sited outside classified zones.
+
+- [Solar-powered surveillance](https://www.melrakki.systems/solar-powered-surveillance/): Power for remote CCTV: device load behaviour, a load worksheet, winter sizing, and when solar-only or hybrid is the honest answer.
+- [Remote communications power](https://www.melrakki.systems/telecommunications/): Power for radio, telemetry and network nodes; backup versus autonomy; what a small platform can carry (macro mobile base stations are beyond it). Melrakki supplies power, not radios.
+- [Drone dock power](https://www.melrakki.systems/drone-dock-power/): Why a drone dock is a harder load than a camera (continuous baseline plus charge peaks). Melrakki powers only dock and aircraft combinations it has tested and passed.
+- [Critical infrastructure](https://www.melrakki.systems/critical-infrastructure/): Remote assets whose security or monitoring shares a power supply with the asset it protects, and where independent power belongs.
+- [Oil and gas](https://www.melrakki.systems/oil-and-gas/): Surveillance and monitoring power for remote oil and gas sites; platforms are sited outside hazardous zones; climate and fuel considerations.
 - [Defence and security](https://www.melrakki.systems/defence-and-security/): Signature (acoustic, thermal, exhaust, resupply) and logistics as design inputs for perimeter, border and compound power. No defence approvals or contracts are claimed.
 
-## Platform figures (100 W continuous reference load)
-- Harka Solar MK-HK-S6: 1,080 W array, 24 V 400 Ah AGM, 75 h battery reserve, no fuel.
-- Harka Hybrid MK-HK-H6: 1,080 W array, 24 V 220 Ah AGM, 41 h battery reserve, Stage V HVO generator that starts at 40% state of charge, 125 L HVO tank, up to 1,840 h before refuelling.
-- Battery reserves are stated to 80% depth of discharge. Remote monitoring is optional. Wind loading, insulation and ventilation are engineered per site. Manufactured to Melrakki Systems designs and specifications.
+## Field notes
 
-## Resilience
-Field notes on off-grid power and operational resilience: keeping critical systems alive where the grid and the fuel convoy end.
-- [Where the grid ends](https://www.melrakki.systems/resilience/): The resilience section overview.
-- [When the grid goes away](https://www.melrakki.systems/resilience/when-the-grid-goes-away/): The pillar note on resilience at the remote edge: resilience as fewer dependencies rather than a bigger backup, and power as infrastructure for other infrastructure.
-- [The sabotage problem](https://www.melrakki.systems/resilience/the-sabotage-problem/): Why sabotage is an infrastructure dependency problem as well as a security problem; the dependency cascade after a disruption, shared dependencies as single points of failure, and designing remote infrastructure to be harder to disconnect. Cites the National Security Strategy 2025, the National Security (State Threats) Act 2026, MI5, DSIT and NATO's 2026 Resilience Baseline Requirements; makes no prediction of specific attacks. The framing is Melrakki's own.
-- [The last mile of resilience](https://www.melrakki.systems/resilience/the-last-mile-of-resilience/): Why critical infrastructure is only as resilient as its furthest node, evidence from Storm Arwen and Ofcom's mobile power work, redundancy, diversity, independence and recovery, and a working definition of autonomous edge infrastructure. The framing is Melrakki's own.
-- [When the infrastructure becomes the vulnerability](https://www.melrakki.systems/resilience/when-the-infrastructure-becomes-the-vulnerability/): Why a technically robust security system can still be operationally fragile, the dependency chain beneath protective security, redundancy versus independence, and moving the dependency boundary closer to the asset. Cites NPSA, NCSC, MI5, Cabinet Office and NESO sources; the framing is Melrakki's own.
-- [When the drone has its own power station](https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/): Why persistent remote drone operations are an infrastructure and off-grid energy problem, not a drone problem, and where Greni (working prototype in field test) fits.
-- [The true cost of a diesel generator on a remote site](https://www.melrakki.systems/resilience/the-true-cost-of-a-diesel-generator/): Why the real cost of remote diesel power is the convoy, the site visits, the signature and the downtime, not the fuel, and what autonomous power removes.
-- [Designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/): How to size an off-grid solar or hybrid power system from the load backwards, and let the honest answer choose the tier.
+Field notes are written by the founder. They explain and argue; they are not product specifications. Where a note describes a product, the product page takes precedence.
 
-## Company
-- [About Melrakki](https://www.melrakki.systems/about/): Why Melrakki exists, the six principles it builds to, and its founder, Simon Legrand (https://www.simonlegrand.co.uk/), co-founder of Sunstone Systems, with thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems. Based in Kent, United Kingdom.
+- [When the grid goes away](https://www.melrakki.systems/resilience/when-the-grid-goes-away/): The main field note. Resilience as fewer dependencies rather than a bigger backup; redundancy versus independence; power as infrastructure for other infrastructure; the worst credible week.
+- [The last mile of resilience](https://www.melrakki.systems/resilience/the-last-mile-of-resilience/): Why critical infrastructure is only as resilient as its furthest node. Includes Melrakki's working definition of autonomous edge infrastructure, offered as a way of thinking rather than an established industry category.
+- [When the infrastructure becomes the vulnerability](https://www.melrakki.systems/resilience/when-the-infrastructure-becomes-the-vulnerability/): Why a robust security system can be operationally fragile, and moving the dependency boundary closer to the asset.
+- [The sabotage problem](https://www.melrakki.systems/resilience/the-sabotage-problem/): Sabotage as a dependency problem as well as a security problem. Separates what authoritative sources document from what they do not predict.
+- [When the drone has its own power station](https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/): Why persistent remote drone operation is an energy and infrastructure problem, UK BVLOS context, and where Greni (prototype) fits.
+- [The true cost of a diesel generator on a remote site](https://www.melrakki.systems/resilience/the-true-cost-of-a-diesel-generator/): Why the real cost of remote diesel is logistics, site visits, signature and downtime, and when diesel is still the right answer.
 
-## Contact
-- [Website](https://www.melrakki.systems/): Company overview, platforms and enquiries.
-- Email: hello@melrakki.systems
+## Optional
+
+- [Full reference (llms-full.txt)](https://www.melrakki.systems/llms-full.txt): The facts above in more depth, plus the cleaned text of the platform and application pages and summaries of every field note.
+- [Home](https://www.melrakki.systems/): Company overview.
+- [Field notes index](https://www.melrakki.systems/resilience/): All notes.
+- Contact: hello@melrakki.systems

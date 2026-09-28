@@ -1,0 +1,1594 @@
+# Melrakki Systems: full reference
+
+> The detailed companion to https://www.melrakki.systems/llms.txt. It is generated from the live website and a hand-reviewed summary of facts. The website pages linked throughout are the source of truth; where this file and a page disagree, the page wins. Last reviewed: 2026-09-28.
+
+Contents: Part 1, facts about Melrakki Systems (summary). Part 2, platform and application pages (cleaned page text). Part 3, field note summaries.
+
+
+---
+
+## Part 1. Facts about Melrakki Systems
+
+This part is a structured summary drawn from the pages linked in each section. The linked pages are the source of truth. Each item is labelled with one of these statuses:
+
+- **Commercial**: offered today.
+- **Prototype, field test**: a working prototype, not yet offered for sale.
+- **Historical**: work carried out before Melrakki Systems existed under that name.
+- **Principle**: Melrakki's own design philosophy or framing, not an external standard.
+
+### What Melrakki Systems is
+
+Melrakki Systems is a UK engineering company, based in Kent, that designs autonomous off-grid power for critical equipment operating beyond reliable infrastructure. That equipment includes surveillance, communications, sensors and autonomous systems such as drones. It works business to business, worldwide.
+
+Melrakki supplies the power infrastructure beneath that equipment: generation, storage, power management and, where needed, backup generation. The operator supplies the cameras, radios, sensors or aircraft, or Melrakki specifies them.
+
+Melrakki offers:
+- two standard platforms, Harka Solar and Harka Hybrid (Commercial);
+- bespoke off-grid power engineering (Commercial);
+- Greni, an off-grid drone charging and docking station (Prototype, field test).
+
+Source pages: [Home](https://www.melrakki.systems/), [About](https://www.melrakki.systems/about/).
+
+**What Melrakki is not.** It is not a domestic or general solar installer, a utility, a battery manufacturer, a CCTV or camera manufacturer, a drone manufacturer or a telecoms operator.
+
+Its products include solar panels and batteries, carry cameras and radios, and one is designed to charge drones. These are components of a remote power system, or the loads it supports, not the business itself. Melrakki does not supply radios or network services. Harka platforms are delivered open for the operator's own payload.
+
+The name is the Icelandic word for the Arctic fox. The platforms also have Icelandic names: Harka means toughness, and Greni is the fox's den.
+
+### Core ideas (Principle)
+
+**Engineered from the load backwards.** Melrakki's design method. A system is designed in a fixed order, and the order is the method:
+
+1. The requirement: mission, load, duty cycle.
+2. The site: location, conditions.
+3. The architecture: generation, storage, backup, platform.
+
+The load comes first; the platform comes last. The published sizing method asks for these numbers:
+- continuous and peak load;
+- the duty cycle of each device;
+- daily energy in watt-hours;
+- required autonomy with no input;
+- latitude and worst-month peak sun hours;
+- temperature range;
+- shading, soiling and snow exposure;
+- access interval;
+- security exposure.
+
+The tier (solar-only or hybrid) is an output of the method, not a preference.
+
+Sources: [Home](https://www.melrakki.systems/#approach), [Designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/).
+
+**The worst credible week.** Melrakki's sizing case. A remote system is designed to hold through the hardest week the site will credibly see, not its average or best day. That week is described as low sun, cold, snow, wind, a heavier load than usual, repeated demand and no one able to attend. It differs by load, location, conditions and mission profile, so it is set site by site. This is a Melrakki design principle, not a named external engineering standard.
+
+Sources: [When the grid goes away](https://www.melrakki.systems/resilience/when-the-grid-goes-away/), [About](https://www.melrakki.systems/about/).
+
+**Dependency.** Melrakki treats resilience as reducing what a system depends on, rather than adding a bigger backup ("fewer dependencies, not bigger backups"). The dependencies the site names are:
+- grid supply;
+- fuel and its delivery;
+- site access and routine visits;
+- maintenance;
+- communications;
+- the external infrastructure a protective system itself relies on.
+
+Two related distinctions:
+- **Redundancy versus independence.** Redundancy adds a second copy of something. Independence removes the shared dependency.
+- **Moving the dependency boundary.** No system is fully independent. Good design swaps inherited external dependencies for a smaller, more controllable set on site.
+
+Power is described as "infrastructure for other infrastructure": the enabling layer every other remote capability depends on.
+
+Sources: [When the grid goes away](https://www.melrakki.systems/resilience/when-the-grid-goes-away/), [When the infrastructure becomes the vulnerability](https://www.melrakki.systems/resilience/when-the-infrastructure-becomes-the-vulnerability/), [The sabotage problem](https://www.melrakki.systems/resilience/the-sabotage-problem/).
+
+**Autonomous edge infrastructure.** A working definition Melrakki uses: "infrastructure designed to maintain critical functions at remote locations with reduced dependence on external power, logistics, communications and routine human attendance". Melrakki presents it as a useful way of thinking about an emerging engineering problem, "not as an established industry category, and not as something Melrakki has invented".
+
+It describes five layers, which are not always needed together:
+- energy autonomy;
+- operational autonomy (remote monitoring);
+- communications resilience;
+- physical autonomy;
+- mission autonomy.
+
+Melrakki's own work sits in the first, energy autonomy, which it treats as the enabling layer for the rest. The underlying proposition: the further critical equipment moves from reliable infrastructure, the more autonomous the supporting infrastructure needs to become.
+
+Source: [The last mile of resilience](https://www.melrakki.systems/resilience/the-last-mile-of-resilience/).
+
+**The last mile of resilience.** Critical infrastructure does not end at the control room. It ends where the equipment has to work, and that final distance is often the hardest part to power, access and maintain.
+
+Source: [The last mile of resilience](https://www.melrakki.systems/resilience/the-last-mile-of-resilience/).
+
+**Other stated principles.** From the "six principles" on the About page:
+- **Proven hardware inside**: Melrakki's own platform architecture, built around components with a field record.
+- **The decision stays human**: autonomy removes logistics, not judgement.
+- **Say what is built and what is in test**: deployed technology is kept separate from development work.
+
+Source: [About](https://www.melrakki.systems/about/).
+
+### Platforms
+
+All runtimes are at a 100 W continuous reference load and scale with the load: halve the load and runtimes roughly double. Battery reserves are stated to 80% depth of discharge.
+
+#### Harka Solar, model MK-HK-S6 (Commercial)
+
+- **Purpose.** The clean tier. Autonomous solar and battery power for surveillance, communications and sensor payloads, with no fuel and no engine.
+- **Mast.** 6 m, hot-dip galvanised, raised manually by one person without tools. Mechanical safety brake.
+- **Solar array.** 1,080 W, made up of three 360 W panels that open by hand ("book-opening").
+- **Battery.** 24 VDC, 400 Ah, four AGM lead-acid batteries: 9.6 kWh nameplate, about 7.5 kWh usable. Expected cycle life 500 (brochure).
+- **Battery-only reserve.** 75 h at 100 W. Runs continuously where the worst month's sun covers the load.
+- **Fuel, engine, emissions.** None.
+- **Equipment bay.** Lockable steel, 370 × 200 × 470 mm internal, with an open head mount for the operator's cameras, lighting, sensors and radios.
+- **Weight and transport.** 1,100 kg. Skid with forklift pockets, ten units per truck.
+- **Remote monitoring.** Optional.
+- **Site engineering.** Wind loading, insulation and ventilation are engineered per site.
+- **Manufacture.** Manufactured to Melrakki Systems designs and specifications.
+- **Limitations.**
+  - Solar output falls sharply in winter. In a southern UK December, the 1,080 W array alone sustains roughly a 25 W average load, and roughly 16 W in Scotland (0.7 performance ratio; indicative).
+  - Not certified for hazardous (ATEX/DSEAR) areas; sited outside classified zones.
+  - No published operating temperature range; thermal design is per site.
+- **Sources.** [Harka](https://www.melrakki.systems/harka/), [Harka Solar brochure (PDF)](https://www.melrakki.systems/Melrakki-Harka-Solar.pdf), [Off-grid power](https://www.melrakki.systems/off-grid-power/).
+
+#### Harka Hybrid, model MK-HK-H6 (Commercial)
+
+- **Purpose.** The endurance tier. Solar and battery carry the load; a backup generator recharges the battery only when the sun cannot keep up.
+- **Mast and array.** As Harka Solar: 6 m manual galvanised mast, 1,080 W array (3 × 360 W).
+- **Battery.** 24 VDC, 220 Ah, two AGM lead-acid batteries: 5.3 kWh nameplate, about 4.1 kWh usable.
+- **Generator.** Stage V diesel generator running on HVO renewable diesel: Kubota Z482 engine, Linz Electric 3.5 kVA alternator, 220 V 50 Hz, 1,500 rpm. It starts when the battery falls to 40% state of charge, recharges it, then stops. It is silent on battery; the generator is low-rpm and noise-insulated.
+- **Fuel tank.** 125 L of HVO.
+- **Battery-only reserve.** 41 h at 100 W (the reserve if the generator is unavailable).
+- **Endurance.** Up to 1,840 h before refuelling at 100 W. This assumes no solar input; any solar extends it.
+- **Weight.** 1,368 kg.
+- **Equipment bay, transport, monitoring, site engineering.** As Harka Solar.
+- **Limitations.**
+  - Carries a fuel store and a generator to service.
+  - Not certified for hazardous areas.
+  - The generator produces noise, heat and exhaust while running.
+- **Sources.** [Harka](https://www.melrakki.systems/harka/), [Harka Hybrid brochure (PDF)](https://www.melrakki.systems/Melrakki-Harka-Hybrid.pdf).
+
+#### Choosing between the Harka tiers
+
+The deciding factor is whether the site's worst-month solar resource covers the load:
+- If it does, with margin, Harka Solar is the answer: no fuel on site.
+- If it does not, Harka Hybrid closes the gap with the smallest amount of fuel.
+
+Neither is described as universally better.
+
+#### Greni, model MK-GR-01 (Prototype, field test)
+
+- **What it is.** An off-grid charging and docking station for autonomous drones. Melrakki also describes it as an autonomous edge node: power, charging, docking, communications and storage at a remote site with no mains supply.
+- **Status.** A working prototype is in field test with a leading UK organisation. That evaluation is confidential. Greni is not yet available to buy.
+- **What is not published.** Melrakki publishes no performance figures, no aircraft or dock compatibility and no certifications or approvals for Greni. Early interest can be registered.
+- **Architecture as described.**
+  - Skid-mounted solar hybrid power, with a tilting solar array and lithium storage.
+  - Power for the docking mechanism, communications, control electronics, battery thermal protection and the continuous standby draw.
+- **Operating concept.** Persistent readiness rather than persistent flight: detect, decide (a person decides), deploy, observe, return, recharge, ready.
+- **Idea behind it.** "The aircraft is autonomous. The power behind it usually isn't." Most drone-in-a-box systems assume mains power at the landing site. Greni treats the dock as a load and the site's own energy as the system to be engineered.
+- **Third-party docks.** Melrakki powers only dock and aircraft combinations it has tested and passed.
+- **Sources.** [Greni](https://www.melrakki.systems/greni/), [Drone dock power](https://www.melrakki.systems/drone-dock-power/), [When the drone has its own power station](https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/).
+
+#### Bespoke off-grid power engineering (Commercial)
+
+- **What it is.** For requirements a standard platform does not fit. Melrakki engineers the system around the customer's device, site and constraints, using the same method and proven hardware.
+- **When it is appropriate.**
+  - An unusual load or device: a heavy peak, an odd voltage, a demanding duty cycle, or equipment to integrate as one system.
+  - A specific environment: a harder winter, a hotter climate, a marine or high-altitude site, a rare access window.
+  - A hard constraint on size, weight, portability, signature, mounting or timeline.
+- **Scope.** Solar, battery and hybrid architectures; integration with customer equipment; communications and remote monitoring; form factors including a mast, skid, enclosure or direct mounting on the asset.
+- **Starting point.** A requirement brief builder on the page collects load, location, conditions and mission.
+- **Source.** [Bespoke](https://www.melrakki.systems/bespoke/).
+
+### Experience and provenance (Historical)
+
+Melrakki Systems is a new company name. Its experience comes from its founder's and team's earlier work, not from deployments made under the Melrakki name.
+
+- **Founder.** Simon Legrand, founder of Melrakki Systems and co-founder of Sunstone Systems (founded 2011). Over 25 years across technology, infrastructure and the public sector, including 13 years building solar-powered surveillance, autonomous off-grid power and IoT systems. Chartered Marketer (MCIM). He writes Melrakki's field notes.
+- **Deployments.**
+  - Co-design of solar CCTV infrastructure deployed across 58 sites in Kazakhstan, for the oil and gas sector.
+  - Deployments across oil and gas, highways, construction and critical infrastructure.
+- **Not published.** Melrakki does not publish customer names, case studies, certifications or defence approvals.
+- **Sources.** [About](https://www.melrakki.systems/about/), [Home](https://www.melrakki.systems/#pedigree).
+
+### Who it is for
+
+**Environments on the home page:**
+- critical infrastructure;
+- remote security;
+- autonomous systems;
+- remote industrial (including oil and gas and construction);
+- emergency and resilience.
+
+**Priority sectors:** oil and gas; defence and public sector; extreme and hostile-location sites.
+
+**Application and sector pages:**
+- By equipment: [surveillance](https://www.melrakki.systems/solar-powered-surveillance/), [communications](https://www.melrakki.systems/telecommunications/), [drone docks](https://www.melrakki.systems/drone-dock-power/).
+- By sector: [critical infrastructure](https://www.melrakki.systems/critical-infrastructure/), [oil and gas](https://www.melrakki.systems/oil-and-gas/), [defence and security](https://www.melrakki.systems/defence-and-security/).
+
+Listing a sector means Melrakki designs for it. It is not a claim of customers or contracts in that sector.
+
+### Which source to trust
+
+- **Platform figures.** The specification table on the [Harka page](https://www.melrakki.systems/harka/#specifications) is authoritative, followed by the brochures, then other pages.
+- **Greni.** The [Greni page](https://www.melrakki.systems/greni/) is authoritative for status.
+- **Company, founder and experience.** The [About page](https://www.melrakki.systems/about/) is authoritative.
+- **Field notes.** These are argument and explanation written by the founder. They are not product specifications.
+
+---
+
+## Part 2. Platform and application pages
+
+The main text of each page, with navigation, forms and interactive tools removed. Headings are shifted down three levels.
+
+---
+
+### Page: Harka platforms
+
+URL: https://www.melrakki.systems/harka/
+Summary: Harka is Melrakki's autonomous off-grid power platform in two tiers: Harka Solar, solar and battery only, and Harka Hybrid, with an HVO Stage V backup. Power for remote sites with no grid connection and little or no fuel.
+
+The Harka platforms
+
+#### Power wherever you need it. No grid connection, and little or no fuel.
+
+Harka is Melrakki's autonomous off-grid power platform, in two tiers. It generates and stores its own electricity on site, so surveillance, communications, sensors and drones keep running where there is no mains connection and no reliable way to keep a generator fuelled.
+
+Power without infrastructure
+
+##### The systems that matter most now run beyond the grid.
+
+Cameras, radios, sensors and drones are pushed further from mains power every year, onto sites a connection was never going to reach. Every one of them stops the moment its power does. The usual answer is a diesel generator, and it brings a convoy of its own. Harka removes three dependencies at once.
+
+01
+
+###### No grid to connect to
+
+Harka generates and stores its own electricity. No mains connection, no trenching, no cable runs, no civil works to programme and pay for before the site is even live.
+
+02
+
+###### Little or no fuel to haul
+
+Harka Solar burns nothing. Harka Hybrid carries fuelled backup that runs only when it is needed, so the recurring deliveries, storage and theft risk of a running generator largely disappear.
+
+03
+
+###### Far fewer site visits
+
+The platform is built to run unattended, and optional remote monitoring reports its health from wherever you are, so a visit becomes the exception rather than the schedule.
+
+What Harka is
+
+##### A power system, engineered from the load backwards.
+
+Harka is not a solar panel on a pole. It is a designed power system: generation, storage and power management, with remote monitoring as an option, integrated around proven hardware so that nothing critical rests on an unproven part. It is the power platform beneath the payload, built to sustain the surveillance, communications, sensors and drones that a remote site depends on.
+
+Every platform is sized to the exact load it has to carry, its continuous draw, its duty cycle and the conditions it has to survive, rather than picked off a catalogue. That method is the difference between a system that runs beautifully all summer and one that holds through a bad December. We set it out in full in [designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/). For how Harka compares with grid extension, generators and fuel cells, see [off-grid power systems for remote sites](https://www.melrakki.systems/off-grid-power/).
+
+Two tiers, one engineering standard
+
+##### Choose by the site, not by preference.
+
+The two platforms share the same engineering. They differ in one thing: what happens when the sun cannot keep up. That is a site question, and the honest answer decides the tier.
+
+Clean tier
+
+###### Harka Solar
+
+MK-HK-S6
+
+Solar and battery only. No fuel, no emissions, no noise, for the lowest signature and the lowest running cost where irradiance allows. Solar sustains continuous operation in adequate light.
+
+- Mast: 6 m galvanised
+
+- Solar array: 1080 W (3×360 W)
+
+- Battery: 24 VDC, 400 Ah
+
+- Reserve: 75 h at 100 W
+
+- Fuel: None
+
+**Suits** sites where the worst-month solar resource covers the load, and where a silent, zero-emission signature with no engine heat is worth the most.
+
+Endurance tier
+
+###### Harka Hybrid
+
+MK-HK-H6
+
+Solar and battery carry the load in silence, and a Stage V generator on HVO renewable diesel engages only to recharge the pack, then shuts down. Silent and zero emission in battery mode, with fuel burned only in the window the sun cannot cover.
+
+- Mast: 6 m galvanised
+
+- Solar array: 1080 W (3×360 W)
+
+- Battery: 24 VDC, 220 Ah
+
+- Runtime: up to 1840 h at 100 W
+
+- Backup: HVO Stage V generator
+
+**Suits** a latitude, a season or a heavy load where solar alone cannot close the gap, and where uptime cannot be risked and matters more than removing fuel entirely.
+
+Specifications
+
+##### The published figures, side by side.
+
+| | Harka Solar | Harka Hybrid |
+|---|---|---|
+| Model | MK-HK-S6 | MK-HK-H6 |
+| Tier | Clean | Endurance |
+| Mast | 6 m galvanised | 6 m galvanised |
+| Solar array | 1080 W (3×360 W) | 1080 W (3×360 W) |
+| Battery | 24 VDC, 400 Ah | 24 VDC, 220 Ah |
+| Endurance at 100 W | 75 h reserve (battery) | up to 1840 h (with backup) |
+| Backup | None | HVO Stage V generator |
+| Fuel | None | HVO renewable diesel (backup only) |
+| Fuel tank | None | 125 L |
+| Generator start | n/a | 40% state of charge |
+| Battery only at 100 W | 75 h | 41 h (generator unavailable) |
+| Signature | Silent, zero emission | Silent, zero emission on battery |
+
+Runtimes are stated at a 100 W continuous reference load, with battery reserve taken to 80% depth of discharge. Endurance scales with the actual draw: roughly double the load and you roughly halve the endurance. Wind loading, insulation and ventilation are engineered to each customer's site requirement. Manufactured to Melrakki Systems designs and specifications.
+
+Where Harka fits
+
+##### Built for the places that defeat other power.
+
+Melrakki is built for operations where intervention is expensive or impossible and a failure is a redeployment, not a callout. These are the environments where autonomous power earns its place.
+
+[Oil and gasPriority sector](https://www.melrakki.systems/oil-and-gas/)
+[Defence and public sectorPriority sector](https://www.melrakki.systems/defence-and-security/)
+
+Extreme and hostile sitesPriority sector
+[Critical national infrastructureAlso powered](https://www.melrakki.systems/critical-infrastructure/)
+[Security and surveillanceAlso powered](https://www.melrakki.systems/solar-powered-surveillance/)
+[Telecoms and remote networksAlso powered](https://www.melrakki.systems/telecommunications/)
+[Border and perimeter securityAlso powered](https://www.melrakki.systems/defence-and-security/)
+
+Remote constructionAlso powered
+
+Emergency and disaster responseAlso powered
+
+Harka vs a diesel generator
+
+##### The real comparison is dependency, not fuel price.
+
+A diesel generator is a capable machine, and on an accessible site for a short job it is often the right one. On a remote site, its true cost is rarely the fuel. It is the convoy that delivers it, the servicing, the site visits, the emissions and the signature.
+
+| | Remote diesel generator | Harka |
+|---|---|---|
+| Fuel | Continuous, delivered | None (Solar) / backup only (Hybrid) |
+| Logistics | Recurring fuel convoy | Little to none |
+| Site visits | Fuelling and servicing | Unattended; remote monitoring optional |
+| Signature | Noise, heat, exhaust | Silent on battery, no engine heat |
+| Emissions | Continuous at the site | None, or backup only |
+| Theft target | Stored fuel | No fuel to steal (Solar) |
+
+We set out the full argument in [the true cost of a diesel generator on a remote site](https://www.melrakki.systems/resilience/the-true-cost-of-a-diesel-generator/).
+
+Will it hold at your site?
+
+##### Good off-grid power starts with the site, not the panel.
+
+Whether a site runs on the clean tier or needs the endurance tier is not a matter of taste. It falls out of four things: the **load** it has to carry, the **location** and its worst-month solar resource, the **conditions** the platform has to survive, and the **mission profile**, what has to run, how hard, and how often.
+
+The test that matters is the worst credible week, not the best day: low sun, cold, snow, a heavier load than usual, and no one able to attend. Size for that and the platform holds through the season; size for the average and it fails exactly when it is needed. If the worst month still covers the load, Harka Solar is the honest answer. If it does not, Harka Hybrid closes the gap with the smallest amount of fuel, on the days that genuinely need it.
+
+The same thinking underpins the whole approach to [resilience at the remote edge](https://www.melrakki.systems/resilience/when-the-grid-goes-away/), and it is why the power system is designed before anything is bought.
+
+Proven where it matters
+
+More than a decade deploying off-grid solar power into some of the most demanding sectors on earth.
+
+Harka is not a first attempt. The team behind Melrakki has spent over a decade designing and deploying off-grid solar surveillance and autonomous power, from oil and gas to highways, construction and critical infrastructure, including solar CCTV infrastructure deployed across 58 sites in Kazakhstan. Melrakki is that experience, engineered into platforms of its own. The name is the Icelandic word for the Arctic fox, the only animal that thrives unaided through the polar winter. We build power that behaves the same way.
+
+What you need to know
+
+##### Common questions.
+
+**Does Harka need a mains connection?**
+
+No. Harka is an autonomous off-grid platform that generates and stores its own power from solar and battery. There is no mains connection, no trenching and no conventional cable runs.
+
+**How long does it run without any sun?**
+
+Harka Solar holds a published reserve of 75 hours at 100 W from the battery alone, and runs continuously wherever the site's solar resource covers the duty cycle. Endurance scales with the actual load: a lighter load lasts longer, a heavier one shorter.
+
+**What is the difference between Harka Solar and Harka Hybrid?**
+
+Harka Solar is the clean tier, solar and battery only, with no fuel, emissions or noise. Harka Hybrid is the endurance tier: it adds a Stage V generator on HVO renewable diesel that engages only to recharge the battery, to hold uptime through deep winter or heavy loads, when solar alone cannot.
+
+**What can a Harka platform power?**
+
+Harka is the power platform beneath the payload. It is built to sustain surveillance, communications, sensors, drones and other remote loads. You supply the equipment; Harka keeps it running.
+
+**Does it work in winter?**
+
+Yes, when it is sized for the worst month rather than the average. Solar output is seasonal, which is why each platform is engineered from the load backwards, and why the Hybrid tier exists for sites and seasons where solar alone cannot close the gap. See [designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/).
+
+**What fuel does the Hybrid use?**
+
+HVO renewable diesel, in a Stage V generator that runs only when the battery needs recharging. In battery mode the platform is silent and zero emission.
+
+**How is a Harka platform sized for my site?**
+
+From the load backwards. Your continuous and peak load, your location and its worst-month solar resource, the site conditions and the mission profile decide the array, the battery, the reserve and the tier, in that order, before anything is bought.
+
+---
+
+### Page: Greni
+
+URL: https://www.melrakki.systems/greni/
+Summary: Greni is Melrakki's off-grid charging and docking station for autonomous drones: solar hybrid power at the landing zone, with no grid. Working prototype in field test. Register early interest.
+
+Melrakki Greni  MK-GR-01
+
+#### Power at the landing zone, where there is no grid.
+
+Greni is an off-grid charging and docking station for autonomous drones. It generates and stores its own power on site, so a remote aircraft can land, recharge and stand ready with no mains connection, minimal fuel logistics and no one standing by.
+
+Working prototype in field test
+
+The missing layer
+
+##### The aircraft is autonomous. The power behind it usually isn't.
+
+Drone in a box systems from the leading manufacturers can launch, land, charge and re-task an aircraft with no one present. Almost all of them assume a mains connection at the landing site, and treat the power as site works to be arranged by someone else.
+
+On pipelines, remote perimeters, energy sites, borders and disaster zones, that connection usually does not exist. However capable the aircraft, the capability stops at the landing zone. Greni starts from that point. It treats the dock as a load, and the site's own energy as the system to be engineered.
+
+What Greni is
+
+##### A den the aircraft comes home to, powered by the site itself.
+
+Greni applies the method behind every Melrakki platform to a spikier, less forgiving load: characterise the mission first, then size the generation, storage and power management to hold it.
+
+###### Generation and storage
+
+Skid-mounted solar hybrid power, with a tilting solar array and lithium storage, sized to the mission rather than to the space available on the skid.
+
+###### Docking and charging
+
+A protected den the aircraft lands in, recharges in and launches from, so the capability is ready again as soon as a sortie ends.
+
+###### The baseline, not just the spike
+
+Power for everything around the aircraft: the docking mechanism, communications, control electronics, thermal protection for the batteries and the standby draw that runs day and night.
+
+Persistent readiness
+
+##### The drone does not need to be flying. It needs to be ready.
+
+Greni is built around a loop that settles back to ready after every sortie, rather than a promise of something always in the air.
+
+1. **Detect**: A fixed sensor or a report raises something worth seeing.
+
+2. **Decide**: A person takes the decision to look.
+
+3. **Deploy**: The aircraft launches from the den.
+
+4. **Observe**: It flies the task and reports back.
+
+5. **Return**: It lands and docks unattended.
+
+6. **Recharge**: Greni recharges it from stored site energy.
+
+7. **Ready**: The capability is available again.
+
+The decision stays human. What disappears is the need to carry anything to the site to act on it.
+
+Where Greni is now
+
+A working prototype is in field test with a leading UK organisation.
+
+That evaluation is confidential, so we are not able to report on it yet, and we will not publish figures or compatibilities until testing lets us stand behind them. In the meantime we are talking to operators who want to be early: to influence how Greni is specified, and to be first in line when it becomes available.
+
+Greni is not a first attempt at the underlying problem. It builds on more than a decade of deployed off-grid solar surveillance and power, on sites where a service visit is the expensive part. [More about Melrakki](https://www.melrakki.systems/about/).
+
+Where it earns its place
+
+##### Sites that need an aerial capability and have no power to give it.
+
+###### Pipelines and linear assets
+
+Long routes where a patrol means a vehicle and a day, and a response means waiting for one.
+
+###### Oil, gas and energy sites
+
+Remote perimeters, wellsites and laydown areas where a look on demand beats a scheduled visit.
+
+###### Critical national infrastructure
+
+Utilities, substations and remote network assets that need watching beyond the reach of the grid.
+
+###### Border and perimeter security
+
+Long, exposed boundaries where fixed cameras leave gaps and a signature matters.
+
+###### Construction and major projects
+
+Large, changing sites before permanent power arrives, where progress and security both need eyes.
+
+###### Emergency and disaster response
+
+Places where the grid has failed or never existed, and a capability has to stand up quickly.
+
+Early interest
+
+##### Register your interest in Greni.
+
+Tell us about the operation you have in mind. It helps us prioritise early access and shape the specification around real requirements. Fill in what you know and leave the rest. Nothing is submitted automatically and nothing is stored: the form assembles an email that you send yourself.
+
+Just want to hear when there is news? Ask for Greni updates.
+
+Questions
+
+##### Common questions.
+
+**Can I buy Greni now?**
+
+Not yet. A working prototype is in field test, and Greni will be offered more widely once that evaluation allows us to stand behind it. Registering interest puts you in line for early access and means your requirement is taken into account as the specification is finalised.
+
+**Which drones and docks will Greni support?**
+
+We are not publishing compatibility until testing lets us stand behind it. Tell us the aircraft and dock you use, or are considering, and we will be straight with you about fit.
+
+**Will it keep working through a northern winter?**
+
+Only if it is sized for the worst credible week rather than the average day, which is how we size it. Where the sun alone cannot carry the mission in some seasons, a hybrid architecture with fuelled backup is the honest answer, the same logic that separates Harka Solar and Harka Hybrid.
+
+**Can Melrakki power a drone dock we already own?**
+
+Only a dock and aircraft combination that Melrakki has tested and passed. We do not assume compatibility from a datasheet, because a dock's standby draw, charge peaks and thermal behaviour decide whether off-grid power holds. Tell us the dock you use and we will tell you where it stands. [How we think about powering a drone dock off-grid](https://www.melrakki.systems/drone-dock-power/).
+
+**Does Greni decide when the drone flies?**
+
+No. Greni keeps the capability charged, powered and ready. A person keeps the authority to launch and to act. The infrastructure removes the logistics, not the judgement.
+
+**What do you need from us to start?**
+
+Four things: the load, the location, the conditions and the mission profile, meaning what has to fly, how often and in what weather. Those size the power, and sizing the power honestly is what tells you whether the capability will hold through the hardest week of the year.
+
+---
+
+### Page: Bespoke engineering
+
+URL: https://www.melrakki.systems/bespoke/
+Summary: When a standard platform will not do, Melrakki engineers off-grid power around your device, your site and your constraints. Develop your requirement with our brief builder.
+
+Bespoke off-grid power
+
+#### Off-grid power, engineered to your application.
+
+Our standard platforms cover the common cases. When your requirement does not fit one, that is where Melrakki does its best work: we engineer the autonomous power system around your device, your site and your constraints, with the same discipline and the same proven hardware.
+
+When a standard platform will not do
+
+##### Most off-grid power problems don't come in a standard size.
+
+The Harka range and Greni are productised for the patterns we see most often. Plenty of requirements sit outside them, and those are the ones worth engineering properly rather than forcing into a catalogue.
+
+01
+
+###### An unusual load or device
+
+A payload with a heavy peak, an odd voltage, a demanding duty cycle, or a piece of equipment that has to be integrated and powered as one system rather than bolted onto a tower.
+
+02
+
+###### A specific environment
+
+Somewhere a standard platform was never sized for: a harder winter, a hotter climate, a marine or high-altitude site, or an access window that makes a service visit rare and expensive.
+
+03
+
+###### A hard constraint
+
+A limit on size, weight, portability, signature, mounting or timeline that the requirement has to be built around, not compromised against.
+
+The same engineering, built to your brief
+
+##### We don't start from a catalogue. We start from the load.
+
+Bespoke does not mean starting from nothing. It means the same method behind every Melrakki platform, applied to a requirement that happens to be one of a kind. We characterise the exact load, its duty cycle and the conditions it has to survive, then engineer generation, storage, power management, backup and monitoring around it, using proven hardware so nothing critical rests on an unproven part. The approach is set out in full in [designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/). The architecture choices themselves, from solar-only to hybrid, are compared in [off-grid power systems for remote sites](https://www.melrakki.systems/off-grid-power/).
+
+That covers a wide space: solar, battery and hybrid architectures; integration with your own equipment; the communications and remote monitoring the site needs; and the form factor the deployment demands, whether that is a mast, a skid, an enclosure or something built to mount on your asset directly. The same resilience thinking applies as everywhere else we work, described in [resilience at the remote edge](https://www.melrakki.systems/resilience/when-the-grid-goes-away/): reduce the dependencies that can fail, and design for the worst credible week rather than the best day.
+
+Capability and capacity
+
+The capability to engineer it, and the capacity to build it.
+
+Bespoke work is an extension of proven capability, not a leap into the unknown. Melrakki designs and builds its own platform architecture, drawing on more than a decade of deploying off-grid solar surveillance and autonomous power into demanding sectors, from oil and gas to highways, construction and critical infrastructure, including solar CCTV infrastructure deployed across 58 sites in Kazakhstan. When a requirement falls outside the standard range, that same team engineers the answer.
+
+Develop your requirement
+
+##### Build a brief in a couple of minutes.
+
+The better the brief, the faster and sharper the answer. Fill in what you know and leave the rest; the tool assembles a clear requirement you can send us or keep. Nothing is submitted automatically, and nothing is stored: it stays in your browser until you send it.
+
+Where a standard platform fits
+
+##### If your need is a common one, start here.
+
+Not every requirement needs bespoke work. Where the pattern is one we have already productised, a standard platform is faster and cheaper, and it is engineered to the same standard.
+
+Autonomous drones · prototype in field test
+
+###### Greni
+
+An off-grid charging and docking den for autonomous drones, so persistent and beyond-line-of-sight operations keep flying with no power at the landing zone.
+[Explore Greni →](https://www.melrakki.systems/greni/)
+
+Remote surveillance, comms and sensors
+
+###### The Harka range
+
+Autonomous off-grid power in two tiers: Harka Solar, solar and battery only, and Harka Hybrid, with an HVO Stage V backup to hold uptime through deep winter and heavy loads.
+[View the Harka platforms →](https://www.melrakki.systems/harka/)
+
+---
+
+### Page: About
+
+URL: https://www.melrakki.systems/about/
+Summary: Melrakki Systems engineers autonomous off-grid power for the places the grid never reached. Our principles, our founder Simon Legrand, and the record behind the name.
+
+About Melrakki
+
+#### A new name, built on a long record at the edge of the grid.
+
+Melrakki Systems engineers autonomous off-grid power for the places the grid never reached: the surveillance, communications, drones and sensors that have to keep running with no mains connection, little or no fuel and no one standing by.
+
+Why Melrakki exists
+
+##### Every remote system stops the moment its power does.
+
+Cameras, sensors, radios, networks and drones are pushed further from mains power every year, onto sites a connection was never going to reach. The usual answer is a diesel generator, and with it comes fuel to haul, emissions to account for, noise and heat that give a position away, maintenance across scattered sites, and fuel worth stealing.
+
+Melrakki exists to take that dependency away: to make the energy as autonomous as the equipment it keeps alive. We work business to business, worldwide, from Kent in the United Kingdom, through standard platforms where a requirement fits one, and [bespoke engineering](https://www.melrakki.systems/bespoke/) where it does not.
+
+Our DNA
+
+##### Six principles that decide how we build.
+
+These are not slogans. They are the rules our platforms, our bespoke work and our [field notes](https://www.melrakki.systems/resilience/) are held to.
+
+###### Start from the load
+
+We characterise the exact load, its duty cycle and the conditions it must survive first, and let those numbers choose the platform. Never the other way round.
+
+###### Proven hardware inside
+
+Our own platform architecture, integrated around components with a field record, so nothing critical rests on an unproven part.
+
+###### Design for the worst credible week
+
+A system sized for its best day is a demonstration. Infrastructure is sized for the hardest week the site will see.
+
+###### Fewer dependencies, not bigger backups
+
+Resilience comes from removing what can fail: the fuel run, the routine site visit, the cable that was never going to reach.
+
+###### The decision stays human
+
+Autonomy should remove the logistics, not the judgement. A person keeps authority over what the systems we power actually do.
+
+###### Say what is built and what is in test
+
+We separate deployed, proven technology from development work in our specifications, our notes and our conversations. Naming which is which is the point.
+
+The founder
+
+##### Simon Legrand
+
+Simon Legrand is the founder of Melrakki Systems and co-founder of Sunstone Systems, founded in 2011. Over more than twenty-five years across technology, infrastructure and the public sector, including thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems, his work has centred on one problem: keeping systems alive at the edge of the network, on sites with no grid and difficult access.
+
+That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 sites in Kazakhstan, and deployments across oil and gas, highways, construction and critical infrastructure. That work is the thinking that now sits behind the Harka platforms and [Greni](https://www.melrakki.systems/greni/).
+
+Simon is a Chartered Marketer (MCIM) and writes Melrakki's field notes on resilience at the remote edge. Melrakki is that experience, engineered into platforms of its own.
+
+###### More from Simon
+
+- [simonlegrand.co.uk](https://www.simonlegrand.co.uk/)
+
+- [LinkedIn](https://www.linkedin.com/in/-simonlegrand-/)
+
+- [When the grid goes away](https://www.melrakki.systems/resilience/when-the-grid-goes-away/)
+
+- [When the drone has its own power station](https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/)
+
+To talk to Simon about a remote power problem, email hello@melrakki.systems.
+
+Why the fox
+
+The only animal that thrives unaided through the polar winter.
+
+Iceland's only native land mammal is the Arctic fox, melrakki, an animal that thrives through the polar winter with no shelter and no resupply, entirely on its own resources. We build power that behaves the same way. Our platforms carry Icelandic names for the same reason: Harka, meaning toughness, and Greni, the fox's den.
+
+---
+
+### Page: Off-grid power systems for remote sites
+
+URL: https://www.melrakki.systems/off-grid-power/
+Summary: How to power surveillance, communications and sensors where there is no reliable grid: solar, battery and hybrid architectures, sized from the load backwards.
+
+Off-grid power systems
+
+#### Off-grid power for equipment that has to keep running.
+
+Cameras, radios, sensors and drones increasingly sit where mains power is unavailable, unreliable or too expensive to bring in. This is how to decide what should power them: by the load, the site, and what the mission can afford to depend on.
+
+What off-grid actually means
+
+##### Keeping equipment alive where the grid does not reach, or cannot be trusted.
+
+An off-grid system is not simply equipment without a cable. It is a small power station that has to generate, store and manage its own energy, and decide what happens when it runs short, with nobody there to intervene.
+
+That makes three questions unavoidable, and every good design answers them in this order. How much energy does the equipment need in a day, in the worst month of the year? How long must it keep running with no input at all? And what is allowed to refill it: the sun alone, or fuel as well?
+
+Beneath all three sits a fourth, which is the one that decides resilience. **What does the system depend on that it does not control?** A grid connection, a fuel delivery, a site visit and a clear sky are all dependencies. The job is to remove the ones whose failure would stop the mission, and to size honestly for the ones that remain.
+
+*Figure: Conceptual architecture. Everything shown sits on the site; nothing depends on a grid connection. A generator is only present where the worst month demands it, and then it recharges storage rather than running the load directly.*
+
+The architectures
+
+##### Compare them by what they depend on, not what they cost to buy.
+
+Each of these is the right answer somewhere. The question is which dependency your site can live with in its worst week.
+
+| Architecture | It depends on | Where it is strong | Where it struggles |
+|---|---|---|---|
+| Grid extension | The network, the cable route and the local supply | Heavy, continuous loads close to a reliable supply | Distance, civil works and lead time; fails with the local network, often in the same storm that makes the site hard to reach |
+| Diesel generator only | Fuel deliveries, servicing and someone to do both | Short jobs on accessible sites; loads in the kilowatts | Runs continuously for a small load; fuel logistics, theft, noise, heat and exhaust. See what a remote generator really costs |
+| Solar and battery | The site's worst-month sun | Low to moderate loads where winter sun covers the draw; nothing to deliver, nothing to steal, no noise | High latitudes in winter, heavy or growing loads, persistent shade or snow |
+| Solar hybrid | The sun most of the time, and a small, infrequent fuel resupply | Year-round uptime where solar alone cannot close the winter gap | Still carries a fuel store and a generator to service, though far less of both |
+| Fuel cell hybrid | Delivered methanol or hydrogen cartridges | Quiet, low-emission backup with a compact footprint | A delivered fuel all the same, with its own supply chain. Harka does not use fuel cells |
+
+Autonomy and endurance
+
+##### How long it holds, and how long until someone has to visit, are different questions.
+
+These two words get used interchangeably, and they describe different promises. **Autonomy** is how long the system holds with no input whatsoever: the battery reserve that covers a run of dark days, a snow-covered array or a failed generator. **Endurance** is how long the site runs before someone has to bring something to it.
+
+A solar-only platform has modest autonomy and, where the worst month's sun covers the load, effectively unlimited endurance: there is nothing to deliver. A hybrid has less battery autonomy but very long endurance, because the generator refills the battery from a 125-litre HVO tank: up to 1,840 hours, about eleven weeks, at the 100 W reference load.
+
+Both figures scale with the load. The published Harka numbers are stated at a 100 W reference draw, which is 2.4 kWh a day. Run 50 W and the battery figures roughly double; run 200 W and they roughly halve. That is why the load has to be measured before anything else is decided.
+
+*Figure: Published figures at a 100 W continuous reference load, battery reserve to 80% depth of discharge. Halve the load and both battery figures roughly double.*
+
+The winter number
+
+##### What solar alone can carry in a UK December.
+
+Solar output is a season, not a number. The figure that matters is peak sun hours in the worst month, and in the UK that month is December. Taking the 1,080 W Harka array, a conservative 0.7 performance ratio for tilt, temperature, soiling and charge losses, and typical December peak sun hours, the average continuous load that solar alone can sustain is:
+
+*Solar-only capacity of a 1,080 W array in the worst month. Indicative, before site-specific shading and snow.*
+
+| Location (December) | Peak sun hours per day | Daily solar yield | Sustainable average load |
+|---|---|---|---|
+| Southern UK | ~0.8 | ~605 Wh | **~25 W** |
+| Scotland | ~0.5 | ~380 Wh | **~16 W** |
+| Southern Europe | ~1.8 | ~1,360 Wh | **~57 W** |
+
+This is the most useful number to know before specifying solar-only power in the UK, and it is rarely published. A camera mast with infrared, a router and an enclosure heater commonly averages more than 25 W across a December day and night. Solar-only power will run it beautifully from spring to autumn and fall short in midwinter, exactly when nights are longest and the battery is coldest.
+
+There are three honest routes when the worst month does not close: reduce the load, enlarge the array and battery until it does (which buys one hard month with a lot of idle capacity for the other eleven), or add a generator that runs only in the deficit window. The [Harka viability check](https://www.melrakki.systems/harka/#calc) runs this arithmetic for your load and location. Take your site's own figure from [PVGIS](https://re.jrc.ec.europa.eu/pvg_tools/en/).
+
+Remote sites
+
+##### Designing for a site you cannot easily reach.
+
+The further critical equipment moves from reliable infrastructure, the more autonomous the infrastructure supporting it needs to become.
+
+On an accessible site a flat battery is an inconvenience. On a site reached by a weekly convoy, a seasonal window or a helicopter, it is an outage that lasts until the next visit. Access is therefore not a logistics detail to sort out after the design. It is a design input, and it sets two numbers directly: the battery reserve, which has to cover the time it takes someone to get there in bad weather, and the fuel endurance, which has to outlast the resupply interval with margin.
+
+| How the site is reached | What it means for the design |
+|---|---|
+| By road, any day | Moderate reserve is enough. Fuel, if any, is a routine delivery. The case for autonomy is cost and signature more than survival. |
+| Scheduled visits, weekly or monthly | Reserve must bridge the gap between visits in the worst week. Remote monitoring earns its place, so a visit is triggered by condition rather than by calendar. |
+| Seasonal access only | Solar-only power must hold the whole closed season on the worst-month figure, or the tank must outlast it. Design for the winter the site will actually get. |
+| Convoy or helicopter | Every visit is expensive and exposed. Minimise anything that has to be delivered or serviced, and size reserve for the longest credible delay, not the planned one. |
+
+Three physical factors complete the picture. **Wind loading** on the mast and array is engineered to each site's requirement. **Insulation and ventilation** of the battery and equipment enclosures are specified to the site's temperature range, because cold cuts battery capacity and heat shortens battery life. And **transport** matters more than it looks: Harka platforms are skid-mounted with forklift pockets, ten to a truck, with a manual mast one person raises without tools and a solar array that opens by hand.
+
+Lifecycle
+
+##### Batteries are a lifecycle, not a component.
+
+Harka platforms use AGM lead-acid batteries: four in Harka Solar (24 V, 400 Ah) and two in Harka Hybrid (24 V, 220 Ah). Lead-acid is heavy, robust and well understood, and like every battery it wears according to how deeply and how hot it is cycled.
+
+- **Depth of discharge drives cycle life.** Harka's published expected life is 500 cycles. For comparison, EnerSys rates its own pure-lead AGM at up to 400 cycles at 80% depth of discharge, with many more at shallower depths. A well-sized solar platform cycles shallowly on most days: at a 25 W load, a 16-hour winter night uses about 4% of the Harka Solar pack. Deep cycles only come in long runs of low sun.
+
+- **Cold reduces what you can draw.** EnerSys data shows available capacity falling to about 84% at 0 °C and 65% at −20 °C at high discharge rates. Slower remote loads fare better, but the effect arrives in the same weeks as the weakest sun.
+
+- **Heat shortens life.** EnerSys gives lead-acid life halving for roughly every 8 to 10 °C above 20 to 25 °C. In hot climates, ventilation and shading of the battery enclosure are part of the design, not an accessory.
+
+The practical conclusion: plan the battery as a lifecycle replacement, sized so that normal days cycle it lightly, and protected from the temperature extremes of the site. Published Harka reserve figures are taken to 80% depth of discharge, the same deep-cycle point the manufacturers rate against. In normal running the Hybrid's generator starts much earlier, at 40% state of charge, so its battery is rarely cycled that deeply.
+
+Our approach
+
+##### Engineered from the load backwards.
+
+We design every system in the same order, and the order is the method. The requirement comes first: the **mission**, the **load** and its **duty cycle**. Then the site: its **location**, with its worst-month sun, and the **conditions** it has to survive. Only then the architecture: **generation**, **storage**, **backup** if the worst month demands it, and finally the **platform** that carries it all.
+
+Working the other way round, from a panel on a datasheet, is how systems end up running beautifully all summer and going dark in February. The full sizing method, with the numbers to bring to the first conversation, is in [designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/). The resilience thinking behind it is in [when the grid goes away](https://www.melrakki.systems/resilience/when-the-grid-goes-away/).
+
+Platforms
+
+##### Two standard architectures, and engineering beyond them.
+
+Harka covers the common cases for surveillance, communications and sensors. Greni, for autonomous drones, is [in development, with a prototype in field test](https://www.melrakki.systems/greni/).
+
+[Clean tier · MK-HK-S6 ### Harka Solar Solar and battery only. No fuel, no engine, no emissions. 1,080 W array, 24 V 400 Ah AGM, 75 h reserve at 100 W. For sites where the worst month covers the load. The Harka platforms →](https://www.melrakki.systems/harka/)[Endurance tier · MK-HK-H6 ### Harka Hybrid Solar and battery carry the load; a Stage V generator on HVO recharges the pack only when the sun cannot. 41 h battery reserve, up to 1,840 h before refuelling at 100 W.Compare the specifications →](https://www.melrakki.systems/harka/#specifications)[Engineered to your application ### Bespoke For loads, sites and constraints no standard platform was sized for: an unusual device, a harder winter, a hotter climate or a limit on size, weight or signature. Bespoke engineering →](https://www.melrakki.systems/bespoke/)
+
+Where this applies
+
+##### Applications and sectors.
+
+[By equipment ### Surveillance CCTV, infrared, thermal and analytics on a remote mast, and what winter does to their power budget. Solar-powered surveillance →](https://www.melrakki.systems/solar-powered-surveillance/)[By equipment ### Communications Radio links, routers and telemetry gateways that everything else on the site depends on. Remote communications power →](https://www.melrakki.systems/telecommunications/)[By equipment ### Drone docks Why a dock is a harder load than a camera, and what it takes to power one with no grid. Drone dock power →](https://www.melrakki.systems/drone-dock-power/)[By sector ### Critical infrastructure The remote edge of energy, transport, water and communications networks, where power often fails with the asset it protects. Critical infrastructure →](https://www.melrakki.systems/critical-infrastructure/)[By sector ### Oil and gas Wellsites, pipeline routes and remote perimeters, extreme climates and the hazardous-area boundary. Oil and gas sites →](https://www.melrakki.systems/oil-and-gas/)[By sector ### Defence and security Perimeters, borders and compounds, where fuel logistics and signature are design inputs. Defence and security →](https://www.melrakki.systems/defence-and-security/)
+
+What people ask
+
+##### Common questions.
+
+**How do you size an off-grid power system for remote equipment?**
+
+Start with the load, not the panel. Work out the equipment's realistic daily energy in watt-hours for the worst month, decide how many hours it must hold with no input, then size the solar array to the worst month's peak sun hours after losses, and the battery to the reserve. If the worst month does not close, add backup generation or reduce the load. The full method is in [designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/).
+
+**Can solar alone power remote equipment through a UK winter?**
+
+Only at low loads. With a 1,080 W array, a southern UK December supports roughly a 25 W average continuous load, and Scotland roughly 16 W. Above that, solar-only power will fall short in midwinter unless the array and battery are made much larger. A hybrid with a generator that runs only in the deficit window is usually the more honest answer.
+
+**What is the difference between battery autonomy and endurance?**
+
+Autonomy is how long the system runs with no input at all, from the battery alone. Endurance is how long it runs before someone has to deliver something, such as fuel. At 100 W, Harka Solar has 75 hours of autonomy and unlimited endurance where the worst month's sun covers the load; Harka Hybrid has 41 hours of autonomy and up to 1,840 hours of endurance before refuelling.
+
+**When is a diesel generator still the right answer?**
+
+On an accessible site, for a short job, or for loads in the kilowatts. A generator is a capable machine. Its cost on a remote site is rarely the fuel price; it is the deliveries, servicing, visits, theft risk and signature that come with running an engine continuously for a small load.
+
+**How often does an off-grid power system need a site visit?**
+
+It depends on the architecture and the site. Solar-only platforms have nothing to refuel, but panels, batteries and fixings still need periodic inspection. A hybrid needs refuelling and generator servicing on an interval set by the load and the season. Optional remote monitoring lets visits be triggered by the system's condition rather than by the calendar.
+
+Sources
+
+##### Where the external figures come from.
+
+1. [EU Joint Research Centre, PVGIS: Photovoltaic Geographical Information System](https://re.jrc.ec.europa.eu/pvg_tools/en/)
+2. [EnerSys, Genesis XE and EP application manual: cycle life, capacity and temperature](https://www.enersys.com/493bb4/globalassets/documents/product-documentation/genesis/ep/emea/en-gpl-am-005_0911.pdf)
+3. [EnerSys, Genesis EP battery range summary](https://www.enersys.com.cn/493bb4/globalassets/documents/product-documentation/genesis/ep/emea/en-ep-rs-003-sept-20.pdf)
+4. [EnerSys, PowerSafe SBS application guide: temperature and service life](https://www.enersys.com/4b05c9/globalassets/documents/product-documentation/powersafe/sbs/amer/amer-en-am-ps-sbs-1222_powersafe_sbs_application_guide.pdf)
+
+---
+
+### Page: Solar-powered surveillance
+
+URL: https://www.melrakki.systems/solar-powered-surveillance/
+Summary: What it takes to keep remote CCTV running on solar: camera load, infrared at night, winter sun, battery reserve, and when a hybrid backup is the honest answer.
+
+Solar-powered surveillance
+
+#### Solar power for surveillance that holds through winter.
+
+This is about the part of a solar CCTV system that decides whether the cameras are still recording in February: the load, the longest night, the weakest sun and the battery that has to bridge them.
+
+The problem
+
+##### Most solar CCTV is sized for the brochure, not the night.
+
+Remote CCTV rarely fails because a camera breaks. It fails because the power was sized for a summer day and asked to survive a winter night.
+
+A surveillance mast is not a constant load. Fixed cameras draw steadily. PTZ cameras draw more when they move and when their housings heat. Infrared illumination draws nothing by day and a great deal by night. A cellular router idles, then draws hard while it uploads. An enclosure heater does its heaviest work on the coldest night of the year.
+
+In a UK December all of that lines up against you. The nights are around sixteen hours long, so infrared runs for most of the day. The sun is lowest, so the array returns the least. And the cold reduces how much the battery can deliver. Size to the annual average and the system is fine for nine months and dark for the three that matter most.
+
+*Figure: Winter works against a surveillance mast from three directions at once: the longest nights keep infrared on for around 16 hours, the shortest days give the least generation, and the cold reduces what the battery can deliver.*
+
+The load budget
+
+##### Every device, how it behaves across a day, and what to measure.
+
+A PoE class tells you the budget a switch reserves for a device, not what it draws. Power budgets built from PoE classes or nameplate maxima oversize the system; budgets built from optimistic averages leave it dark. Measure or take the datasheet's typical figure, and count the switch or injector losses too.
+
+| Device | How it behaves | What to measure |
+|---|---|---|
+| Fixed IP camera | A steady draw around the clock; higher with on-board analytics or a heated housing | Typical power from the datasheet, with analytics and heater states as used |
+| PTZ camera | Idle between moves, higher when panning and zooming, highest with heaters and wipers | An average over a realistic patrol pattern, not the peak |
+| Infrared illuminator | Nothing by day, full draw through the night | Watts multiplied by the longest night of the year, not the average |
+| Thermal camera | Steady and often higher than a visible camera | Typical power, including any housing heater |
+| Router or radio link | Idle, then bursts while transmitting; average rises with how much video leaves the site | Average over a day at your real upload pattern |
+| Recorder, analytics, detectors | Steady; edge analytics can dominate a small budget | Typical power in the configuration you will actually run |
+| Enclosure heating and cooling | Seasonal, and at its worst in the same weeks as the weakest sun | Worst-month duty cycle for your site |
+
+Try it
+
+##### What does your mast really draw?
+
+Winter
+
+##### Solar only, or hybrid: let the worst month decide.
+
+Using the Harka array's own figures, solar alone sustains an average load of roughly **25 W in a southern UK December** and **16 W in Scotland**. Most multi-camera masts with infrared and a cellular link average more than that through the winter. That does not rule solar out. It means choosing, deliberately, between three routes.
+
+| Route | What it involves | When it is right |
+|---|---|---|
+| Lower the winter load | Infrared or white light only on detection; event-based upload rather than continuous streaming; cameras chosen on measured draw; analytics placed where the power is | The mission tolerates it, and the saving brings the worst month inside solar capacity |
+| Solar only, larger | A bigger array and battery than the standard platform, engineered as a bespoke system | Fuel on site is unacceptable, and the footprint, weight and cost are justified |
+| Solar hybrid | Solar and battery carry the load; a generator recharges the pack only in the deficit window | Uptime cannot be risked through midwinter and a small, infrequent fuel resupply is acceptable |
+
+Why the hybrid burns so little
+
+In a hybrid, the generator is not the power source. It is a charger for the battery. It runs only when the pack falls to 40% state of charge, refills it, and stops. Starting at 40% rather than lower keeps each battery cycle shallow, which is what makes lead-acid last; if the generator were ever unavailable, the battery still holds 41 hours at 100 W. Through spring, summer and autumn the sun usually covers the load and the generator barely runs. The fuel it does burn is concentrated in the weeks when solar genuinely cannot keep up.
+
+Deployment
+
+##### Engineering the mast, not just the power.
+
+Power is only half of a working surveillance mast. The rest is where it stands, what it carries and who has to look after it.
+
+- **Your equipment, on an open platform.** Harka is delivered with a universal head mount and a lockable steel equipment bay (370 × 200 × 470 mm) that accept the operator's own cameras, lighting, sensors and radios. We can also specify them.
+
+- **Height and field of view.** The Harka mast raises the head to 6 m. Camera choice and siting do the rest.
+
+- **Communications are part of the load.** A 4G, 5G or satellite link is often the largest continuous draw after infrared. How much video leaves the site decides how much energy the link needs.
+
+- **Knowing it is healthy.** Optional remote monitoring reports the power system's condition over the site's link, so a visit is triggered by need rather than by schedule.
+
+- **Theft and tampering.** Sensitive components sit in the lockable bay. Harka Solar carries no fuel, so there is nothing on site worth siphoning.
+
+- **The site itself.** Wind loading, insulation and ventilation are engineered to each site's requirement. Platforms travel ten to a truck, with forklift pockets, and one person raises the mast without tools.
+
+For the wider question of what a protective system depends on, and why a robust camera can still be an operationally fragile one, read [when the infrastructure becomes the vulnerability](https://www.melrakki.systems/resilience/when-the-infrastructure-becomes-the-vulnerability/).
+
+Experience
+
+Thirteen years of putting surveillance where the grid does not go.
+
+The team behind Melrakki has spent more than a decade designing and deploying off-grid solar surveillance, long before the work carried this name. That includes solar CCTV infrastructure across 58 oil and gas sites in Kazakhstan, and deployments across highways, construction and critical infrastructure. It is where the load-backwards method comes from: remote power rarely looks the same on a drawing as it does when someone has to keep it running through a winter.
+
+[More about Melrakki and its founder](https://www.melrakki.systems/about/).
+
+Platforms
+
+##### Surveillance power, specified by the load.
+
+The full sizing method is in [designing power from the load backwards](https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/). Surveillance on sites with more demanding conditions is covered under [oil and gas](https://www.melrakki.systems/oil-and-gas/), [critical infrastructure](https://www.melrakki.systems/critical-infrastructure/) and [defence and security](https://www.melrakki.systems/defence-and-security/).
+
+[Clean tier · MK-HK-S6 ### Harka Solar For masts whose winter load sits within the site's worst-month sun. No fuel, no engine, no emissions, 75 h battery reserve at 100 W.Harka Solar →](https://www.melrakki.systems/harka/)[Endurance tier · MK-HK-H6 ### Harka Hybrid For typical UK surveillance loads through midwinter. Silent on battery; the HVO generator recharges only when the sun cannot. Harka Hybrid →](https://www.melrakki.systems/harka/#specifications)[Engineered to your application ### Bespoke Heavier payloads, multiple masts from one power source, unusual voltages, or a site no standard platform was sized for. Bespoke engineering →](https://www.melrakki.systems/bespoke/)
+
+What people ask
+
+##### Common questions.
+
+**How long will a solar CCTV tower run without sun?**
+
+It depends on the load. Harka Solar holds about 7.5 kWh usable, which is 75 hours at 100 W, around 150 hours at 50 W and around 300 hours at 25 W, with no solar input at all, at 25 °C. Cold reduces these figures. Harka Hybrid holds 41 hours at 100 W on battery, after which its generator recharges the pack.
+
+**Does solar CCTV work in a UK winter?**
+
+At low loads, yes. With a 1,080 W array, a southern UK December supports roughly a 25 W average load and Scotland roughly 16 W. Masts with infrared, several cameras and a cellular link usually average more than that in winter, which is why a hybrid, a lower night load or a larger bespoke system is often the honest answer.
+
+**How much power does a CCTV camera use?**
+
+Take the typical figure from the camera's datasheet in the configuration you will run it, including any housing heater and analytics. Do not use the PoE class, which is the budget the switch reserves rather than the camera's consumption. Infrared illumination is usually the largest single night-time load, so size it against the longest night of the year.
+
+**Can I use my own cameras and radios?**
+
+Yes. Harka is delivered as an open platform with a universal head mount and a lockable internal equipment bay that accept the operator's own cameras, lighting, sensors and radios. Melrakki can also specify the payload if you prefer.
+
+**Is a solar CCTV tower secure against theft and tampering?**
+
+Sensitive components sit in a lockable steel compartment, and Harka Solar carries no fuel, which removes one of the most common reasons remote sites are targeted. The physical security of the mast itself is part of the site design.
+
+---
+
+### Page: Remote communications power
+
+URL: https://www.melrakki.systems/telecommunications/
+Summary: Solar and hybrid power for radio, telemetry and network nodes where mains is absent or unreliable, and where a small autonomous platform stops being enough.
+
+Remote communications power
+
+#### Keeping remote communications on air without the grid.
+
+A radio link, a router or a telemetry gateway is usually the smallest load on a site and the one everything else depends on. Powering it independently of the grid is a small engineering problem with large consequences.
+
+The problem
+
+##### Everything on a remote site reaches the world through one link.
+
+On most remote sites the communications equipment is the smallest load and the one everything else depends on.
+
+The camera's footage, the sensor's alarm, the telemetry reading and the power system's own health report all leave the site through the same link. When the link loses power, the site does not just lose communications. It goes silent, and nobody knows whether anything else is still working.
+
+Communications power also tends to fail at the worst time. The storm that takes out the local supply is the same storm that makes the site hard to reach. Ofcom's technical work found that between 2020 and 2022, 25.3% of reported incidents on UK fixed and mobile networks were caused by power-related issues, and that only around 20% of mast sites had backup of at least an hour, and around 5% of at least six hours.
+
+Backup or autonomy
+
+##### Two different promises, often confused.
+
+| | Backup | Autonomy |
+|---|---|---|
+| Assumes | Mains will return soon | Mains may not exist, or may not return for days |
+| Measured in | Minutes to hours | Days, in the worst month |
+| Refilled by | The grid, once restored | Generation on site: solar, and a generator if the worst month demands it |
+| Fails when | The outage outlasts the battery | The design underestimated the load or the winter |
+| Right for | Sites with a dependable supply and brief interruptions | Sites with no supply, an unreliable one, or recovery measured in days |
+
+Ofcom's revised [network and service resilience guidance](https://www.ofcom.org.uk/internet-based-services/network-security/resilience-guidance), published in June 2026, asks communications providers to seek to eliminate loss of key dependencies, including mains power, "for a significant period of time", and leaves the duration to risk assessment. For a remote node, a realistic risk assessment usually ends with the same answer: the time it takes someone to reach the site in the weather that caused the outage.
+
+Scale
+
+##### What a small autonomous platform can honestly carry.
+
+Communications loads span three orders of magnitude, and the honest answer depends on where yours sits. The Harka platforms carry a 1,080 W solar array on a 24 V DC system. In a southern UK December, that array alone sustains roughly a 25 W average load.
+
+| Communications load | Typical character | What fits |
+|---|---|---|
+| Telemetry gateways, IoT and sensor links | Small, steady draw with brief transmissions | Harka Solar, comfortably, including in a UK winter |
+| 4G or 5G routers, point-to-point links, small repeaters | Modest continuous draw that rises with traffic | Harka Solar where the winter average stays inside solar capacity; Harka Hybrid where it does not |
+| Multi-radio nodes and small cells | Several radios, backhaul and some cooling | Harka Hybrid, or a bespoke system sized to the node |
+| Macro mobile base stations | Multi-band radio and cooling, commonly drawing kilowatts | Beyond a single mast platform. A bespoke hybrid at a very different scale, and a conversation about whether autonomy or long-duration backup is the real requirement |
+
+Take the actual figure from each device's datasheet in the configuration you will run it, averaged over a day at your real traffic pattern.
+
+Engineering considerations
+
+##### Designing power for a communications node.
+
+- **Stay on DC where you can.** Much communications equipment runs natively on DC. Every conversion to AC and back costs energy that a small solar system has to generate in December.
+
+- **Measure the duty cycle, not the nameplate.** Radios idle and burst. The daily average at your real traffic pattern is the number that sizes the system; the peak sizes the conversion.
+
+- **Power and monitoring share a link.** Optional remote monitoring reports the power system's health over the same connection it keeps alive. Design the two together, so the link is the last thing to go and the first warning arrives in time.
+
+- **Siting pulls two ways.** The antenna wants height and line of sight; the array wants an unshaded southern aspect. On a hillside or in a cutting those are not always the same spot. The Harka mast raises equipment to 6 m.
+
+- **The failures correlate.** Storms remove the supply and the access together. Size autonomy for how long it takes to reach the site in bad weather, not on a normal day.
+
+- **Winter is the design case.** Longest nights, lowest sun, coldest batteries. Insulation and ventilation of the enclosures are specified to each site's temperature range.
+
+Our approach
+
+##### The power layer beneath the network.
+
+Melrakki provides the power infrastructure. We do not supply radios or network services. The platforms are delivered open, with a universal head mount and a lockable equipment bay for the operator's own equipment, and we can specify it where that helps.
+
+For the wider argument about why the edge of a network needs resilience engineered differently, read [the last mile of resilience](https://www.melrakki.systems/resilience/the-last-mile-of-resilience/). For communications nodes that form part of a critical network, see [critical infrastructure](https://www.melrakki.systems/critical-infrastructure/). For the architecture choices in more depth, see [off-grid power systems for remote sites](https://www.melrakki.systems/off-grid-power/).
+
+[Clean tier · MK-HK-S6 ### Harka Solar For telemetry, gateways and low-power links whose winter average sits inside the site's solar capacity. No fuel, nothing to service but the site. Harka Solar →](https://www.melrakki.systems/harka/)[Endurance tier · MK-HK-H6 ### Harka Hybrid For routers, repeaters and multi-radio nodes that must stay on air through midwinter. HVO generator recharges only when needed. Harka Hybrid →](https://www.melrakki.systems/harka/#specifications)[Engineered to your application ### Bespoke Larger nodes, unusual voltages, several radios from one power system, or a site no standard platform was sized for. Bespoke engineering →](https://www.melrakki.systems/bespoke/)
+
+What people ask
+
+##### Common questions.
+
+**Can a 4G router run on solar power all year in the UK?**
+
+Usually, if the whole node's average draw stays well inside what the array can harvest in December. A 1,080 W array supports roughly a 25 W average load in southern England and about 16 W in Scotland in the worst month. Add cameras or heaters to the same system and a hybrid may be needed.
+
+**How long should battery backup last at a remote communications site?**
+
+As long as it takes to restore the site in the conditions that caused the outage, which at a remote site is often days rather than hours. Ofcom's 2026 guidance leaves the duration to risk assessment. Where recovery depends on access in bad weather, autonomy with on-site generation is usually a better answer than a larger backup battery.
+
+**Can Melrakki power a mobile phone mast?**
+
+Macro mobile base stations commonly draw kilowatts, which is beyond a single mast platform. That is a bespoke conversation at a different scale, and we will be straight about whether autonomous power or longer-duration backup is the right requirement.
+
+**Does Melrakki supply radios or connectivity?**
+
+No. Melrakki provides the power infrastructure. You supply the radios, routers and network services, or we specify the equipment with you.
+
+Sources
+
+##### Where the external figures come from.
+
+1. [Ofcom, Network and Service Resilience Guidance, June 2026](https://www.ofcom.org.uk/internet-based-services/network-security/resilience-guidance)
+2. [Ofcom, Mobile RAN power resilience: technical report, February 2025](https://www.ofcom.org.uk/siteassets/resources/documents/consultations/category-1-10-weeks/272921-resilience-guidance-and-mobile-ran-power-back-up/associated-documents/mobile-ran-power-resilience-technical-report-cfi-update.pdf?v=390945)
+3. [Electronic Communications Resilience and Response Group, Post Incident Report: 2021/2022 Severe Storms](https://assets.publishing.service.gov.uk/media/62828be08fa8f556165a1dec/GOV.UK_ECRRG_Post_Incident_Report_-_2021_2022_Severe_Storms.pdf)
+
+---
+
+### Page: Drone dock power
+
+URL: https://www.melrakki.systems/drone-dock-power/
+Summary: Drone-in-a-box systems assume mains at the landing zone. How to engineer off-grid power for a dock: standby load, charge peaks, weather and sortie rate.
+
+Drone dock power
+
+#### Powering a drone dock where there is no grid.
+
+What it takes to replace the mains connection a dock assumes with energy generated and stored on site, and why the answer depends on the dock's baseline as much as its charge peaks.
+
+The missing layer
+
+##### The aircraft is autonomous. The power behind it usually is not.
+
+Drone-in-a-box systems can launch, land, recharge and re-task an aircraft with no one present. Almost all of them assume a mains connection at the landing site.
+
+That assumption holds on a depot roof. It does not hold on a pipeline route, a remote perimeter, a border or a disaster zone, which are often the places an autonomous aircraft would be most useful. However capable the aircraft, the capability stops at the landing zone if nothing there can recharge it.
+
+Replacing the mains connection is an off-grid power problem, and a harder one than powering a camera. It is worth understanding why before anyone specifies panels or batteries.
+
+The dock as a load
+
+##### A continuous baseline with a spike after every sortie.
+
+A dock has two loads layered on top of each other.
+
+**The baseline** runs all day and all night: the dock's control electronics, its communications link, its own backup battery, and the heating or cooling that keeps the aircraft battery and mechanism within temperature. On a cold or hot day the thermal part can grow substantially, and it runs whether or not anything flies.
+
+**The charging peaks** arrive after every sortie. Docks are designed to turn the aircraft round quickly, so they recharge fast, which means a short, high draw.
+
+Published specifications show the scale. One widely deployed commercial dock, for example, takes a 100 to 240 V AC mains supply with a maximum input of 800 W, and recharges its aircraft's roughly 150 Wh battery from 15% to 95% in under half an hour. It is rated to operate from −30 to 50 °C. Other docks differ, which is exactly why the real figures have to come from the dock you intend to use.
+
+*Figure: The peaks decide how much power the storage and conversion must deliver, in the cold, at night. The baseline, running 24 hours a day, usually decides how much energy the site has to generate.*
+
+Why this is harder than a camera
+
+A camera mast is sized mostly for energy. A dock has to be sized for energy and for peak power: the storage and conversion must deliver the charge peak on a winter night with the battery cold and the sun long gone. It usually needs an AC supply as well, which adds conversion losses a DC camera system does not have.
+
+Sizing
+
+##### The sortie arithmetic.
+
+The daily energy a dock site needs comes from three terms, and each has to be taken for the worst month rather than the average:
+
+1. **Baseline**: the dock's standby draw, including thermal management in the site's winter or summer extreme, multiplied by 24 hours.
+
+2. **Sorties**: the number of flights a day, multiplied by the energy to recharge the aircraft each time, grossed up for charger and conversion losses.
+
+3. **Everything else on the node**: cameras, sensors or radios sharing the site.
+
+The standby figure is the one most often missing from datasheets, and it is frequently the largest term because it never stops. As an illustration only, using assumed rather than measured figures: a dock idling at 50 W uses 1.2 kWh a day before anything flies, while six recharges of a battery the size of the one above add less than 1 kWh. Double the standby in a hard winter and it dominates completely. That is why compatibility has to be established by measurement on the actual dock, not by reading its maximum input.
+
+Weather cuts both ways. The coldest weeks raise the baseline, reduce battery capacity and weaken the sun at the same time. In a northern winter, a hybrid architecture with fuelled backup is often the honest answer for a dock, the same logic that separates [Harka Solar and Harka Hybrid](https://www.melrakki.systems/harka/).
+
+Operations
+
+##### Where the rules sit, and what power changes.
+
+Persistent drone operations beyond visual line of sight (BVLOS) need regulatory approval as well as power. In the UK the Civil Aviation Authority is working towards [routine BVLOS operations by 2027](https://www.caa.co.uk/drones/drone-regulations/policy-programmes/beyond-visual-line-of-sight-bvlos/), and remotely operated dock deployments are already being approved case by case. In June 2026, for example, [Network Rail was reported to have received CAA approval](https://www.dronewatch.eu/network-rail-obtains-uk-approval-for-bvlos-dji-dock-operations/) for BVLOS dock operations at two sites, flown from a remote operations centre.
+
+Power does not grant any permission. What it changes is where a dock can go and how dependable it is once there. As approvals become routine, the constraint on where docks can be placed shifts from regulation towards infrastructure: a landing zone needs power, a communications link and protection from the weather, and a remote landing zone needs all three without a grid.
+
+How we approach it
+
+##### Tested combinations only.
+
+**Compatibility is proven by test, not assumed.** Melrakki powers only dock and aircraft combinations it has tested and passed. A datasheet's maximum input tells us very little about how a dock behaves at −10 °C at three in the morning, which is the condition the power system actually has to survive. Tell us the dock you use or are considering, and we will tell you plainly where it stands.
+
+That discipline is also why Greni exists.
+
+In development. Prototype in field test
+
+Melrakki Greni, MK-GR-01: an autonomous edge node for drones.
+
+Greni is an off-grid charging and docking station built on skid-mounted solar hybrid power, with a tilting solar array and lithium storage, designed around the dock's full load: the charge peaks and the baseline that runs day and night. A working prototype is in field test with a leading UK organisation. That evaluation is confidential, and we will not publish figures or compatibilities until testing lets us stand behind them.
+
+[Explore Greni](https://www.melrakki.systems/greni/) or [register early interest](https://www.melrakki.systems/greni/#interest) to help shape how it is specified.
+
+What people ask
+
+##### Common questions.
+
+**Can a drone dock run on solar power?**
+
+In principle, yes, if generation and storage cover the dock's daily energy in the worst month and the storage can deliver the charging peak on a cold night. In a northern winter, solar alone often cannot, and a hybrid architecture with fuelled backup is the more honest design.
+
+**How much power does a drone dock need?**
+
+Two figures matter. The peak is set by fast charging after each sortie; one widely deployed commercial dock, for example, lists a maximum input of 800 W. The daily energy is set mostly by the standby baseline, including heating or cooling, which runs 24 hours a day. The baseline is rarely published and has to be measured.
+
+**Will Melrakki power the drone dock we already have?**
+
+Only if that dock and aircraft combination has been tested and passed by Melrakki. We do not assume compatibility from a datasheet. Tell us the dock and aircraft you use and we will tell you where it stands.
+
+**When will Greni be available?**
+
+Greni is a working prototype in field test. We are not publishing dates, figures or compatibilities until testing lets us stand behind them. Registering interest puts your requirement in front of us while the specification is being finalised.
+
+**Does off-grid power affect BVLOS approval?**
+
+No. Approval concerns the operation, the airspace and the operator. Power affects where a dock can be placed and how dependable it is. The two need planning together, but one does not grant the other.
+
+---
+
+### Page: Critical infrastructure
+
+URL: https://www.melrakki.systems/critical-infrastructure/
+Summary: Remote substations, pipelines, roadside and telemetry assets often depend on the power they protect. Where autonomous power removes that dependency.
+
+Critical infrastructure
+
+#### Power for the edge of critical infrastructure.
+
+The control room has resilient supplies. The camera on the far fence, the telemetry outstation and the radio on the hill often run from the same local supply as the asset they protect. When it fails, they fail with it.
+
+The problem
+
+##### The edge often depends on the power it is meant to protect.
+
+Critical infrastructure does not end at the control room. It ends where the equipment has to work: the far fence of a substation, a valve on a pipeline route, a roadside cabinet, a radio link on a hill.
+
+That edge is often powered by whatever is nearest. Very often that is the same local supply that feeds the asset being protected or monitored. When it fails, through a fault, a storm, a fire or deliberate interference, the protection fails with it, at exactly the moment it is needed. Restoring it means a site visit, in the same conditions that caused the outage.
+
+We have written about this at length. [The last mile of resilience](https://www.melrakki.systems/resilience/the-last-mile-of-resilience/) sets out why the edge behaves differently from the centre. [When the infrastructure becomes the vulnerability](https://www.melrakki.systems/resilience/when-the-infrastructure-becomes-the-vulnerability/) looks at the dependency chain beneath protective security. [The sabotage problem](https://www.melrakki.systems/resilience/the-sabotage-problem/) asks what happens when someone is trying to make it fail. This page is the practical version: where independent power belongs, and how to decide.
+
+*Figure: Redundancy adds a second copy of something. Independence removes the shared dependency. At remote assets the second is usually cheaper, and it is the one that survives the event that takes out the first.*
+
+Asset by asset
+
+##### What the edge depends on, and what fails first.
+
+The pattern repeats across sectors. The question to ask of every remote asset is the same: if its supply went tonight, what would still be watching it?
+
+| Remote asset | What it usually runs on | What takes it down | What autonomous power changes |
+|---|---|---|---|
+| Substation and switching-site perimeter | The site's own auxiliary or a nearby low-voltage supply | The fault, fire or outage the security is there to watch | Cameras and detection keep recording through the event and report it |
+| Pipeline and linear routes | Nothing, or a generator at points of interest | Distance: no supply for kilometres, and fuel that has to be driven out | Surveillance and sensing at the points that matter, with nothing to deliver |
+| Rail and highway roadside systems | Roadside supply along the route | Cable faults, damage and theft; supply works that take months to programme | Temporary or permanent monitoring without civil works or a supply application |
+| Telemetry and monitoring outstations | Small local supply or a solar panel | Undersized winter power, and a communications link on a different supply | Power and link designed as one system, sized for the worst month |
+| Remote communications nodes | Local mains with short battery backup | A prolonged outage that outlasts the backup | Days of autonomy rather than hours. See remote communications power |
+| Water, reservoir and remote utility compounds | Site supply, often single feed | Storms that take out supply and access together | Protection that does not share the asset's single point of failure |
+
+Questions to ask
+
+##### Seven questions for any remote security or monitoring system.
+
+These apply whoever supplies the equipment. If the answers are uncomfortable, the edge is where to start.
+
+- What does this system draw power from, and does that supply fail with the asset it protects?
+
+- How long does it keep working if that supply goes, measured in the worst week of the year rather than the best?
+
+- Is the communications link that carries its alarms powered independently, or does it share the same point of failure?
+
+- Who has to travel for it to recover, and how long would that take in the weather that caused the outage?
+
+- Does it report that it is failing before it fails, or do you find out when it is already dark?
+
+- If fuel is involved, who delivers it, how often, and is the fuel store itself a target?
+
+- Could someone disconnect it deliberately, and how visible and reachable is the thing they would cut?
+
+Context
+
+##### Why the edge is now a resilience question, not a maintenance one.
+
+UK government and regulators have moved steadily towards the same concern. The [UK Government Resilience Action Plan](https://www.gov.uk/government/publications/uk-government-resilience-action-plan/uk-government-resilience-action-plan-html) commits to mapping vulnerabilities and interdependencies across critical national infrastructure. The [Storm Arwen review](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1081116/storm-arwen-review-final-report.pdf) recorded supply disruption to just over a million customers in November 2021: most were restored within a day, and a small but significant number were without power for up to 13 days. The [communications industry's post-incident report](https://assets.publishing.service.gov.uk/media/62828be08fa8f556165a1dec/GOV.UK_ECRRG_Post_Incident_Report_-_2021_2022_Severe_Storms.pdf) found battery backup at mobile sites depleted after a number of hours, because it had been designed for brief outages rather than prolonged ones.
+
+In June 2026 Ofcom's revised [network and service resilience guidance](https://www.ofcom.org.uk/internet-based-services/network-security/resilience-guidance) asked communications providers to seek to eliminate loss of key dependencies, including mains power, for a significant period of time, leaving the duration to risk assessment. The direction is consistent: the edge is expected to keep working when the supply around it does not.
+
+Our approach
+
+##### Power that does not share the asset's point of failure.
+
+We start with the asset and its worst credible week, then engineer the power from the load backwards: what has to keep running, for how long, with what access, in which conditions. Where a remote supply exists but is shared with the asset, the case for independence is usually stronger than the case for a bigger backup on the same feed.
+
+Melrakki provides the power infrastructure. The platforms are delivered open for the operator's own cameras, sensors and radios, or we specify them.
+
+[Clean tier · MK-HK-S6 ### Harka Solar Where the worst month covers the load and nothing should be delivered to site. Silent, no fuel, no engine. Harka Solar →](https://www.melrakki.systems/harka/)[Endurance tier · MK-HK-H6 ### Harka Hybrid Where uptime must hold through midwinter. Solar first, with an HVO generator that only recharges the battery. Harka Hybrid →](https://www.melrakki.systems/harka/#specifications)[Engineered to your application ### Bespoke Multiple loads, unusual voltages, integration onto an existing asset, or conditions no standard platform was sized for. Bespoke engineering →](https://www.melrakki.systems/bespoke/)
+
+In development  For linear assets that need an aerial look on demand, [Greni](https://www.melrakki.systems/greni/), our autonomous drone node, is a working prototype in field test.
+
+What people ask
+
+##### Common questions.
+
+**Is a UPS enough for remote security equipment?**
+
+A UPS bridges a short interruption on the same supply. It does not remove the dependency: if the outage lasts longer than the battery, or the fault is on the feed the UPS sits behind, the equipment goes dark. At remote assets, independent generation and storage sized for the worst week is usually the stronger answer.
+
+**Which remote assets are the best candidates for autonomous power?**
+
+Assets where mains is absent or unreliable, where the security or monitoring shares a supply with the asset it protects, and where restoring a failed system means an expensive or slow site visit. Perimeter security, linear routes, roadside systems, telemetry and remote communications nodes are the common cases.
+
+**Does Melrakki supply the cameras and sensors?**
+
+Melrakki provides the power infrastructure. The platforms are delivered open so operators can fit their own cameras, sensors and radios, and we can specify the payload where that helps.
+
+**How do you decide between solar-only and hybrid power for an infrastructure site?**
+
+By the worst month. If the site's worst-month sun covers the load with margin, solar-only removes fuel entirely. If not, a hybrid carries the load on solar and battery and runs a generator only to recharge in the deficit window. Our [guide to off-grid architectures](https://www.melrakki.systems/off-grid-power/) sets out the numbers.
+
+Sources
+
+##### Where the external figures come from.
+
+1. [Cabinet Office, UK Government Resilience Action Plan, July 2025](https://www.gov.uk/government/publications/uk-government-resilience-action-plan/uk-government-resilience-action-plan-html)
+2. [Energy Emergencies Executive Committee, Storm Arwen Review: Final Report, June 2022](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1081116/storm-arwen-review-final-report.pdf)
+3. [Electronic Communications Resilience and Response Group, Post Incident Report: 2021/2022 Severe Storms](https://assets.publishing.service.gov.uk/media/62828be08fa8f556165a1dec/GOV.UK_ECRRG_Post_Incident_Report_-_2021_2022_Severe_Storms.pdf)
+4. [Ofcom, Network and Service Resilience Guidance, June 2026](https://www.ofcom.org.uk/internet-based-services/network-security/resilience-guidance)
+5. [NPSA, Critical National Infrastructure](https://www.npsa.gov.uk/about-npsa/critical-national-infrastructure)
+
+---
+
+### Page: Oil and gas
+
+URL: https://www.melrakki.systems/oil-and-gas/
+Summary: Autonomous solar and hybrid power for surveillance, monitoring and communications on remote oil and gas sites, from a team with over a decade in the sector.
+
+Oil and gas
+
+#### Power for oil and gas sites the grid never reached.
+
+Wellsites, pipeline routes, laydown areas and remote perimeters need watching and connecting, often far from dependable power. The team behind Melrakki has been putting autonomous solar power into that environment for more than a decade.
+
+The problem
+
+##### Watching remote assets without a convoy to keep them powered.
+
+Oil and gas assets are spread across the places the grid never reached: wellsites, pipeline routes, gathering stations, laydown yards and camp perimeters, often hours from the nearest dependable supply.
+
+They still need watching, connecting and monitoring. The usual answer is a generator at each point, and on an oil and gas site that answer carries costs a spreadsheet tends to miss. Every fuel run is a vehicle journey on remote roads, which is an exposure in its own right. Every fuel store is something to be stolen or diverted. Every running engine is noise, heat and exhaust at a site where people may be trying to see or hear what is happening.
+
+The climate adds its own pressure: long, deep winters and extreme summer heat, dust and wind, and service intervals set by access rather than convenience.
+
+Applications
+
+##### Where autonomous power earns its place on an oil and gas site.
+
+Melrakki's experience in the sector is surveillance-led. The same load-backwards method applies to any remote load on the site.
+
+| Where power is needed | What it carries | What matters most |
+|---|---|---|
+| Wellsite and pad perimeters | Cameras, infrared, detection, a cellular or satellite link | Continuous recording through winter nights; nothing on site worth stealing |
+| Pipeline routes and points of interest | Surveillance at crossings, valves and access points; sensing | No supply for kilometres; long unattended intervals |
+| Laydown yards and construction compounds | Perimeter cameras, lighting, access monitoring | Rapid deployment before permanent power exists; relocation as work moves |
+| Gates, camps and access roads | Surveillance, communications relays | Dependable uptime without adding to the fuel logistics |
+| Instrumentation and monitoring | Low-power sensing and telemetry | Power and communications designed together |
+
+The hazardous-area boundary
+
+##### Power stands outside the zone.
+
+Hazardous areas
+
+Harka platforms are not certified for use inside hazardous areas. A solar array, a battery and, on the Hybrid, a generator are all potential ignition sources, and none of them is rated for an explosive atmosphere.
+
+Platforms must be sited outside classified zones, as defined by the operator's hazardous area classification. In Great Britain that falls under DSEAR, with equipment for explosive atmospheres covered by ATEX and UKEX; internationally, IECEx. Where monitoring is needed inside a zone, certified equipment in the zone can be powered from a platform sited safely outside it, subject to the operator's own design and approval.
+
+The zone drawing is therefore one of the first documents we ask for. It decides where power can stand, how far cable runs to certified equipment have to go, and sometimes whether a camera can see what it needs to from outside the boundary. For the regulatory background, see HSE's guidance on [ATEX and explosive atmospheres](https://www.hse.gov.uk/fireandexplosion/atex.htm) and on [hazardous area classification](https://www.hse.gov.uk/comah/sragtech/techmeasareaclas.htm).
+
+Climate
+
+##### Designing for the extremes the site will actually see.
+
+Oil and gas sites tend to sit at the extremes, and the power system feels every one of them.
+
+- **Cold** cuts what a battery can deliver. EnerSys data for pure-lead AGM shows available capacity falling to about 84% at 0 °C and 65% at −20 °C at high discharge rates. Battery enclosures are insulated to the site's winter.
+
+- **Heat** shortens battery life: EnerSys gives lead-acid life halving for roughly every 8 to 10 °C above 20 to 25 °C. Enclosures are ventilated and shaded to the site's summer.
+
+- **Dust and soiling** quietly reduce solar yield. The cleaning interval belongs in the design, alongside the worst-month sun figure.
+
+- **Wind** loading on the mast and array is engineered to each site's requirement.
+
+- **Winter sun** at northern latitudes may not cover the load at all. That is what the Hybrid tier is for.
+
+We do not publish a single operating temperature range for Harka because the thermal design is specified per site: insulated, ventilated, or both, to the conditions the customer needs it to survive.
+
+Fuel
+
+##### Less fuel to deliver, store and protect.
+
+On a remote oil and gas site, fuel is not just an operating cost. It is a logistics chain, a security problem and a safety exposure.
+
+**Harka Solar** removes it entirely: no fuel, no engine, nothing to deliver, nothing to steal. Where the worst month's sun covers the load, it runs with no resupply at all.
+
+**Harka Hybrid** minimises it. Solar and battery carry the load; a Stage V generator running on HVO renewable diesel starts only when the battery reaches 40% state of charge, recharges it and stops. From a 125-litre HVO tank, at the 100 W reference load, it runs up to 1,840 hours, around eleven weeks, before refuelling, with most of the fuel burned in the weeks the sun cannot cover.
+
+The full argument, including when a generator is still the right answer, is in [the true cost of a diesel generator on a remote site](https://www.melrakki.systems/resilience/the-true-cost-of-a-diesel-generator/).
+
+Experience
+
+Solar surveillance infrastructure across 58 oil and gas sites in Kazakhstan.
+
+The team behind Melrakki has spent more than a decade designing and deploying off-grid solar surveillance into demanding sectors, and oil and gas is where much of that experience was earned: solar CCTV infrastructure co-designed for 58 sites in Kazakhstan, where continental winters and summers are both severe, alongside work in highways, construction and critical infrastructure. It is the reason we size for the worst credible week, not the best day.
+
+[More about Melrakki](https://www.melrakki.systems/about/).
+
+Platforms
+
+##### Autonomous power for the remote edge of the field.
+
+[Clean tier · MK-HK-S6 ### Harka Solar No fuel on site. For perimeters and points of interest where the worst month's sun covers the load. Harka Solar →](https://www.melrakki.systems/harka/)[Endurance tier · MK-HK-H6 ### Harka Hybrid For northern winters and heavier loads. Up to 1,840 h before refuelling at 100 W.Harka Hybrid →](https://www.melrakki.systems/harka/#specifications)[Engineered to your application ### Bespoke Unusual loads, integration with existing site systems, or conditions a standard platform was not sized for. Bespoke engineering →](https://www.melrakki.systems/bespoke/)
+
+Platforms are skid-mounted with forklift pockets and travel ten to a truck. One person raises the manual mast without tools, and the array opens by hand. For camera load budgets and winter sizing in detail, see [solar-powered surveillance](https://www.melrakki.systems/solar-powered-surveillance/). For the resilience argument behind independent power at remote assets, see [the sabotage problem](https://www.melrakki.systems/resilience/the-sabotage-problem/).
+
+In development  For an aerial look on demand at remote wellsites and pipeline routes, [Greni](https://www.melrakki.systems/greni/), our autonomous drone node, is a working prototype in field test. See also [powering a drone dock off-grid](https://www.melrakki.systems/drone-dock-power/).
+
+What people ask
+
+##### Common questions.
+
+**Can a Harka platform be installed inside an ATEX zone?**
+
+No. Harka platforms are not certified for hazardous areas and must be sited outside classified zones, as set by the operator's hazardous area classification. Certified equipment inside a zone can be powered from a platform outside it, subject to the operator's design and approval.
+
+**Will solar power work in extreme heat and cold?**
+
+Yes, when the system is designed for it. Cold reduces battery capacity and winter reduces solar yield, so the system is sized for the worst month; heat shortens battery life, so enclosures are ventilated and shaded. Insulation and ventilation are specified to each site's conditions rather than to a single published range.
+
+**Solar only or hybrid for a remote wellsite?**
+
+Let the worst month decide. If the site's worst-month sun covers the load with margin, Harka Solar removes fuel from the site entirely. If not, Harka Hybrid carries the load on solar and battery and runs its HVO generator only to recharge the battery when it reaches 40% state of charge.
+
+**How are the platforms transported to remote sites?**
+
+Harka platforms are skid-mounted with forklift pockets, travel ten to a truck and are built for all-terrain transport. One person raises the mast manually without tools, and the solar array opens by hand.
+
+Sources
+
+##### Where the external figures come from.
+
+1. [HSE, ATEX equipment and explosive atmospheres](https://www.hse.gov.uk/fireandexplosion/atex.htm)
+2. [HSE, Hazardous area classification and control of ignition sources](https://www.hse.gov.uk/comah/sragtech/techmeasareaclas.htm)
+3. [EnerSys, Genesis XE and EP application manual: capacity versus temperature](https://www.enersys.com/493bb4/globalassets/documents/product-documentation/genesis/ep/emea/en-gpl-am-005_0911.pdf)
+4. [EnerSys, PowerSafe SBS application guide: temperature and service life](https://www.enersys.com/4b05c9/globalassets/documents/product-documentation/powersafe/sbs/amer/amer-en-am-ps-sbs-1222_powersafe_sbs_application_guide.pdf)
+
+---
+
+### Page: Defence and security
+
+URL: https://www.melrakki.systems/defence-and-security/
+Summary: Off-grid power for surveillance and communications that reduces fuel logistics and signature: acoustic, thermal, exhaust, and the resupply pattern itself.
+
+Defence and security
+
+#### Autonomous power for defence and security sites.
+
+For surveillance and communications at a perimeter, a border or a temporary compound, the power system decides more than uptime. It decides what the site sounds like, how it looks to a thermal camera, and how often someone has to drive to it.
+
+The problem
+
+##### Power that adds a logistics chain and a signature to the site it protects.
+
+Persistent surveillance and communications at a perimeter, a border or a temporary compound depend on power, and the way that power is delivered has consequences beyond uptime.
+
+A generator can be heard, seen on a thermal camera and smelt downwind. Its fuel has to be delivered, and every delivery is a vehicle on a predictable route to a known point. Its fuel store is worth stealing. None of this matters much on a secure, accessible site. At the edge, it can matter more than the equipment the generator is powering.
+
+Military analysis has made the same point about logistics for years. A [2025 RUSI commentary](https://www.rusi.org/explore-our-research/publications/commentary/achieving-military-advantage-british-army-through-energy-transition) on energy in the British Army recalls estimates that it took around 27 litres of fuel to deliver one litre to a patrol base in southern Afghanistan, and that 52% of casualties in that campaign were sustained maintaining lines of communication and resupply. It also notes that vehicle acoustic signatures can be detected and identified at 10 km. The scale of a fixed security site is different. The principle is not: **every delivery is an exposure, and every running engine is a signature.**
+
+The signature ledger
+
+##### What each architecture gives away.
+
+| Signature | Diesel generator site | Harka Hybrid | Harka Solar |
+|---|---|---|---|
+| Acoustic | An engine running continuously | Silent on battery. A low-rpm, noise-insulated generator runs only to recharge | Silent. No engine |
+| Thermal | Engine block and exhaust heat | No engine heat on battery; generator heat while recharging | No engine heat or exhaust. With appropriate insulation, the electronics' heat signature is extremely low |
+| Exhaust | Continuous | Only while recharging, on HVO | None |
+| Resupply pattern | Regular fuel runs to a known point | Up to 1,840 h between refuelling at 100 W | None: nothing to deliver |
+| Visual | Generator, fuel store, vehicle tracks | Mast, array and generator housing | Mast and array |
+
+Two honest limits. First, a 6 m mast and a solar array are visible: lowering the acoustic, thermal and logistic signature is not concealment, and siting still matters. Second, the Hybrid is only silent while the sun and battery are carrying the load. Its generator runs only when the battery falls to 40% state of charge, which from a full battery at 100 W is roughly 31 hours of silent running before any solar top-up. Where signature is the overriding requirement, the load and the array are sized so the generator runs as rarely as possible, or the clean tier is used.
+
+Logistics
+
+##### Fewer visits, by design.
+
+For a security site, the number of times someone must visit is a design input, not an operating detail. It sets the battery reserve, the fuel endurance and whether remote monitoring is essential or optional.
+
+- **Reserve** should cover the longest credible interval before anyone can attend, in the worst week of the year. Harka holds 75 h (Solar) and 41 h (Hybrid) on battery at 100 W; lighter loads hold proportionally longer.
+
+- **Endurance** is unlimited on Harka Solar wherever the worst month's sun covers the load, and up to 1,840 h before refuelling on Harka Hybrid at 100 W, from a 125-litre HVO tank.
+
+- **Knowing the site is healthy** without going there takes remote monitoring, which is optional on Harka and usually worth specifying where visits are costly or exposed.
+
+- **Deployment** is deliberately simple: skid-mounted platforms with forklift pockets, ten to a truck, a manual mast one person raises in minutes without tools, and an array that opens by hand.
+
+Resilience
+
+##### Harder to disconnect.
+
+Independent power is also a resilience measure. A camera that runs from the same supply as the site it protects can be switched off by anyone who can reach that supply. One that generates and stores its own power, with no external cable to cut and its sensitive components in a lockable steel bay, is harder to disconnect.
+
+That does not make it invulnerable, and we do not claim it does. It removes one dependency, which is usually the cheapest one to remove. The fuller argument is in [the sabotage problem](https://www.melrakki.systems/resilience/the-sabotage-problem/) and [when the infrastructure becomes the vulnerability](https://www.melrakki.systems/resilience/when-the-infrastructure-becomes-the-vulnerability/).
+
+Platforms
+
+##### Power specified by the mission, not the catalogue.
+
+[Clean tier · MK-HK-S6 ### Harka Solar The lowest signature in the range: no engine, no fuel, no exhaust. For sites where the worst month's sun covers the load. Harka Solar →](https://www.melrakki.systems/harka/)[Endurance tier · MK-HK-H6 ### Harka Hybrid For higher latitudes, winter and heavier loads, with a generator that runs only to recharge and long intervals between refuelling. Harka Hybrid →](https://www.melrakki.systems/harka/#specifications)[Engineered to your application ### Bespoke Constraints on size, weight, portability, signature or mounting that the design has to be built around. Bespoke engineering →](https://www.melrakki.systems/bespoke/)
+
+Wind loading, insulation and ventilation are engineered to each site's requirement. For camera load budgets and winter sizing, see [solar-powered surveillance](https://www.melrakki.systems/solar-powered-surveillance/); for the architecture choices in general, [off-grid power systems for remote sites](https://www.melrakki.systems/off-grid-power/).
+
+Melrakki does not publish customer or programme information, and nothing on this page implies a defence approval, accreditation or contract. We engineer to the requirement and say plainly what is proven and what is not.
+
+What people ask
+
+##### Common questions.
+
+**Is solar power silent?**
+
+Harka Solar has no engine and makes no operating noise. Harka Hybrid is silent while the sun and battery carry the load; its low-rpm, noise-insulated generator runs only to recharge the battery when it reaches 40% state of charge.
+
+**Does a solar platform have a thermal signature?**
+
+There is no engine heat or exhaust. The electronics still produce some heat, and with appropriate insulation that signature is extremely low. The mast and array remain visible, so siting still matters.
+
+**How long can a site run without resupply?**
+
+Harka Solar needs no resupply wherever the worst month's sun covers the load, and holds 75 hours on battery alone at 100 W. Harka Hybrid holds 41 hours on battery and runs up to 1,840 hours before refuelling at 100 W. Lighter loads extend all three figures.
+
+**How quickly can a platform be deployed?**
+
+Harka platforms are skid-mounted, travel ten to a truck and are moved by forklift. One person raises the mast manually in minutes without tools, and the solar array opens by hand.
+
+**Does Melrakki hold defence approvals?**
+
+We do not publish customer or programme information and make no claim to defence approvals or accreditations on this site. Tell us the requirement and we will be straight about what is proven and what would need to be established.
+
+Sources
+
+##### Where the external figures come from.
+
+1. [Goodall, P., Achieving military advantage for the British Army through energy transition, RUSI commentary, February 2025](https://www.rusi.org/explore-our-research/publications/commentary/achieving-military-advantage-british-army-through-energy-transition)
+
+---
+
+## Part 3. Field notes
+
+Essays by the founder, Simon Legrand. They explain Melrakki's thinking and cite external sources. They are not product specifications. Read the full notes at the links.
+
+---
+
+### When the grid goes away
+
+URL: https://www.melrakki.systems/resilience/when-the-grid-goes-away/
+Published: 2026-09-23
+
+What happens to a remote camera, sensor or comms node when its power disappears. Key points: every remote capability depends on power, so power is 'infrastructure for other infrastructure'. 'The grid goes away' means no connection at all, or one that cannot be relied on when needed. A generator is a resilience component with its own dependency chain (fuel, transport, servicing, access), not a definition of resilience. Redundancy (a second copy) differs from independence (not depending on the thing that failed). Good design moves the dependency boundary rather than claiming absolute independence. Systems are sized for the worst credible week (low sun, cold, snow, wind, heavier load, repeated demand, no one able to attend), which differs site by site. The note also floats 'autonomous resilience infrastructure' as a direction, stating that Melrakki does not claim to run such a network today.
+
+---
+
+### The last mile of resilience
+
+URL: https://www.melrakki.systems/resilience/the-last-mile-of-resilience/
+Published: 2026-09-25
+
+Critical infrastructure is only as resilient as its furthest node. Uses the Storm Arwen reviews (2021) and Ofcom's mobile power resilience work as evidence that the edge recovers more slowly than the centre. Distinguishes redundancy, diversity, independence and recovery. Gives Melrakki's working definition of autonomous edge infrastructure ('infrastructure designed to maintain critical functions at remote locations with reduced dependence on external power, logistics, communications and routine human attendance'), explicitly not an established industry category or a Melrakki invention. It has five layers: energy autonomy, operational autonomy, communications resilience, physical autonomy and mission autonomy. Power is the enabling layer, and that is where Melrakki works.
+
+---
+
+### When the infrastructure becomes the vulnerability
+
+URL: https://www.melrakki.systems/resilience/when-the-infrastructure-becomes-the-vulnerability/
+Published: 2026-09-25
+
+A security system can be technically robust and operationally fragile if it depends on infrastructure outside its control. Uses the March 2025 North Hyde substation fire, with NESO's finding of a transformer bushing failure and police finding nothing suspicious, as an example of a dependency failure rather than a security story. Argues for asking what the protection itself depends on, and for moving the dependency boundary closer to the asset. Cites NPSA, NCSC, MI5, Cabinet Office and NESO sources.
+
+---
+
+### The sabotage problem
+
+URL: https://www.melrakki.systems/resilience/the-sabotage-problem/
+Published: 2026-09-25
+
+Security asks whether an attack can be stopped; resilience asks whether the system can continue if it happens. Sets out what UK and NATO sources document about state-linked sabotage (the National Security Strategy 2025, the National Security (State Threats) Act 2026, MI5 statements, NATO's 2026 Resilience Baseline Requirements). It also states what they do not claim: no specific attack is predicted at any site, and most infrastructure faults are accidental. Discusses the dependency cascade, shared dependencies as single points of failure, and designing remote infrastructure to be harder to disconnect.
+
+---
+
+### When the drone has its own power station
+
+URL: https://www.melrakki.systems/resilience/off-grid-drone-infrastructure/
+Published: 2026-09-23
+
+A drone can only be as autonomous as the infrastructure behind it. Most drone-in-a-box systems assume mains power at the dock, so persistent remote operation is an energy problem. Describes Greni as a prototype in confidential field test, with no results, endurance figures or compatibilities to report. Covers the operating loop (persistent readiness, not persistent flight), weather and hybrid sizing, and the UK regulatory context: BVLOS in the Specific category under UK SORA since April 2025, the Atypical Air Environment policy and the CAA roadmap towards routine BVLOS by 2027. States that an off-grid node exempts no one from airspace, protective-security or data-protection obligations.
+
+---
+
+### The true cost of a diesel generator on a remote site
+
+URL: https://www.melrakki.systems/resilience/the-true-cost-of-a-diesel-generator/
+Published: 2026-09-23
+
+On a remote site, the generator is the cheap part. The real costs are fuel delivered rather than fuel bought, convoys, site visits, noise, heat and exhaust, fuel theft, emissions, and downtime when the generator stops. Autonomous power is not maintenance-free. Diesel is still the right tool for short projects on accessible sites, very heavy or unpredictable loads, and genuine emergencies. Argues that the better comparison is dependency, not 'solar versus diesel'.
+
+---
+
+### Designing power from the load backwards
+
+URL: https://www.melrakki.systems/resilience/designing-power-from-the-load-backwards/
+Published: 2026-09-22
+
+The sizing method, in order. Characterise the load and its duty cycle. Turn it into daily watt-hours (100 W continuous is 2.4 kWh a day). Account for losses: Harka Solar's 9.6 kWh nameplate gives about 7.5 kWh of real work. Set the reserve needed with no input. Match generation to the worst month's peak sun hours, not the average. Let the result decide the tier: solar-only where the worst month closes, hybrid where it does not. Ends with the nine numbers to bring to a first conversation.
