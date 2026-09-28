@@ -205,61 +205,81 @@ a:focus-visible,.btn:focus-visible,button:focus-visible,summary:focus-visible,in
 
 <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@graph": [
-  {
-   "@type": "AboutPage",
-   "name": "About Melrakki Systems",
-   "url": "https://www.melrakki.systems/about/",
-   "mainEntity": {
-    "@id": "https://www.melrakki.systems/#org"
-   }
-  },
-  {
-   "@type": "Organization",
-   "@id": "https://www.melrakki.systems/#org",
-   "name": "Melrakki Systems",
-   "url": "https://www.melrakki.systems/",
-   "logo": "https://www.melrakki.systems/icon-1024.png",
-   "email": "hello@melrakki.systems",
-   "slogan": "Power that holds.",
-   "description": "Melrakki Systems engineers autonomous off-grid power for surveillance, communications, drones and sensors on sites with no grid, from the load backwards and around proven hardware.",
-   "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "Kent",
-    "addressCountry": "GB"
-   },
-   "areaServed": "Worldwide",
-   "founder": {
-    "@type": "Person",
-    "@id": "https://www.melrakki.systems/about/#founder",
-    "name": "Simon Legrand",
-    "jobTitle": "Founder, Melrakki Systems",
-    "url": "https://www.simonlegrand.co.uk/",
-    "sameAs": [
-     "https://www.simonlegrand.co.uk/",
-     "https://www.linkedin.com/in/-simonlegrand-/"
-    ]
-   }
-  },
-  {
-   "@type": "BreadcrumbList",
-   "itemListElement": [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-     "@type": "ListItem",
-     "position": 1,
-     "name": "Home",
-     "item": "https://www.melrakki.systems/"
+      "@type": "AboutPage",
+      "name": "About Melrakki Systems",
+      "url": "https://www.melrakki.systems/about/",
+      "mainEntity": {
+        "@id": "https://www.melrakki.systems/#org"
+      },
+      "about": {
+        "@id": "https://www.melrakki.systems/#org"
+      }
     },
     {
-     "@type": "ListItem",
-     "position": 2,
-     "name": "About",
-     "item": "https://www.melrakki.systems/about/"
+      "@type": "Organization",
+      "@id": "https://www.melrakki.systems/#org",
+      "name": "Melrakki Systems",
+      "url": "https://www.melrakki.systems/",
+      "logo": "https://www.melrakki.systems/icon-512.png",
+      "image": "https://www.melrakki.systems/social-preview.png",
+      "description": "Melrakki Systems is a UK engineering company that designs autonomous off-grid power for critical equipment operating beyond reliable infrastructure: surveillance, communications, sensors and autonomous systems. It offers the Harka Solar and Harka Hybrid platforms, bespoke off-grid power engineering, and Greni, an off-grid drone charging and docking station in prototype field test. Each system is engineered from the load backwards.",
+      "slogan": "Power that holds.",
+      "email": "hello@melrakki.systems",
+      "areaServed": "Worldwide",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Kent",
+        "addressCountry": "GB"
+      },
+      "founder": {
+        "@id": "https://www.melrakki.systems/about/#founder"
+      },
+      "knowsAbout": [
+        "Autonomous off-grid power",
+        "Remote power systems",
+        "Solar and battery power systems",
+        "Solar hybrid power systems",
+        "Power for remote surveillance",
+        "Power for remote communications",
+        "Off-grid drone docking and charging",
+        "Critical infrastructure resilience"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.melrakki.systems/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://www.melrakki.systems/about/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.melrakki.systems/about/#founder",
+      "name": "Simon Legrand",
+      "jobTitle": "Founder",
+      "url": "https://www.melrakki.systems/about/",
+      "worksFor": {
+        "@id": "https://www.melrakki.systems/#org"
+      },
+      "sameAs": [
+        "https://www.simonlegrand.co.uk/",
+        "https://www.linkedin.com/in/-simonlegrand-/"
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
 </script>
 <link rel="stylesheet" href="/assets/nav.css">
