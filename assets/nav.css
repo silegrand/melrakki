@@ -59,3 +59,5 @@ footer.site .foot-bottom{margin-top:3rem;padding-top:1.6rem;border-top:1px solid
 footer.site .foot-bottom p{font-size:.82rem;color:var(--slate);margin:0;}
 footer.site .foot-desc{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--cyan);letter-spacing:.03em;}
 @media (max-width:900px){ footer.site .foot-grid{grid-template-columns:1fr !important;gap:2rem;} footer.site .foot-col ul{gap:.25rem;} footer.site .foot-col a{display:inline-block;padding:.35rem 0;} }
+footer.site .foot-col h2{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin:0 0 1.1rem;font-weight:600;line-height:1.12;}
+.brand picture,.foot-brand picture{display:block;}
