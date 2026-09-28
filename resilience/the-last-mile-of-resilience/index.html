@@ -143,6 +143,7 @@
  ]
 }
 </script>
+<link rel="stylesheet" href="/assets/nav.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -152,10 +153,19 @@
     <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
     <nav class="primary" aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#platforms">Platforms</a></li>
         <li><a href="/#approach">Approach</a></li>
-        <li><a href="/#sectors">Sectors</a></li>
-        <li><a href="/resilience/" aria-current="page">Notes</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li class="nav-drop"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/" aria-current="page">Field notes</a></li>
         <li><a href="/about/">About</a></li>
         <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
       </ul>
@@ -242,11 +252,11 @@
       <h2>What happened at the edge during Storm Arwen</h2>
       <p>The last mile is not a hypothetical. Storm Arwen, in November 2021, disrupted electricity supply to just over a million customers. According to the government's review, 83% had power restored within 24 hours, but a small and significant proportion were without it for up to 13 days <a href="#src-1" class="cite" aria-label="Source 1">[1]</a>.</p>
       <p>That distribution is the point. The system as a whole recovered quickly. The edge did not.</p>
-      <p>The industry's own post-incident report on communications is more telling still. Thousands of mobile cell sites were disrupted by power outages, affecting all four mobile network operators. Battery resilience at key sites was used, but was depleted after a number of hours, because it was intended for brief, intermittent outages rather than a prolonged one <a href="#src-4" class="cite" aria-label="Source 4">[4]</a>. The review of the storm noted that some customers lost not only power but water and communications as well, because other essential services lacked full resilience to power loss on that scale <a href="#src-3" class="cite" aria-label="Source 3">[3]</a>, and concluded that growing electricity dependency for essential services will make storms, even less severe ones, increasingly impactful <a href="#src-2" class="cite" aria-label="Source 2">[2]</a>.</p>
+      <p>The industry's own post-incident report on communications is more telling still. Thousands of mobile cell sites were disrupted by power outages, affecting all four mobile network operators. Battery resilience at key sites was used, but was depleted after a number of hours, because it was intended for brief, intermittent outages rather than a prolonged one <a href="#src-4" class="cite" aria-label="Source 4">[4]</a>. The review of the storm noted that some customers lost not only power but water and communications as well, because other essential services lacked full resilience to power loss on that scale <a href="#src-3" class="cite" aria-label="Source 3">[3]</a>, and concluded that growing electricity dependency for essential services will make storms, even less severe ones, increasingly impactful <a href="#src-2" class="cite" aria-label="Source 2">[2]</a>. What that means for powering remote communications is covered in <a href="/telecommunications/">off-grid power for remote communications</a>.</p>
       <p>Nothing about this was a failure of the centre. It was the last mile, behaving exactly as it had been designed to, in conditions it had not been designed for.</p>
 
       <h2>Why the edge is different</h2>
-      <p>Remote systems are not inherently less resilient. But their resilience has to be engineered differently, because the things that make resilience cheap at the centre are scarce at the edge.</p>
+      <p>Remote systems are not inherently less resilient. But their resilience has to be engineered differently, because the things that make resilience cheap at the centre are scarce at the edge. The asset-by-asset version is in <a href="/critical-infrastructure/">off-grid power for critical infrastructure</a>.</p>
       <p>Distance lengthens every response. Weather and terrain decide when a site can be reached, not the maintenance schedule. A grid connection may not exist, or may be a long, exposed spur. Communications may be weak or single-path. Fuel has to be delivered. Personnel are few and spread thinly across many sites. And an emergency response that takes an hour in a town can take a day at the edge.</p>
       <p>There is also a matter of scale. Resilience at the centre is a handful of large investments. Resilience at the edge is thousands of small ones, multiplied across every node. Ofcom's technical work on mobile network power illustrates this: existing backup at mobile sites varies widely, from days at some remote or hub sites to 10 to 15 minutes at others, and Ofcom estimated that a minimum of one hour of backup at all mobile sites would cost the industry between £0.9 billion and £1.8 billion <a href="#src-5" class="cite" aria-label="Source 5">[5]</a>.</p>
       <p>The edge is where resilience becomes expensive, because it has to be bought many times over. That is exactly why it is where compromises tend to be made.</p>
@@ -362,7 +372,7 @@
       <h2>About the author</h2>
       <div class="checklist">
         <p><strong>Simon Legrand</strong> is the founder of Melrakki Systems and co-founder of Sunstone Systems. Over more than twenty-five years across technology, infrastructure and the public sector, including thirteen years building solar-powered surveillance, autonomous off-grid power and IoT systems, his work has centred on keeping systems alive at the edge of the network.</p>
-        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 Chevron and Tengizchevroil sites in Kazakhstan, and deployments across oil and gas, highways, construction and critical infrastructure. <a href="/about/">More about Melrakki</a>.</p>
+        <p>That experience is first-hand. It includes co-design of solar CCTV infrastructure deployed across 58 sites in Kazakhstan, and deployments across oil and gas, highways, construction and critical infrastructure. <a href="/about/">More about Melrakki</a>.</p>
       </div>
 
       <h2>Sources and a note on attribution</h2>
@@ -408,14 +418,7 @@
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <ul>
-          <li><a href="/#platforms">Platforms</a></li>
-          <li><a href="/#sectors">Sectors</a></li>
-          <li><a href="/#story">Story</a></li>
-          <li><a href="/greni/">Greni</a></li>
-          <li><a href="/resilience/">Notes</a></li>
-          <li><a href="/about/">About</a></li>
-        </ul>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
       </div>
       <div class="foot-col">
         <h4>Platforms</h4>
@@ -442,5 +445,6 @@
   });}
 })();
 </script>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>
