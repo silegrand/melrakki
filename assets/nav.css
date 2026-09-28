@@ -46,3 +46,16 @@
 .also li a{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(0,144,180,.45);}
 a.sector{display:block;transition:border-color .2s;}
 a.sector:hover{border-color:var(--cyan);}
+/* one footer, identical on every page */
+footer.site{background:var(--navy-900);border-top:1px solid var(--navy-700);padding-block:clamp(3rem,6vw,4rem) 2rem;}
+footer.site .foot-brand img{width:200px;height:auto;margin-bottom:1.2rem;}
+footer.site .foot-brand p{font-size:.92rem;color:var(--slate);max-width:44ch;line-height:1.6;}
+footer.site .foot-strap{margin-top:1.2rem;font-weight:600;color:#fff;letter-spacing:.02em;}
+footer.site .foot-col h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin:0 0 1.1rem;font-weight:600;line-height:1.12;}
+footer.site .foot-col ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;}
+footer.site .foot-col a{font-size:.92rem;color:var(--text);transition:color .2s;}
+footer.site .foot-col a:hover{color:var(--cyan);}
+footer.site .foot-bottom{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--navy-700);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center;}
+footer.site .foot-bottom p{font-size:.82rem;color:var(--slate);margin:0;}
+footer.site .foot-desc{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--cyan);letter-spacing:.03em;}
+@media (max-width:900px){ footer.site .foot-grid{grid-template-columns:1fr !important;gap:2rem;} footer.site .foot-col ul{gap:.25rem;} footer.site .foot-col a{display:inline-block;padding:.35rem 0;} }
