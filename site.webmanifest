@@ -1,15 +1,33 @@
 {
   "name": "Melrakki Systems",
   "short_name": "Melrakki",
-  "description": "Autonomous off-grid power platforms that keep surveillance, communications and drones running in the most remote and hostile places on earth.",
+  "description": "Autonomous off-grid power for critical equipment operating beyond reliable infrastructure: surveillance, communications, sensors and autonomous systems.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#071A2B",
   "theme_color": "#071A2B",
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
   ]
 }

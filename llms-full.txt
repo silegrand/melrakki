@@ -220,7 +220,7 @@ The main text of each page, with navigation, forms and interactive tools removed
 ### Page: Harka platforms
 
 URL: https://www.melrakki.systems/harka/
-Summary: Harka is Melrakki's autonomous off-grid power platform in two tiers: Harka Solar, solar and battery only, and Harka Hybrid, with an HVO Stage V backup. Power for remote sites with no grid connection and little or no fuel.
+Summary: Harka Solar and Harka Hybrid: autonomous off-grid power platforms with a 6 m mast and 1,080 W solar array. Solar only, or solar with an HVO backup generator.
 
 The Harka platforms
 
@@ -416,7 +416,7 @@ From the load backwards. Your continuous and peak load, your location and its wo
 ### Page: Greni
 
 URL: https://www.melrakki.systems/greni/
-Summary: Greni is Melrakki's off-grid charging and docking station for autonomous drones: solar hybrid power at the landing zone, with no grid. Working prototype in field test. Register early interest.
+Summary: Greni is an off-grid charging and docking station for autonomous drones, with solar hybrid power at the landing zone. Working prototype in field test.
 
 Melrakki Greni  MK-GR-01
 
@@ -551,7 +551,7 @@ Four things: the load, the location, the conditions and the mission profile, mea
 ### Page: Bespoke engineering
 
 URL: https://www.melrakki.systems/bespoke/
-Summary: When a standard platform will not do, Melrakki engineers off-grid power around your device, your site and your constraints. Develop your requirement with our brief builder.
+Summary: When a standard platform will not do, Melrakki engineers autonomous off-grid power around your device, your site and your constraints. Build a brief.
 
 Bespoke off-grid power
 
@@ -628,7 +628,7 @@ Autonomous off-grid power in two tiers: Harka Solar, solar and battery only, and
 ### Page: About
 
 URL: https://www.melrakki.systems/about/
-Summary: Melrakki Systems engineers autonomous off-grid power for the places the grid never reached. Our principles, our founder Simon Legrand, and the record behind the name.
+Summary: Melrakki Systems engineers autonomous off-grid power for critical equipment beyond reliable infrastructure. Our principles, our founder and our experience.
 
 About Melrakki
 
