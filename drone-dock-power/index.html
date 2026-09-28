@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Off-Grid Power for Drone Docks | Melrakki Systems</title>
+<meta name="description" content="Drone-in-a-box systems assume mains at the landing zone. How to engineer off-grid power for a dock: standby load, charge peaks, weather and sortie rate.">
+<link rel="canonical" href="https://www.melrakki.systems/drone-dock-power/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#071A2B">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Melrakki Systems">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Powering a drone dock where there is no grid">
+<meta property="og:description" content="Why a drone dock is a harder load than a camera, the sortie arithmetic, and why compatibility has to be proven by test.">
+<meta property="og:url" content="https://www.melrakki.systems/drone-dock-power/">
+<meta property="og:image" content="https://www.melrakki.systems/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Melrakki Systems. Power that holds.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Powering a drone dock where there is no grid">
+<meta name="twitter:description" content="Why a drone dock is a harder load than a camera, the sortie arithmetic, and why compatibility has to be proven by test.">
+<meta name="twitter:image" content="https://www.melrakki.systems/social-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/solutions.css">
+<link rel="stylesheet" href="/assets/nav.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.melrakki.systems/drone-dock-power/#webpage",
+      "url": "https://www.melrakki.systems/drone-dock-power/",
+      "name": "Off-Grid Power for Drone Docks | Melrakki Systems",
+      "description": "Drone-in-a-box systems assume mains at the landing zone. How to engineer off-grid power for a dock: standby load, charge peaks, weather and sortie rate.",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://www.melrakki.systems/#website"
+      },
+      "about": {
+        "@id": "https://www.melrakki.systems/#org"
+      },
+      "publisher": {
+        "@id": "https://www.melrakki.systems/#org"
+      },
+      "breadcrumb": {
+        "@id": "https://www.melrakki.systems/drone-dock-power/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.melrakki.systems/drone-dock-power/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.melrakki.systems/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Off-grid power",
+          "item": "https://www.melrakki.systems/off-grid-power/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Drone docks",
+          "item": "https://www.melrakki.systems/drone-dock-power/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.melrakki.systems/drone-dock-power/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can a drone dock run on solar power?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In principle, yes, if generation and storage cover the dock's daily energy in the worst month and the storage can deliver the charging peak on a cold night. In a northern winter, solar alone often cannot, and a hybrid architecture with fuelled backup is the more honest design."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much power does a drone dock need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two figures matter. The peak is set by fast charging after each sortie; one widely deployed commercial dock, for example, lists a maximum input of 800 W. The daily energy is set mostly by the standby baseline, including heating or cooling, which runs 24 hours a day. The baseline is rarely published and has to be measured."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will Melrakki power the drone dock we already have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only if that dock and aircraft combination has been tested and passed by Melrakki. We do not assume compatibility from a datasheet. Tell us the dock and aircraft you use and we will tell you where it stands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When will Greni be available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Greni is a working prototype in field test. We are not publishing dates, figures or compatibilities until testing lets us stand behind them. Registering interest puts your requirement in front of us while the specification is being finalised."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does off-grid power affect BVLOS approval?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Approval concerns the operation, the airspace and the operator. Power affects where a dock can be placed and how dependable it is. The two need planning together, but one does not grant the other."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Melrakki Systems home"><img src="/logo-lockup.png" width="480" height="135" alt="Melrakki Systems"></a>
+    <nav class="primary" aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#approach">Approach</a></li>
+        <li><a href="/#platforms">Platforms</a></li>
+        <li><a href="/bespoke/">Bespoke</a></li>
+        <li class="nav-drop current"><details><summary>Applications</summary>
+          <div class="drop">
+            <a class="drop-lead" href="/off-grid-power/">Off-grid power<span>How it works, and which architecture fits</span></a>
+            <div class="drop-cols">
+              <div><p class="drop-h">By equipment</p><ul><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/" aria-current="page">Drone docks</a></li></ul></div>
+              <div><p class="drop-h">By sector</p><ul><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul></div>
+            </div>
+          </div>
+        </details></li>
+        <li><a href="/resilience/">Field notes</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="mailto:hello@melrakki.systems">Talk to an engineer</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="deep phero">
+  <div class="wrap">
+    <div class="head">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/off-grid-power/">Off-grid power</a><span class="sep">/</span><span aria-current="page">Drone docks</span></nav>
+      <p class="eyebrow" style="margin-top:1.6rem;">Drone dock power</p>
+      <h1>Powering a drone dock where there is no grid.</h1>
+      <p class="standfirst">What it takes to replace the mains connection a dock assumes with energy generated and stored on site, and why the answer depends on the dock's baseline as much as its charge peaks.</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/greni/#interest">Register interest in Greni</a>
+      <a class="btn btn-secondary" href="/resilience/off-grid-drone-infrastructure/">Read the thinking behind it</a>
+    </div>
+    <div class="spec-strip">
+      <div><div class="n">24 h</div><div class="l">A dock's baseline never stops</div></div>
+      <div><div class="n">Peaks</div><div class="l">Every sortie ends in a fast charge</div></div>
+      <div><div class="n">Tested</div><div class="l">Compatibility proven, not assumed</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">The missing layer</p><h2>The aircraft is autonomous. The power behind it usually is not.</h2></div>
+    <div class="measure">
+  <p class="lede">Drone-in-a-box systems can launch, land, recharge and re-task an aircraft with no one present. Almost all of them assume a mains connection at the landing site.</p>
+  <p>That assumption holds on a depot roof. It does not hold on a pipeline route, a remote perimeter, a border or a disaster zone, which are often the places an autonomous aircraft would be most useful. However capable the aircraft, the capability stops at the landing zone if nothing there can recharge it.</p>
+  <p>Replacing the mains connection is an off-grid power problem, and a harder one than powering a camera. It is worth understanding why before anyone specifies panels or batteries.</p>
+</div>
+  </div>
+</section><section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">The dock as a load</p><h2>A continuous baseline with a spike after every sortie.</h2></div>
+    <div class="measure">
+  <p>A dock has two loads layered on top of each other.</p>
+  <p><strong>The baseline</strong> runs all day and all night: the dock's control electronics, its communications link, its own backup battery, and the heating or cooling that keeps the aircraft battery and mechanism within temperature. On a cold or hot day the thermal part can grow substantially, and it runs whether or not anything flies.</p>
+  <p><strong>The charging peaks</strong> arrive after every sortie. Docks are designed to turn the aircraft round quickly, so they recharge fast, which means a short, high draw.</p>
+  <p>Published specifications show the scale. One widely deployed commercial dock, for example, takes a 100 to 240 V AC mains supply with a maximum input of 800 W, and recharges its aircraft's roughly 150 Wh battery from 15% to 95% in under half an hour. It is rated to operate from −30 to 50 °C. Other docks differ, which is exactly why the real figures have to come from the dock you intend to use.</p>
+</div>
+<figure class="fig">
+<svg viewBox="0 0 760 280" role="img" aria-labelledby="dk-t dk-d">
+<title id="dk-t">The load profile of a drone dock over a day</title>
+<desc id="dk-d">A drone dock draws a continuous baseline for its electronics, communications and thermal management, all day and night. Each sortie ends with a short, tall charging peak as the aircraft recharges. The peaks set the power the system must deliver; the baseline usually dominates the energy over a day.</desc>
+<line x1="60" y1="220" x2="740" y2="220" class="grid"/>
+<line x1="60" y1="40" x2="60" y2="220" class="grid"/>
+<text x="60" y="242" text-anchor="middle" class="ts">00:00</text><text x="230" y="242" text-anchor="middle" class="ts">06:00</text><text x="400" y="242" text-anchor="middle" class="ts">12:00</text><text x="570" y="242" text-anchor="middle" class="ts">18:00</text><text x="740" y="242" text-anchor="middle" class="ts">24:00</text>
+<rect x="60" y="180" width="680" height="40" class="area"/>
+<rect x="196" y="70" width="18" height="110" class="area2"/>
+<rect x="326" y="70" width="18" height="110" class="area2"/>
+<rect x="440" y="70" width="18" height="110" class="area2"/>
+<rect x="560" y="70" width="18" height="110" class="area2"/>
+<rect x="680" y="70" width="18" height="110" class="area2"/>
+<text x="400" y="205" text-anchor="middle" class="ts">baseline: electronics, comms, heating or cooling, standby</text>
+<text x="370" y="58" text-anchor="middle" class="t">charge peak after each sortie</text>
+<text x="20" y="28" class="tc">POWER (ILLUSTRATIVE)</text>
+<text x="60" y="270" class="ts">Cyan: continuous baseline. Amber: aircraft charging. Illustrative shapes, not measurements of any product.</text>
+</svg>
+<figcaption>The peaks decide how much power the storage and conversion must deliver, in the cold, at night. The baseline, running 24 hours a day, usually decides how much energy the site has to generate.</figcaption>
+</figure>
+<div class="callout"><span class="k">Why this is harder than a camera</span><p>A camera mast is sized mostly for energy. A dock has to be sized for energy <em>and</em> for peak power: the storage and conversion must deliver the charge peak on a winter night with the battery cold and the sun long gone. It usually needs an AC supply as well, which adds conversion losses a DC camera system does not have.</p></div>
+  </div>
+</section><section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Sizing</p><h2>The sortie arithmetic.</h2></div>
+    <div class="measure">
+  <p>The daily energy a dock site needs comes from three terms, and each has to be taken for the worst month rather than the average:</p>
+  <ol>
+    <li><strong>Baseline</strong>: the dock's standby draw, including thermal management in the site's winter or summer extreme, multiplied by 24 hours.</li>
+    <li><strong>Sorties</strong>: the number of flights a day, multiplied by the energy to recharge the aircraft each time, grossed up for charger and conversion losses.</li>
+    <li><strong>Everything else on the node</strong>: cameras, sensors or radios sharing the site.</li>
+  </ol>
+  <p>The standby figure is the one most often missing from datasheets, and it is frequently the largest term because it never stops. As an illustration only, using assumed rather than measured figures: a dock idling at 50 W uses 1.2 kWh a day before anything flies, while six recharges of a battery the size of the one above add less than 1 kWh. Double the standby in a hard winter and it dominates completely. That is why compatibility has to be established by measurement on the actual dock, not by reading its maximum input.</p>
+  <p>Weather cuts both ways. The coldest weeks raise the baseline, reduce battery capacity and weaken the sun at the same time. In a northern winter, a hybrid architecture with fuelled backup is often the honest answer for a dock, the same logic that separates <a href="/harka/">Harka Solar and Harka Hybrid</a>.</p>
+</div>
+  </div>
+</section><section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Operations</p><h2>Where the rules sit, and what power changes.</h2></div>
+    <div class="measure">
+  <p>Persistent drone operations beyond visual line of sight (BVLOS) need regulatory approval as well as power. In the UK the Civil Aviation Authority is working towards <a href="https://www.caa.co.uk/drones/drone-regulations/policy-programmes/beyond-visual-line-of-sight-bvlos/" rel="noopener">routine BVLOS operations by 2027</a>, and remotely operated dock deployments are already being approved case by case. In June 2026, for example, <a href="https://www.dronewatch.eu/network-rail-obtains-uk-approval-for-bvlos-dji-dock-operations/" rel="noopener">Network Rail was reported to have received CAA approval</a> for BVLOS dock operations at two sites, flown from a remote operations centre.</p>
+  <p>Power does not grant any permission. What it changes is where a dock can go and how dependable it is once there. As approvals become routine, the constraint on where docks can be placed shifts from regulation towards infrastructure: a landing zone needs power, a communications link and protection from the weather, and a remote landing zone needs all three without a grid.</p>
+</div>
+  </div>
+</section><section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">How we approach it</p><h2>Tested combinations only.</h2></div>
+    <div class="measure">
+  <p><strong>Compatibility is proven by test, not assumed.</strong> Melrakki powers only dock and aircraft combinations it has tested and passed. A datasheet's maximum input tells us very little about how a dock behaves at −10 °C at three in the morning, which is the condition the power system actually has to survive. Tell us the dock you use or are considering, and we will tell you plainly where it stands.</p>
+  <p>That discipline is also why Greni exists.</p>
+</div>
+<div class="proof" style="margin-top:2rem;">
+  <p><span class="status">In development. Prototype in field test</span></p>
+  <p class="big" style="margin-top:1.2rem;">Melrakki Greni, MK-GR-01: an autonomous edge node for drones.</p>
+  <p>Greni is an off-grid charging and docking station built on skid-mounted solar hybrid power, with a tilting solar array and lithium storage, designed around the dock's full load: the charge peaks and the baseline that runs day and night. A working prototype is in field test with a leading UK organisation. That evaluation is confidential, and we will not publish figures or compatibilities until testing lets us stand behind them.</p>
+  <p><a href="/greni/">Explore Greni</a> or <a href="/greni/#interest">register early interest</a> to help shape how it is specified.</p>
+</div>
+  </div>
+</section>
+
+<section class="section" id="questions" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What people ask</p>
+      <h2>Common questions.</h2>
+    </div>
+    <div class="faq measure" style="max-width:52rem;">
+      <details><summary>Can a drone dock run on solar power?</summary><p>In principle, yes, if generation and storage cover the dock's daily energy in the worst month and the storage can deliver the charging peak on a cold night. In a northern winter, solar alone often cannot, and a hybrid architecture with fuelled backup is the more honest design.</p></details>
+      <details><summary>How much power does a drone dock need?</summary><p>Two figures matter. The peak is set by fast charging after each sortie; one widely deployed commercial dock, for example, lists a maximum input of 800 W. The daily energy is set mostly by the standby baseline, including heating or cooling, which runs 24 hours a day. The baseline is rarely published and has to be measured.</p></details>
+      <details><summary>Will Melrakki power the drone dock we already have?</summary><p>Only if that dock and aircraft combination has been tested and passed by Melrakki. We do not assume compatibility from a datasheet. Tell us the dock and aircraft you use and we will tell you where it stands.</p></details>
+      <details><summary>When will Greni be available?</summary><p>Greni is a working prototype in field test. We are not publishing dates, figures or compatibilities until testing lets us stand behind them. Registering interest puts your requirement in front of us while the specification is being finalised.</p></details>
+      <details><summary>Does off-grid power affect BVLOS approval?</summary><p>No. Approval concerns the operation, the airspace and the operator. Power affects where a dock can be placed and how dependable it is. The two need planning together, but one does not grant the other.</p></details>
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+
+<section class="section-tight cta">
+  <div class="wrap">
+    <p class="cta-four">Load. Location. Conditions. Mission.</p>
+    <h2>Tell us what needs to keep running.</h2>
+    <p>Tell us the dock, the aircraft, the site and how often it has to fly. We will be straight about what is tested, what is not, and where Greni fits.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/bespoke/#brief">Develop a requirement</a>
+      <a class="btn btn-secondary" href="/greni/#interest">Register interest in Greni</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/logo-lockup.png" width="480" height="135" loading="lazy" decoding="async" alt="Melrakki Systems">
+        <p>Autonomous off-grid power platforms, solar and battery towers and masts, engineered from the load backwards and built around proven hardware.</p>
+        <p class="foot-strap">Power that holds.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul><li><a href="/bespoke/">Bespoke</a></li><li><a href="/harka/">Harka platforms</a></li><li><a href="/greni/">Greni</a></li><li><a href="/#approach">Approach</a></li><li><a href="/resilience/">Field notes</a></li><li><a href="/about/">About</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Applications</h4>
+        <ul><li><a href="/off-grid-power/">Off-grid power</a></li><li><a href="/solar-powered-surveillance/">Surveillance</a></li><li><a href="/telecommunications/">Communications</a></li><li><a href="/drone-dock-power/">Drone docks</a></li><li><a href="/critical-infrastructure/">Critical infrastructure</a></li><li><a href="/oil-and-gas/">Oil and gas</a></li><li><a href="/defence-and-security/">Defence and security</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <ul>
+          <li><a href="/Melrakki-Harka-Hybrid.pdf">Harka Hybrid brochure</a></li>
+          <li><a href="/Melrakki-Harka-Solar.pdf">Harka Solar brochure</a></li>
+          <li><a href="/greni/#interest">Greni early interest</a></li>
+          <li><a href="/bespoke/#brief">Build a requirement brief</a></li>
+          <li><a href="mailto:hello@melrakki.systems">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>hello@melrakki.systems &nbsp;|&nbsp; &copy; 2026 Melrakki Systems.</p>
+      <p class="foot-desc">Autonomous power for the hardest places on earth.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(!t||!l)return;
+  function close(){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');}
+  t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){close();t.focus();}});
+})();
+</script>
+<script src="/assets/nav.js" defer></script>
+</body>
+</html>
